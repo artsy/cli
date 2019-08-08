@@ -26,6 +26,7 @@
     "nyc": "^13",
     "ts-node": "^8",
     "tslint": "^5",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3"
   },
   "engines": {
@@ -58,5 +59,11 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "prettier": {
+    "semi": false,
+    "singleQuote": false,
+    "trailingComma": "es5",
+    "bracketSpacing": true
+  }
 }
