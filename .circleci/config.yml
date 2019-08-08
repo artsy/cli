@@ -34,7 +34,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/artsy-cli/.npmrc
       - run:
           name: Publish package
-          command: npm publish --dry-run
+          command: npm publish
 
 workflows:
   version: 2
