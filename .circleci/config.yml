@@ -1,25 +1,49 @@
 version: 2
 
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:12
-
     working_directory: ~/artsy-cli
-
     steps:
       - checkout
-
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             - v1-dependencies-
-
       - run: yarn install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
       - run: yarn test
+
+  publish:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/artsy-cli
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn install
+      - run:
+          name: Configure NPM
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/artsy-cli/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish --dry-run
+
+workflows:
+  version: 2
+  default:
+    jobs:
+      - test
+  deploy:
+    jobs:
+      - test
+      - publish:
+          requires:
+            - test
