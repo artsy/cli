@@ -1,4 +1,7 @@
-# Artsy CLI
+# Artsy CLI [![CircleCI][badge]][circleci]
+
+[badge]: https://circleci.com/gh/artsy/artsy-cli.svg?style=svg
+[circleci]: https://circleci.com/gh/artsy/artsy-cli
 
 What I'm thinking here is that we mob on creating the oclif tool and then the
 streams of work could be:
