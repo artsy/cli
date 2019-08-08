@@ -1,4 +1,5 @@
 import { Command, flags } from "@oclif/command"
+import cli from "cli-ux"
 
 export default class Login extends Command {
   static description =
@@ -12,6 +13,11 @@ export default class Login extends Command {
 
   async run() {
     // const {args, flags} = this.parse(Auth)
-    this.log("Authenticating against stagingapi.artsy.net...")
+    const username = await cli.prompt("Username", { type: "normal" })
+    const password = await cli.prompt("Password", { type: "hide" })
+
+    this.log(
+      `Authenticating against stagingapi.artsy.net with ${username}|${password}`
+    )
   }
 }
