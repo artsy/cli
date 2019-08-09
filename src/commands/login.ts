@@ -1,5 +1,6 @@
 import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
+import Gravity from "../lib/gravity"
 
 export default class Login extends Command {
   static description =
@@ -12,12 +13,21 @@ export default class Login extends Command {
   // static args = [{ name: 'file' }];
 
   async run() {
+    require("dotenv").config()
+
     // const {args, flags} = this.parse(Auth)
-    const username = await cli.prompt("Username", { type: "normal" })
+    const email = await cli.prompt("Email", { type: "normal" })
     const password = await cli.prompt("Password", { type: "hide" })
 
-    this.log(
-      `Authenticating against stagingapi.artsy.net with ${username}|${password}`
-    )
+    this.log(`Authenticating against stagingapi.artsy.net for ${email}...`)
+
+    const result = await new Gravity().getAccessToken({
+      email,
+      password,
+    })
+
+    this.log("-------------- vvv Your access token vvv --------------")
+    this.log(result.access_token)
+    this.log("-------------- ^^^ Your access token ^^^ --------------")
   }
 }
