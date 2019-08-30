@@ -10,7 +10,7 @@ export default class Identify extends Command {
 
   static args = [{ name: "id" }]
 
-  static collectionsToCheck = [
+  static collectionsToCheck: CollectionMapping[] = [
     { name: "Artist", endpoint: "artist" },
     { name: "Artwork", endpoint: "artwork" },
     { name: "Partner", endpoint: "partner" },
@@ -38,4 +38,12 @@ export default class Identify extends Command {
       this.log(`Nothing found in: ${collections.join(", ")}`)
     }
   }
+}
+
+interface CollectionMapping {
+  /** Name of the Gravity resource */
+  name: string
+
+  /** The name of the collection as it appears in the GET endpoint for the resource, i.e. /api/v1/<endpoint>/:id */
+  endpoint: string
 }
