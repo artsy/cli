@@ -16,6 +16,7 @@
     "trailing-comma": false,
     "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
     "jsdoc-format": false,
-    "radix": false
+    "radix": false,
+    "no-single-line-block-comment": false
   }
 }
