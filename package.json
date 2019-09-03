@@ -16,6 +16,7 @@
     "tslib": "^1"
   },
   "devDependencies": {
+    "@artsy/auto-config": "^1.0.1",
     "@oclif/dev-cli": "^1",
     "@oclif/test": "^1",
     "@oclif/tslint": "^3",
