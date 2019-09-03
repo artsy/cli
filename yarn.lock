@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@artsy/auto-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@artsy/auto-config/-/auto-config-1.0.1.tgz#781aaaf026d2d06520005ced032ebca284935e8c"
+  integrity sha512-S6tw+x7CmTQQutt2Xqla4Y+3/Wr4RVjaZ5WYmv2V4D0ZUc/lk5UQKpI9akxlgOd5tMUcqBDPRGK6SF5pGNYP8g==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
