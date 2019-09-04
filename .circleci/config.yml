@@ -9,6 +9,7 @@ workflows:
       - yarn/update-cache
       - yarn/test
       - yarn/auto-release:
+          context: npm-deploy
           filters:
             branches:
               only: master
