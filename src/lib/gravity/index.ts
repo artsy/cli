@@ -1,6 +1,5 @@
 import fetch from "node-fetch"
-const fs = require('fs')
-const os = require('os')
+import { Config } from "../../config"
 
 class Gravity {
   static HOSTS = {
@@ -29,8 +28,7 @@ class Gravity {
   }
 
   async get(endpoint: string) {
-    const path = `${os.homedir()}/.config/artsy`
-    const token: string = fs.readFileSync(path, {encoding: 'utf-8'})
+    const token: string = Config.readToken()
 
     const gravityUrl: string = this.url(`api/v1/${endpoint}`)
     const headers = { "X-Access-Token": token }
