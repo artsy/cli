@@ -1,4 +1,6 @@
 import fetch from "node-fetch"
+const fs = require('fs')
+const os = require('os')
 
 class Gravity {
   static HOSTS = {
@@ -27,7 +29,8 @@ class Gravity {
   }
 
   async get(endpoint: string) {
-    const token: string = process.env.TOKEN! // temp until our auth/token plumbing is hooked up
+    const path = `${os.homedir()}/.config/artsy`
+    const token: string = fs.readFileSync(path, {encoding: 'utf-8'})
 
     const gravityUrl: string = this.url(`api/v1/${endpoint}`)
     const headers = { "X-Access-Token": token }
