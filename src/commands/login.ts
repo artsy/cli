@@ -1,8 +1,7 @@
 import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
+import { Config } from "../config"
 import Gravity from "../lib/gravity"
-const fs = require('fs')
-const os = require('os')
 
 export default class Login extends Command {
   static description =
@@ -25,8 +24,7 @@ export default class Login extends Command {
       password,
     })
 
-    const path = `${os.homedir()}/.config/artsy`
-    fs.writeFileSync(path, result.access_token)
+    Config.writeToken(result.access_token)
     this.log(result.access_token)
   }
 }
