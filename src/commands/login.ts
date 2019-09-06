@@ -10,12 +10,9 @@ export default class Login extends Command {
     help: flags.help({ char: "h" }),
   }
 
-  // static args = [{ name: 'file' }];
-
   async run() {
     require("dotenv").config()
 
-    // const {args, flags} = this.parse(Auth)
     const email = await cli.prompt("Email", { type: "normal" })
     const password = await cli.prompt("Password", { type: "hide" })
 
@@ -26,8 +23,6 @@ export default class Login extends Command {
       password,
     })
 
-    this.log("-------------- vvv Your access token vvv --------------")
     this.log(result.access_token)
-    this.log("-------------- ^^^ Your access token ^^^ --------------")
   }
 }
