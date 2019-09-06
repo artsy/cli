@@ -32,7 +32,7 @@ export default class Identify extends Command {
     if (foundIndex >= 0) {
       const foundCollection = Identify.collectionsToCheck[foundIndex]
       const foundResource = `${foundCollection.endpoint}/${id}`
-      this.log(`${foundCollection.name} ${gravity.url(foundResource)}`)
+      this.log(`${foundCollection.name} ${gravity.url(`api/v1/${foundResource}`)}`)
     } else {
       const collections = Identify.collectionsToCheck.map(c => c.name)
       this.log(`Nothing found in: ${collections.join(", ")}`)
