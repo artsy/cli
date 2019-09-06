@@ -7,6 +7,7 @@ workflows:
   default:
     jobs:
       - yarn/update-cache
+      - yarn/lint
       - yarn/test
       - yarn/auto-release:
           context: npm-deploy
@@ -15,4 +16,5 @@ workflows:
               only: master
           requires:
             - yarn/update-cache
+            - yarn/lint
             - yarn/test
