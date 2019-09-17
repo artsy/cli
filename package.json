@@ -1,7 +1,7 @@
 {
-  "name": "artsy-cli",
+  "name": "@artsy/cli",
   "description": "The artsy command line tool",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "author": "Jon Allured @jonallured",
   "bin": {
     "artsy": "./bin/run"
@@ -78,5 +78,8 @@
     "singleQuote": false,
     "trailingComma": "es5",
     "bracketSpacing": true
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

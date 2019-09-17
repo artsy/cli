@@ -8,7 +8,7 @@
 Artsy CLI is published on npm, so installing is really easy:
 
 ```
-$ npm install --global artsy-cli
+$ npm install --global @artsy/cli
 ```
 
 ## Releasing
