@@ -13,22 +13,10 @@ $ npm install --global @artsy/cli
 
 ## Releasing
 
-Here is a recipe for bumping the package version, merging that work to master
-and then updating the release branch to point at it:
+The release process happens automatically on every PR merge thanks to [auto](https://github.com/intuit/auto). To ensure
+the proper version is released for your PR please chose one of the following labels
 
-```
-$ git checkout -b release-0.0.X
-$ npm version 0.0.X
-$ git commit -a -m "Bump version for 0.0.X"
-$ hub pull-request -m "Bump version for 0.0.X" -l "Merge On Green"
-# wait for PR to merge
-$ git fetch
-$ git checkout release
-$ git reset --hard upstream/master
-$ git push upstream
-$ git branch -D release-0.0.X
-$ git push origin :release-0.0.X
-```
-
-Once that release branch has been pushed, then Circle will take over and run the
-actual npm publish command for us.
+- `Version: Major`
+- `Version: Minor`
+- `Version: Patch`
+- `Version: Trivial`
