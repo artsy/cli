@@ -1,3 +1,16 @@
+# v0.1.0 (Wed Sep 18 2019)
+
+#### 🚀  Enhancement
+
+- Update release documentation [#14](https://github.com/artsy/artsy-cli/pull/14) ([@zephraph](https://github.com/zephraph))
+- Update project to publish to @artsy/cli [#14](https://github.com/artsy/artsy-cli/pull/14) ([@zephraph](https://github.com/zephraph))
+
+#### Authors: 1
+
+- Justin Bennett ([@zephraph](https://github.com/zephraph))
+
+---
+
 # v0.0.5 (Fri Sep 06 2019)
 
 #### 🐛  Bug Fix
