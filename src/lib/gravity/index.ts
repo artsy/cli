@@ -7,9 +7,11 @@ class Gravity {
     production: "api.artsy.net",
   }
 
-  async getAccessToken(credentials: Credentials) {
+  async getAccessToken(
+    credentials: GravityCredentials
+  ): Promise<GravityAccessTokenResponse | GravityErrorResponse> {
     const gravityUrl = this.url("oauth2/access_token")
-    const body: AccessTokenRequest = {
+    const body: GravityAccessTokenRequest = {
       client_id: process.env.CLIENT_ID!,
       client_secret: process.env.CLIENT_SECRET!,
       grant_type: "credentials",
@@ -24,7 +26,7 @@ class Gravity {
 
     const json = await response.json()
 
-    return json as AccessTokenResponse
+    return json
   }
 
   async get(endpoint: string) {
@@ -44,19 +46,3 @@ class Gravity {
 }
 
 export default Gravity
-
-export interface Credentials {
-  email: string
-  password: string
-}
-
-interface AccessTokenRequest extends Credentials {
-  grant_type: string
-  client_id: string
-  client_secret: string
-}
-
-interface AccessTokenResponse {
-  access_token: string
-  expires_in: string
-}

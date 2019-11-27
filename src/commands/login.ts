@@ -24,7 +24,15 @@ export default class Login extends Command {
       password,
     })
 
-    Config.writeToken(result.access_token)
-    this.log(result.access_token)
+    const errorDescription = (result as GravityErrorResponse).error_description
+
+    if (errorDescription) {
+      this.error(errorDescription)
+    }
+
+    const accessToken = (result as GravityAccessTokenResponse).access_token
+
+    Config.writeToken(accessToken)
+    this.log(accessToken)
   }
 }
