@@ -1,3 +1,20 @@
+# v0.3.0 (Wed Apr 29 2020)
+
+#### 🚀  Enhancement
+
+- Update auto release configuration [#18](https://github.com/artsy/artsy-cli/pull/18) ([@dblandin](https://github.com/dblandin))
+- Add on-call:list command to list members in OpsGenie [#15](https://github.com/artsy/artsy-cli/pull/15) ([@dblandin](https://github.com/dblandin))
+
+#### 🐛  Bug Fix
+
+- Update @artsy/auto-config [#19](https://github.com/artsy/artsy-cli/pull/19) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.1.0 (Wed Sep 18 2019)
 
 #### 🚀  Enhancement
