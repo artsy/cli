@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@slack/client": "^5.0.2",
     "@types/node-fetch": "^2.5.0",
     "cli-ux": "^5.3.1",
     "dotenv": "^8.0.0",
@@ -64,6 +65,9 @@
     "topics": {
       "on-call": {
         "description": "Commands relating the engineering on-call process"
+      },
+      "scheduled": {
+        "description": "Tasks usually executed on a schedule"
       }
     }
   },
