@@ -1,5 +1,5 @@
 import { Command, flags } from "@oclif/command"
-import fetch from "node-fetch"
+import { Opsgenie } from "../../utils/opsgenie"
 
 const chunk = require("lodash.chunk")
 const shuffle = require("lodash.shuffle")
@@ -18,81 +18,67 @@ export default class List extends Command {
       default: 1,
       description: "Split members into [N] groups",
     }),
-    "team-name": flags.string({
+    team: flags.string({
+      char: "t",
       description: "Name of team to limit results to",
     }),
   }
 
   async run() {
-    const { flags } = this.parse()
-
     require("dotenv").config()
 
+    const { flags } = this.parse(List)
+
+    let users = await this.fetchUsers()
+
+    if (flags.randomize) {
+      users = shuffle(users)
+    }
+
+    this.output(users)
+  }
+
+  async fetchUsers() {
+    const { flags } = this.parse(List)
+    const opsgenie = new Opsgenie()
     let usernames: string[]
 
-    if (flags["team-name"]) {
-      const teamMembers = await this.fetchTeamMembers(flags["team-name"])
+    if (flags.team) {
+      const team = await opsgenie.team(flags.team)
 
-      usernames = teamMembers.data.members.map((member: any) => {
+      usernames = team.data.members.map((member: any) => {
         return member.user.username
       })
     } else {
-      const users = await this.fetchUsers()
+      const users = await opsgenie.users()
 
       usernames = users.data.map((user: any) => {
         return user.username
       })
     }
 
-    let users = await Promise.all(
-      usernames.map(username => this.fetchTeamMember(username))
-    )
+    return Promise.all(usernames.map(username => opsgenie.user(username)))
+  }
 
-    if (flags.randomize) {
-      users = shuffle(users)
-    }
+  group(users: any[]) {
+    const { flags } = this.parse(List)
 
-    chunk(users, Math.round(users.length / flags.split)).forEach(
-      (group: any, index: number) => {
-        group.forEach((user: any) => {
-          this.log(user.data.fullName)
-        })
+    return chunk(users, Math.round(users.length / flags.split))
+  }
 
-        if (index + 1 < flags.split) {
-          this.log()
-        }
+  output(users: any[]) {
+    const { flags } = this.parse(List)
+
+    this.group(users).forEach((group: any, index: number) => {
+      // print each member's name
+      group.forEach((user: any) => {
+        this.log(user.data.fullName)
+      })
+
+      // print separator between groups
+      if (index + 1 < flags.split) {
+        this.log()
       }
-    )
-  }
-
-  async fetchTeamMembers(teamName: string): Promise<any> {
-    const url = `https://api.opsgenie.com/v2/teams/${teamName}?identifierType=name`
-
-    return this.get(url)
-  }
-
-  async fetchUsers(): Promise<any> {
-    const url = `https://api.opsgenie.com/v2/users`
-
-    return this.get(url)
-  }
-
-  async fetchTeamMember(username: string): Promise<any> {
-    const url = `https://api.opsgenie.com/v2/users/${username}`
-
-    return this.get(url)
-  }
-
-  async get(url: string) {
-    const req = await fetch(url, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `GenieKey ${process.env.OPSGENIE_API_KEY}`,
-      },
     })
-
-    return req.json()
   }
 }
