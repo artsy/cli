@@ -1,4 +1,5 @@
 import fetch from "node-fetch"
+import * as querystring from "querystring"
 
 export class Opsgenie {
   apiKey: string
@@ -23,6 +24,20 @@ export class Opsgenie {
 
   users(): Promise<OpsGenieUsersResponse> {
     return this.get("https://api.opsgenie.com/v2/users")
+  }
+
+  scheduleOnCalls(
+    scheduleName: string,
+    targetDate = new Date()
+  ): Promise<OpsGenieOnCallsResponse> {
+    const qs = querystring.stringify({
+      date: targetDate.toISOString(),
+      scheduleIdentifierType: "name",
+    })
+
+    return this.get(
+      `https://api.opsgenie.com/v2/schedules/${scheduleName}/on-calls?${qs}`
+    )
   }
 
   async get(url: string) {

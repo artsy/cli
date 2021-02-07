@@ -20,3 +20,9 @@ interface OpsGenieUserResponse {
 interface OpsGenieUsersResponse {
   data: OpsGenieUser[]
 }
+
+interface OpsGenieOnCallsResponse {
+  data: {
+    onCallParticipants: String[]
+  }
+}
