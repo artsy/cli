@@ -40,6 +40,20 @@ export class Opsgenie {
     )
   }
 
+  scheduleNextOnCalls(
+    scheduleName: string,
+    targetDate = new Date()
+  ): Promise<OpsGenieNextOnCallsResponse> {
+    const qs = querystring.stringify({
+      date: targetDate.toISOString(),
+      scheduleIdentifierType: "name",
+    })
+
+    return this.get(
+      `https://api.opsgenie.com/v2/schedules/${scheduleName}/next-on-calls?${qs}`
+    )
+  }
+
   async get(url: string) {
     const req = await fetch(url, {
       method: "GET",

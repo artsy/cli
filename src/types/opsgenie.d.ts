@@ -3,6 +3,10 @@ interface OpsGenieUser {
   fullName: string
 }
 
+interface OpsGenieOnCallParticipant {
+  name: string
+}
+
 interface OpsGenieTeamMember {
   user: OpsGenieUser
 }
@@ -23,6 +27,12 @@ interface OpsGenieUsersResponse {
 
 interface OpsGenieOnCallsResponse {
   data: {
-    onCallParticipants: String[]
+    onCallParticipants: OpsGenieOnCallParticipant[]
+  }
+}
+
+interface OpsGenieNextOnCallsResponse {
+  data: {
+    exactNextOnCallRecipients: OpsGenieOnCallParticipant[]
   }
 }
