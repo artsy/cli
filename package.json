@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@octokit/graphql": "^4.6.0",
     "@slack/client": "^5.0.2",
     "@types/node-fetch": "^2.5.0",
     "cli-ux": "^5.3.1",
