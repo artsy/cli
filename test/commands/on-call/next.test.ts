@@ -1,6 +1,6 @@
 import { expect, test } from "@oclif/test"
 
-describe("on-call:who", () => {
+describe("on-call:next", () => {
   beforeEach(() => {
     process.env.OPSGENIE_API_KEY = "test"
   })
@@ -12,10 +12,10 @@ describe("on-call:who", () => {
   test
     .nock("https://api.opsgenie.com/v2", api =>
       api
-        .get(/\/schedules\/Test\/on-calls.*/)
+        .get(/\/schedules\/Test\/next-on-calls.*/)
         .reply(200, {
           data: {
-            onCallParticipants: [
+            exactNextOnCallRecipients: [
               { name: "devon@example.com" },
               { name: "jon@example.com" },
             ],
@@ -27,8 +27,8 @@ describe("on-call:who", () => {
         .reply(200, { data: { fullName: "Jon Allured" } })
     )
     .stdout()
-    .command(["on-call:who", "--schedule=Test"])
-    .it("return who is currently on-call", ctx => {
+    .command(["on-call:next", "--schedule=Test"])
+    .it("return who's next on-call", ctx => {
       expect(ctx.stdout).to.contain("Devon Blandin\nJon Allured")
     })
 })

@@ -1,8 +1,8 @@
 import { Command, flags } from "@oclif/command"
 import { Opsgenie } from "../../utils/opsgenie"
 
-export default class Who extends Command {
-  static description = "List who is on call now"
+export default class Next extends Command {
+  static description = "List is on call next"
 
   static flags = {
     date: flags.string({ description: "target date in ISO format" }),
@@ -21,20 +21,25 @@ export default class Who extends Command {
   }
 
   async fetchParticipants() {
-    const { flags } = this.parse(Who)
+    const { flags } = this.parse(Next)
 
     const targetDate = flags.date ? new Date(flags.date) : new Date()
 
     const opsgenie = new Opsgenie()
-    const onCalls = await opsgenie.scheduleOnCalls(flags.schedule, targetDate)
+    const onCalls = await opsgenie.scheduleNextOnCalls(
+      flags.schedule,
+      targetDate
+    )
 
     if (!onCalls.data) {
       this.error(`Whoops! I didn't find the schedule \`${flags.schedule}\`.`)
     }
 
-    const usernames = onCalls.data.onCallParticipants.map(participant => {
-      return participant.name
-    })
+    const usernames = onCalls.data.exactNextOnCallRecipients.map(
+      participant => {
+        return participant.name
+      }
+    )
 
     return Promise.all(usernames.map(username => opsgenie.user(username)))
   }
