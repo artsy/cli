@@ -22,7 +22,7 @@ describe("scheduled:standup-reminder", () => {
         .get(/\/v2\/schedules\/.*\/next-on-calls.*/)
         .reply(200, {
           data: {
-            nextOnCallRecipients: [
+            exactNextOnCallRecipients: [
               { name: "justin@example.com" },
               { name: "steve@example.com" },
             ],

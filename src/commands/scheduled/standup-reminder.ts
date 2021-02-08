@@ -51,7 +51,7 @@ export default class StandupReminder extends Command {
     const opsgenie = new Opsgenie()
     const onCalls = await opsgenie.scheduleNextOnCalls("Engineering On Call")
 
-    return onCalls.data.nextOnCallRecipients.map((participant: any) => {
+    return onCalls.data.exactNextOnCallRecipients.map((participant: any) => {
       return participant.name
     })
   }
