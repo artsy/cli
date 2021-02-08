@@ -1,3 +1,20 @@
+# v0.4.0 (Mon Feb 08 2021)
+
+#### 🚀  Enhancement
+
+- feat: add scheduled:rfcs task [#24](https://github.com/artsy/artsy-cli/pull/24) ([@dblandin](https://github.com/dblandin))
+- feat: add scheduled:standup-reminder task [#24](https://github.com/artsy/artsy-cli/pull/24) ([@dblandin](https://github.com/dblandin))
+
+#### 🐛  Bug Fix
+
+- fix: port opsgenie nextOnCall fix to standup-reminder [#27](https://github.com/artsy/artsy-cli/pull/27) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.3.0 (Wed Apr 29 2020)
 
 #### 🚀  Enhancement
