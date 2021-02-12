@@ -1,16 +1,12 @@
-const ACRONYM_MAP: AcronymMap = require("./data.json")
+import { acronymMap } from "./data"
 
 export const findAcronym = (query: string): string | undefined => {
-  const acronym = Object.keys(ACRONYM_MAP).find(
+  const acronym = Object.keys(acronymMap).find(
     key => key.toLowerCase().trim() === query.toLowerCase().trim()
   )
 
   if (acronym) {
-    const description = ACRONYM_MAP[acronym]
+    const description = acronymMap[acronym]
     return [acronym, description].join(": ")
   }
-}
-
-interface AcronymMap {
-  [acronym: string]: string
 }

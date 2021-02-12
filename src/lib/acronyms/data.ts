@@ -1,4 +1,8 @@
-{
+interface AcronymMap {
+  [acronym: string]: string
+}
+
+export const acronymMap: AcronymMap = {
   "ACA": "Artsy Curated Auction",
   "ACB": "Artsy Confirmed Buyer",
   "ACV": "Annual Contract Value",
