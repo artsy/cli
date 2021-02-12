@@ -1,3 +1,16 @@
+# v0.6.0 (Fri Feb 12 2021)
+
+#### 🚀  Enhancement
+
+- feat: alias acronym to tla & wtf [#32](https://github.com/artsy/artsy-cli/pull/32) ([@anandaroop](https://github.com/anandaroop))
+- feat: add an acronym subcommand [#32](https://github.com/artsy/artsy-cli/pull/32) ([@anandaroop](https://github.com/anandaroop))
+
+#### Authors: 1
+
+- Anandaroop Roy ([@anandaroop](https://github.com/anandaroop))
+
+---
+
 # v0.5.0 (Fri Feb 12 2021)
 
 #### 🚀  Enhancement
