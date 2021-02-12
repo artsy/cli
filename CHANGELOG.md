@@ -1,3 +1,23 @@
+# v0.7.0 (Fri Feb 12 2021)
+
+#### 🚀  Enhancement
+
+- feat: add acronym:random command [#39](https://github.com/artsy/artsy-cli/pull/39) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- Bump @types/node from 10.14.15 to 14.14.27 [#37](https://github.com/artsy/artsy-cli/pull/37) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @octokit/graphql-schema from 10.21.0 to 10.22.0 [#36](https://github.com/artsy/artsy-cli/pull/36) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @oclif/plugin-help from 2.2.0 to 2.2.3 [#34](https://github.com/artsy/artsy-cli/pull/34) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @types/chai from 4.1.7 to 4.2.15 [#33](https://github.com/artsy/artsy-cli/pull/33) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.6.1 (Fri Feb 12 2021)
 
 #### 🐛  Bug Fix
