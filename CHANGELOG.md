@@ -1,3 +1,26 @@
+# v0.5.0 (Fri Feb 12 2021)
+
+#### 🚀  Enhancement
+
+- feat: update RFCs reminder [#31](https://github.com/artsy/artsy-cli/pull/31) ([@dblandin](https://github.com/dblandin))
+
+#### 🐛  Bug Fix
+
+- Bump lodash from 4.17.15 to 4.17.20 [#25](https://github.com/artsy/artsy-cli/pull/25) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🏠  Internal
+
+- Bump handlebars from 4.1.2 to 4.7.6 [#22](https://github.com/artsy/artsy-cli/pull/22) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump bl from 3.0.0 to 3.0.1 [#21](https://github.com/artsy/artsy-cli/pull/21) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump node-fetch from 2.6.0 to 2.6.1 [#23](https://github.com/artsy/artsy-cli/pull/23) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.4.0 (Mon Feb 08 2021)
 
 #### 🚀  Enhancement
