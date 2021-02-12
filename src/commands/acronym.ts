@@ -15,16 +15,16 @@ AOV: Average Order Value`,
     help: flags.help({ char: "h" }),
   }
 
-  static args = [{ name: "query" }]
+  static args = [{ name: "acronym", required: true }]
 
   async run() {
     const { args } = this.parse(Acronym)
-    const result = findAcronym(args.query)
+    const result = findAcronym(args.acronym)
 
     if (result) {
-      console.log(result)
+      this.log(result)
     } else {
-      console.log("Sorry, unknown acronym")
+      this.log("Sorry, unknown acronym")
     }
   }
 }
