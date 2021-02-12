@@ -1,3 +1,16 @@
+# v0.6.1 (Fri Feb 12 2021)
+
+#### 🐛  Bug Fix
+
+- chore: run prettier [#38](https://github.com/artsy/artsy-cli/pull/38) ([@dblandin](https://github.com/dblandin))
+- fix: move acronym data to typescript file [#38](https://github.com/artsy/artsy-cli/pull/38) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.6.0 (Fri Feb 12 2021)
 
 #### 🚀  Enhancement
