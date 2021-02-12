@@ -27,6 +27,8 @@ const OpenRequestsForCommentsFixture = {
               {
                 __typename: "IssueComment",
                 createdAt: "2021-02-10T00:20:46Z",
+                url:
+                  "https://github.com/artsy/README/issues/364#issuecomment-776012598",
                 author: {
                   __typename: "User",
                   avatarUrl:

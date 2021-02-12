@@ -1,27 +1,77 @@
 query OpenRequestsForComments {
-  search(
-    query: "org:Artsy label:RFC state:open"
-      type: ISSUE
-      first: 100
-  ) {
+  search(query: "org:Artsy label:RFC state:open", type: ISSUE, first: 20) {
+    __typename
     issueCount
     nodes {
-      ...on Issue {
+      __typename
+
+      ... on Issue {
+        participants {
+          __typename
+          totalCount
+        }
+        timelineItems(last: 1, itemTypes: ISSUE_COMMENT) {
+          __typename
+          nodes {
+            __typename
+
+            ... on IssueComment {
+              createdAt
+              url
+
+              author {
+                __typename
+                avatarUrl
+                login
+                url
+              }
+            }
+          }
+        }
+        createdAt
         title
         url
         author {
+          __typename
+          avatarUrl
           login
           url
-          avatarUrl
         }
       }
       ... on PullRequest {
+        createdAt
         title
         url
+
         author {
+          __typename
+          avatarUrl
           login
           url
-          avatarUrl
+        }
+
+        participants {
+          __typename
+          totalCount
+        }
+
+        timelineItems(last: 1, itemTypes: ISSUE_COMMENT) {
+          __typename
+          nodes {
+            __typename
+
+            ... on IssueComment {
+              createdAt
+              url
+
+              author {
+                __typename
+                avatarUrl
+                login
+                url
+              }
+            }
+          }
         }
       }
     }

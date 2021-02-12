@@ -12,14 +12,12 @@ const { schema } = require("@octokit/graphql-schema")
 
 export function githubClient(): ApolloClient<NormalizedCacheObject> {
   if (!process.env.GITHUB_TOKEN) {
-    throw new Error(
-      "You need to provide a `GITHUB_TOKEN` env variable."
-    );
+    throw new Error("You need to provide a `GITHUB_TOKEN` env variable.")
   }
 
   const fragmentMatcher = new IntrospectionFragmentMatcher({
-    introspectionQueryResultData: schema.json
-  });
+    introspectionQueryResultData: schema.json,
+  })
 
   return new ApolloClient({
     link: new HttpLink({
