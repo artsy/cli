@@ -1,5 +1,5 @@
 import { Command, flags } from "@oclif/command"
-import { findAcronym } from "../lib/acronyms"
+import { findAcronym } from "../../lib/acronyms"
 
 export default class Acronym extends Command {
   static aliases = ["tla", "wtf"]

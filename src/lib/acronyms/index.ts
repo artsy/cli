@@ -10,3 +10,11 @@ export const findAcronym = (query: string): string | undefined => {
     return [acronym, description].join(": ")
   }
 }
+
+export const randomAcronym = (): string => {
+  const keys = Object.keys(acronymMap)
+  const acronym = keys[Math.floor(Math.random() * keys.length)]
+  const description = acronymMap[acronym]
+
+  return [acronym, description].join(": ")
+}
