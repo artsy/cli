@@ -1,0 +1,29 @@
+query OpenRequestsForComments {
+  search(
+    query: "org:Artsy label:RFC state:open"
+      type: ISSUE
+      first: 100
+  ) {
+    issueCount
+    nodes {
+      ...on Issue {
+        title
+        url
+        author {
+          login
+          url
+          avatarUrl
+        }
+      }
+      ... on PullRequest {
+        title
+        url
+        author {
+          login
+          url
+          avatarUrl
+        }
+      }
+    }
+  }
+}

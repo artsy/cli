@@ -14,13 +14,19 @@ describe("scheduled:rfcs", () => {
       api.post("/graphql").reply(200, {
         data: {
           search: {
-            edges: [
-              {
-                node: {
-                  title: "Test",
-                },
+            __typename: "SearchResultItemConnection",
+            issueCount: 1,
+            nodes: [{
+              __typename: "Issue",
+              author: {
+                __typename: "User",
+                login: "dblandin",
+                avatarUrl: "https://example.com/avatar.jpg",
+                url: "https://example.com/dblandin"
               },
-            ],
+              title: "Test",
+              url: "https://example.com/issues/1"
+            }],
           },
         },
       })
@@ -35,7 +41,11 @@ describe("scheduled:rfcs", () => {
             {
               fallback: "Open RFCs",
               color: "#36a64f",
+              author_name: "dblandin",
+              author_link: "https://example.com/dblandin",
+              author_icon: "https://example.com/avatar.jpg",
               title: "Test",
+              title_link: "https://example.com/issues/1"
             },
           ],
           unfurl_links: false,

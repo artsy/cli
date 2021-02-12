@@ -18,5 +18,10 @@
     "jsdoc-format": false,
     "radix": false,
     "no-single-line-block-comment": false
+  },
+  "linterOptions": {
+    "exclude": [
+        "src/__generated__/*"
+    ]
   }
 }

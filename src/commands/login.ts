@@ -1,7 +1,7 @@
 import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
 import { Config } from "../config"
-import Gravity from "../lib/gravity"
+import Gravity from "../utils/gravity"
 
 export default class Login extends Command {
   static description =

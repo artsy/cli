@@ -12,10 +12,17 @@
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
     "@octokit/graphql": "^4.6.0",
+    "@octokit/graphql-schema": "^10.21.0",
     "@slack/client": "^5.0.2",
     "@types/node-fetch": "^2.5.0",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.10",
+    "apollo-link-http": "^1.5.17",
     "cli-ux": "^5.3.1",
+    "cross-fetch": "^3.0.6",
     "dotenv": "^8.0.0",
+    "graphql": "^15.5.0",
+    "graphql-tag": "^2.11.0",
     "lodash.chunk": "^4.2.0",
     "lodash.shuffle": "^4.2.0",
     "node-fetch": "^2.6.0",
@@ -24,6 +31,11 @@
   },
   "devDependencies": {
     "@artsy/auto-config": "^1.0.1",
+    "@graphql-codegen/cli": "1.20.1",
+    "@graphql-codegen/typescript": "1.21.0",
+    "@graphql-codegen/typescript-document-nodes": "1.17.9",
+    "@graphql-codegen/typescript-operations": "^1.17.14",
+    "@graphql-codegen/typescript-resolvers": "1.18.2",
     "@oclif/dev-cli": "^1",
     "@oclif/test": "^1",
     "@oclif/tslint": "^3",
@@ -46,10 +58,9 @@
     "node": ">=8.0.0"
   },
   "files": [
-    "/bin",
-    "/lib",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
+    "bin",
+    "lib",
+    "oclif.manifest.json"
   ],
   "homepage": "https://github.com/artsy/artsy-cli",
   "keywords": [
@@ -77,13 +88,14 @@
     "lint": "yarn lint-src && yarn lint-test && yarn prettier-check",
     "lint-src": "tslint --project tsconfig.json",
     "lint-test": "tslint --project test/tsconfig.json",
-    "postpack": "rm -f oclif.manifest.json",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "postpack": "rm -rf lib oclif.manifest.json tsconfig.tsbuildinfo",
+    "prepack": "rm -rf lib oclif.manifest.json tsconfig.tsbuildinfo && tsc -b && oclif-dev manifest && oclif-dev readme",
     "prettier": "prettier --write {src,test}/**/*.{js,ts}",
     "prettier-check": "prettier --check {src,test}/**/*.{js,ts}",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "type-check": "tsc --emitDeclarationOnly --pretty",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "types": "lib/index.d.ts",
   "prettier": {

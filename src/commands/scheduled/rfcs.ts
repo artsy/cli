@@ -1,5 +1,9 @@
 import { Command } from "@oclif/command"
-import { GitHub } from "../../utils/github"
+import {
+  OpenRequestsForComments,
+  OpenRequestsForCommentsQuery,
+} from "../../__generated__/graphql"
+import { githubClient } from "../../utils/github"
 
 export default class RFCs extends Command {
   static description = "lists open RFCs"
@@ -7,10 +11,11 @@ export default class RFCs extends Command {
   async run() {
     require("dotenv").config()
 
-    const github = new GitHub()
-    const issues = await github.openRFCs()
+    const { data: { search }} = await githubClient().query<OpenRequestsForCommentsQuery>({
+      query: OpenRequestsForComments,
+    });
 
-    if (issues.length === 0) {
+    if (search.issueCount === 0) {
       const payload = JSON.stringify({
         text: `No open RFCs this week.`,
       })
@@ -18,20 +23,24 @@ export default class RFCs extends Command {
       return
     }
 
-    const attachments = issues.map(issue => ({
-      fallback: "Open RFCs",
-      color: "#36a64f",
-      author_name: issue.author?.login,
-      author_link: issue.author?.url,
-      author_icon: issue.author?.avatarURL,
-      title: issue.title,
-      title_link: issue.url,
-    }))
+    const attachments = search.nodes?.map(issue => {
+      if (issue?.__typename === "Issue" || issue?.__typename === "PullRequest") {
+        return {
+          fallback: "Open RFCs",
+          color: "#36a64f",
+          author_name: issue.author?.login,
+          author_link: issue.author?.url,
+          author_icon: issue.author?.avatarUrl,
+          title: issue.title,
+          title_link: issue.url,
+        }
+      }
+    })
 
     const text =
-      issues.length === 1
+      search.issueCount === 1
         ? `There is one open RFC:`
-        : `There are ${issues.length} open RFCs:`
+        : `There are ${search.issueCount} open RFCs:`
 
     const payload = JSON.stringify({
       text,
