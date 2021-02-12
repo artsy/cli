@@ -29085,25 +29085,71 @@ export type IResolvers<ContextType = any> = Resolvers<ContextType>;
 
 export const OpenRequestsForComments = gql`
     query OpenRequestsForComments {
-  search(query: "org:Artsy label:RFC state:open", type: ISSUE, first: 100) {
+  search(query: "org:Artsy label:RFC state:open", type: ISSUE, first: 20) {
+    __typename
     issueCount
     nodes {
+      __typename
       ... on Issue {
+        participants {
+          __typename
+          totalCount
+        }
+        timelineItems(last: 1, itemTypes: ISSUE_COMMENT) {
+          __typename
+          nodes {
+            __typename
+            ... on IssueComment {
+              createdAt
+              url
+              author {
+                __typename
+                avatarUrl
+                login
+                url
+              }
+            }
+          }
+        }
+        createdAt
         title
         url
         author {
+          __typename
+          avatarUrl
           login
           url
-          avatarUrl
         }
       }
       ... on PullRequest {
+        createdAt
         title
         url
         author {
+          __typename
+          avatarUrl
           login
           url
-          avatarUrl
+        }
+        participants {
+          __typename
+          totalCount
+        }
+        timelineItems(last: 1, itemTypes: ISSUE_COMMENT) {
+          __typename
+          nodes {
+            __typename
+            ... on IssueComment {
+              createdAt
+              url
+              author {
+                __typename
+                avatarUrl
+                login
+                url
+              }
+            }
+          }
         }
       }
     }
@@ -29116,46 +29162,96 @@ export type OpenRequestsForCommentsQueryVariables = Exact<{ [key: string]: never
 export type OpenRequestsForCommentsQuery = (
   { __typename?: 'Query' }
   & { search: (
-    { __typename?: 'SearchResultItemConnection' }
+    { __typename: 'SearchResultItemConnection' }
     & Pick<SearchResultItemConnection, 'issueCount'>
-    & { nodes?: Maybe<Array<Maybe<{ __typename?: 'App' } | (
-      { __typename?: 'Issue' }
-      & Pick<Issue, 'title' | 'url'>
-      & { author?: Maybe<(
-        { __typename?: 'Bot' }
-        & Pick<Bot, 'login' | 'url' | 'avatarUrl'>
+    & { nodes?: Maybe<Array<Maybe<{ __typename: 'App' } | (
+      { __typename: 'Issue' }
+      & Pick<Issue, 'createdAt' | 'title' | 'url'>
+      & { participants: (
+        { __typename: 'UserConnection' }
+        & Pick<UserConnection, 'totalCount'>
+      ), timelineItems: (
+        { __typename: 'IssueTimelineItemsConnection' }
+        & { nodes?: Maybe<Array<Maybe<{ __typename: 'AddedToProjectEvent' } | { __typename: 'AssignedEvent' } | { __typename: 'ClosedEvent' } | { __typename: 'CommentDeletedEvent' } | { __typename: 'ConnectedEvent' } | { __typename: 'ConvertedNoteToIssueEvent' } | { __typename: 'CrossReferencedEvent' } | { __typename: 'DemilestonedEvent' } | { __typename: 'DisconnectedEvent' } | (
+          { __typename: 'IssueComment' }
+          & Pick<IssueComment, 'createdAt' | 'url'>
+          & { author?: Maybe<(
+            { __typename: 'Bot' }
+            & Pick<Bot, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'EnterpriseUserAccount' }
+            & Pick<EnterpriseUserAccount, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'Mannequin' }
+            & Pick<Mannequin, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'Organization' }
+            & Pick<Organization, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'User' }
+            & Pick<User, 'avatarUrl' | 'login' | 'url'>
+          )> }
+        ) | { __typename: 'LabeledEvent' } | { __typename: 'LockedEvent' } | { __typename: 'MarkedAsDuplicateEvent' } | { __typename: 'MentionedEvent' } | { __typename: 'MilestonedEvent' } | { __typename: 'MovedColumnsInProjectEvent' } | { __typename: 'PinnedEvent' } | { __typename: 'ReferencedEvent' } | { __typename: 'RemovedFromProjectEvent' } | { __typename: 'RenamedTitleEvent' } | { __typename: 'ReopenedEvent' } | { __typename: 'SubscribedEvent' } | { __typename: 'TransferredEvent' } | { __typename: 'UnassignedEvent' } | { __typename: 'UnlabeledEvent' } | { __typename: 'UnlockedEvent' } | { __typename: 'UnmarkedAsDuplicateEvent' } | { __typename: 'UnpinnedEvent' } | { __typename: 'UnsubscribedEvent' } | { __typename: 'UserBlockedEvent' }>>> }
+      ), author?: Maybe<(
+        { __typename: 'Bot' }
+        & Pick<Bot, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'EnterpriseUserAccount' }
-        & Pick<EnterpriseUserAccount, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'EnterpriseUserAccount' }
+        & Pick<EnterpriseUserAccount, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'Mannequin' }
-        & Pick<Mannequin, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'Mannequin' }
+        & Pick<Mannequin, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'Organization' }
-        & Pick<Organization, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'Organization' }
+        & Pick<Organization, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'User' }
-        & Pick<User, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'User' }
+        & Pick<User, 'avatarUrl' | 'login' | 'url'>
       )> }
-    ) | { __typename?: 'MarketplaceListing' } | { __typename?: 'Organization' } | (
-      { __typename?: 'PullRequest' }
-      & Pick<PullRequest, 'title' | 'url'>
+    ) | { __typename: 'MarketplaceListing' } | { __typename: 'Organization' } | (
+      { __typename: 'PullRequest' }
+      & Pick<PullRequest, 'createdAt' | 'title' | 'url'>
       & { author?: Maybe<(
-        { __typename?: 'Bot' }
-        & Pick<Bot, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'Bot' }
+        & Pick<Bot, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'EnterpriseUserAccount' }
-        & Pick<EnterpriseUserAccount, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'EnterpriseUserAccount' }
+        & Pick<EnterpriseUserAccount, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'Mannequin' }
-        & Pick<Mannequin, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'Mannequin' }
+        & Pick<Mannequin, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'Organization' }
-        & Pick<Organization, 'login' | 'url' | 'avatarUrl'>
+        { __typename: 'Organization' }
+        & Pick<Organization, 'avatarUrl' | 'login' | 'url'>
       ) | (
-        { __typename?: 'User' }
-        & Pick<User, 'login' | 'url' | 'avatarUrl'>
-      )> }
-    ) | { __typename?: 'Repository' } | { __typename?: 'User' }>>> }
+        { __typename: 'User' }
+        & Pick<User, 'avatarUrl' | 'login' | 'url'>
+      )>, participants: (
+        { __typename: 'UserConnection' }
+        & Pick<UserConnection, 'totalCount'>
+      ), timelineItems: (
+        { __typename: 'PullRequestTimelineItemsConnection' }
+        & { nodes?: Maybe<Array<Maybe<{ __typename: 'AddedToProjectEvent' } | { __typename: 'AssignedEvent' } | { __typename: 'AutoMergeDisabledEvent' } | { __typename: 'AutoMergeEnabledEvent' } | { __typename: 'AutoRebaseEnabledEvent' } | { __typename: 'AutoSquashEnabledEvent' } | { __typename: 'AutomaticBaseChangeFailedEvent' } | { __typename: 'AutomaticBaseChangeSucceededEvent' } | { __typename: 'BaseRefChangedEvent' } | { __typename: 'BaseRefDeletedEvent' } | { __typename: 'BaseRefForcePushedEvent' } | { __typename: 'ClosedEvent' } | { __typename: 'CommentDeletedEvent' } | { __typename: 'ConnectedEvent' } | { __typename: 'ConvertToDraftEvent' } | { __typename: 'ConvertedNoteToIssueEvent' } | { __typename: 'CrossReferencedEvent' } | { __typename: 'DemilestonedEvent' } | { __typename: 'DeployedEvent' } | { __typename: 'DeploymentEnvironmentChangedEvent' } | { __typename: 'DisconnectedEvent' } | { __typename: 'HeadRefDeletedEvent' } | { __typename: 'HeadRefForcePushedEvent' } | { __typename: 'HeadRefRestoredEvent' } | (
+          { __typename: 'IssueComment' }
+          & Pick<IssueComment, 'createdAt' | 'url'>
+          & { author?: Maybe<(
+            { __typename: 'Bot' }
+            & Pick<Bot, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'EnterpriseUserAccount' }
+            & Pick<EnterpriseUserAccount, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'Mannequin' }
+            & Pick<Mannequin, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'Organization' }
+            & Pick<Organization, 'avatarUrl' | 'login' | 'url'>
+          ) | (
+            { __typename: 'User' }
+            & Pick<User, 'avatarUrl' | 'login' | 'url'>
+          )> }
+        ) | { __typename: 'LabeledEvent' } | { __typename: 'LockedEvent' } | { __typename: 'MarkedAsDuplicateEvent' } | { __typename: 'MentionedEvent' } | { __typename: 'MergedEvent' } | { __typename: 'MilestonedEvent' } | { __typename: 'MovedColumnsInProjectEvent' } | { __typename: 'PinnedEvent' } | { __typename: 'PullRequestCommit' } | { __typename: 'PullRequestCommitCommentThread' } | { __typename: 'PullRequestReview' } | { __typename: 'PullRequestReviewThread' } | { __typename: 'PullRequestRevisionMarker' } | { __typename: 'ReadyForReviewEvent' } | { __typename: 'ReferencedEvent' } | { __typename: 'RemovedFromProjectEvent' } | { __typename: 'RenamedTitleEvent' } | { __typename: 'ReopenedEvent' } | { __typename: 'ReviewDismissedEvent' } | { __typename: 'ReviewRequestRemovedEvent' } | { __typename: 'ReviewRequestedEvent' } | { __typename: 'SubscribedEvent' } | { __typename: 'TransferredEvent' } | { __typename: 'UnassignedEvent' } | { __typename: 'UnlabeledEvent' } | { __typename: 'UnlockedEvent' } | { __typename: 'UnmarkedAsDuplicateEvent' } | { __typename: 'UnpinnedEvent' } | { __typename: 'UnsubscribedEvent' } | { __typename: 'UserBlockedEvent' }>>> }
+      ) }
+    ) | { __typename: 'Repository' } | { __typename: 'User' }>>> }
   ) }
 );

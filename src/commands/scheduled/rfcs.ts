@@ -8,46 +8,110 @@ import { githubClient } from "../../utils/github"
 export default class RFCs extends Command {
   static description = "lists open RFCs"
 
+  static SearchURL =
+    "https://github.com/search?q=org:Artsy+label:RFC+state:open"
+
   async run() {
     require("dotenv").config()
 
-    const { data: { search }} = await githubClient().query<OpenRequestsForCommentsQuery>({
+    const {
+      data: { search },
+    } = await githubClient().query<OpenRequestsForCommentsQuery>({
       query: OpenRequestsForComments,
-    });
+    })
+
+    const blocks = []
 
     if (search.issueCount === 0) {
-      const payload = JSON.stringify({
-        text: `No open RFCs this week.`,
+      blocks.push({
+        type: "section",
+        text: {
+          type: "plain_text",
+          text: "No open RFCs this week",
+        },
       })
-      this.log(payload)
+      this.log(JSON.stringify({ blocks }))
       return
+    } else {
+      let text: string
+      if (search.issueCount === 1) {
+        text = `There is <${RFCs.SearchURL}|*1 open RFC*>:`
+      } else {
+        text = `There are <${RFCs.SearchURL}|*${search.issueCount} open RFCs*>:`
+      }
+      blocks.push({
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text,
+        },
+      })
     }
 
-    const attachments = search.nodes?.map(issue => {
-      if (issue?.__typename === "Issue" || issue?.__typename === "PullRequest") {
-        return {
-          fallback: "Open RFCs",
-          color: "#36a64f",
-          author_name: issue.author?.login,
-          author_link: issue.author?.url,
-          author_icon: issue.author?.avatarUrl,
-          title: issue.title,
-          title_link: issue.url,
+    search.nodes?.forEach((issue, index) => {
+      if (
+        issue?.__typename === "Issue" ||
+        issue?.__typename === "PullRequest"
+      ) {
+        let issueText = `<${issue.url}|${issue.title}>`
+
+        if (issue.timelineItems.nodes?.length) {
+          const comment = issue.timelineItems.nodes[0]
+          if (comment?.__typename === "IssueComment") {
+            issueText += `\n\n:speech_balloon: _Last comment on <!date^${this.convertTimestampToEpoch(
+              comment.createdAt
+            )}^{date_short_pretty}^${comment.url}|${comment.createdAt}> by <${
+              issue.author?.url
+            }|${issue.author?.login}>_`
+          }
+        }
+
+        blocks.push(
+          ...[
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: issueText,
+              },
+            },
+            {
+              type: "context",
+              elements: [
+                {
+                  type: "image",
+                  image_url: issue.author?.avatarUrl,
+                  alt_text: issue.author?.login,
+                },
+                {
+                  type: "mrkdwn",
+                  text: `Created by <${issue.author?.url}|${
+                    issue.author?.login
+                  }> on <!date^${this.convertTimestampToEpoch(
+                    issue.createdAt
+                  )}^{date_short_pretty}|${issue.createdAt}> / ${
+                    issue.participants.totalCount
+                  } participants`,
+                },
+              ],
+            },
+          ]
+        )
+
+        if (index < search.issueCount - 1) {
+          blocks.push({ type: "divider" })
         }
       }
     })
 
-    const text =
-      search.issueCount === 1
-        ? `There is one open RFC:`
-        : `There are ${search.issueCount} open RFCs:`
-
     const payload = JSON.stringify({
-      text,
-      attachments,
-      unfurl_links: false,
+      blocks,
     })
 
     this.log(payload)
+  }
+
+  convertTimestampToEpoch(timestamp: string) {
+    return +Date.parse(timestamp) / 1000
   }
 }

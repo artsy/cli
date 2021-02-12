@@ -1,4 +1,5 @@
 import { expect, test } from "@oclif/test"
+import { OpenRequestsForCommentsFixture } from "../../fixtures/open-rfcs"
 
 describe("scheduled:rfcs", () => {
   beforeEach(() => {
@@ -11,44 +12,47 @@ describe("scheduled:rfcs", () => {
 
   test
     .nock("https://api.github.com", api =>
-      api.post("/graphql").reply(200, {
-        data: {
-          search: {
-            __typename: "SearchResultItemConnection",
-            issueCount: 1,
-            nodes: [{
-              __typename: "Issue",
-              author: {
-                __typename: "User",
-                login: "dblandin",
-                avatarUrl: "https://example.com/avatar.jpg",
-                url: "https://example.com/dblandin"
-              },
-              title: "Test",
-              url: "https://example.com/issues/1"
-            }],
-          },
-        },
-      })
+      api.post("/graphql").reply(200, OpenRequestsForCommentsFixture)
     )
     .stdout()
     .command(["scheduled:rfcs"])
     .it("returns Slack-formatted open RFCs message", ctx => {
       expect(ctx.stdout.trim()).to.eq(
         JSON.stringify({
-          text: "There is one open RFC:",
-          attachments: [
+          blocks: [
             {
-              fallback: "Open RFCs",
-              color: "#36a64f",
-              author_name: "dblandin",
-              author_link: "https://example.com/dblandin",
-              author_icon: "https://example.com/avatar.jpg",
-              title: "Test",
-              title_link: "https://example.com/issues/1"
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text:
+                  "There is <https://github.com/search?q=org:Artsy+label:RFC+state:open|*1 open RFC*>:",
+              },
+            },
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text:
+                  "<https://github.com/artsy/README/pull/368|RFC: Propose conventions for project set-up and configuration>\n\n:speech_balloon: _Last comment on <!date^1612916446^{date_short_pretty}^https://github.com/artsy/README/issues/364#issuecomment-776012598|2021-02-10T00:20:46Z> by <https://github.com/joeyAghion|joeyAghion>_",
+              },
+            },
+            {
+              type: "context",
+              elements: [
+                {
+                  type: "image",
+                  image_url:
+                    "https://avatars.githubusercontent.com/u/28120?u=cdbf28a4a864baaef4ef0e054b60bd5d5517a87b&v=4",
+                  alt_text: "joeyAghion",
+                },
+                {
+                  type: "mrkdwn",
+                  text:
+                    "Created by <https://github.com/joeyAghion|joeyAghion> on <!date^1612792734^{date_short_pretty}|2021-02-08T13:58:54Z> / 6 participants",
+                },
+              ],
             },
           ],
-          unfurl_links: false,
         })
       )
     })
