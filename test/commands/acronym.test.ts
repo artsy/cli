@@ -21,4 +21,18 @@ describe("acronym", () => {
     .it("is case-insensitive", ctx => {
       expect(ctx.stdout).to.contain("Average Order Value")
     })
+
+  test
+    .stdout()
+    .command(["tla", "aov"])
+    .it("is aliased to tla", ctx => {
+      expect(ctx.stdout).to.contain("Average Order Value")
+    })
+
+  test
+    .stdout()
+    .command(["wtf", "aov"])
+    .it("is aliased to wtf", ctx => {
+      expect(ctx.stdout).to.contain("Average Order Value")
+    })
 })
