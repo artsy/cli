@@ -1,5 +1,5 @@
 import { Command, flags } from "@oclif/command"
-import Gravity from "../lib/gravity"
+import Gravity from "../utils/gravity"
 
 export default class Identify extends Command {
   static description = "Identify a Gravity resource by its BSON ID"

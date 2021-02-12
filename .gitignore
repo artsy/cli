@@ -7,3 +7,8 @@
 /tmp
 node_modules
 .env
+
+.DS_Store
+artsy-cli-*.tgz
+oclif.manifest.json
+tsconfig.tsbuildinfo
