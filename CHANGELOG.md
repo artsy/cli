@@ -1,3 +1,15 @@
+# v0.7.1 (Sat Feb 13 2021)
+
+#### ⚠️  Pushed to `master`
+
+- fix: update token in GitHub GraphQL generate-types task ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.7.0 (Fri Feb 12 2021)
 
 #### 🚀  Enhancement
