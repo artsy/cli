@@ -11,6 +11,7 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "@octokit/graphql": "^4.6.0",
     "@octokit/graphql-schema": "^10.21.0",
     "@slack/client": "^5.0.2",
@@ -72,8 +73,12 @@
     "commands": "./lib/commands",
     "bin": "artsy",
     "plugins": [
-      "@oclif/plugin-help"
+      "@oclif/plugin-help",
+      "@oclif/plugin-warn-if-update-available"
     ],
+    "warn-if-update-available": {
+      "timeoutInDays": 7
+    },
     "topics": {
       "on-call": {
         "description": "Commands relating the engineering on-call process"
