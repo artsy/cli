@@ -33,7 +33,7 @@ describe("scheduled:rfcs", () => {
               text: {
                 type: "mrkdwn",
                 text:
-                  "<https://github.com/artsy/README/pull/368|RFC: Propose conventions for project set-up and configuration>\n\n:speech_balloon: _Last comment on <!date^1612916446^{date_short_pretty}^https://github.com/artsy/README/issues/364#issuecomment-776012598|2021-02-10T00:20:46Z> by <https://github.com/joeyAghion|joeyAghion>_",
+                  "<https://github.com/artsy/README/pull/368|RFC: Propose conventions for project set-up and configuration>\n\n:speech_balloon: _Last comment <!date^1612916446^{date_short_pretty}^https://github.com/artsy/README/issues/364#issuecomment-776012598|2021-02-10T00:20:46Z> by <https://github.com/dblandin|dblandin>_",
               },
             },
             {
