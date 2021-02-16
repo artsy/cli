@@ -1,3 +1,15 @@
+# v0.8.1 (Tue Feb 16 2021)
+
+#### 🐛  Bug Fix
+
+- fix: correct comment author login/url [#51](https://github.com/artsy/artsy-cli/pull/51) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.8.0 (Tue Feb 16 2021)
 
 #### 🚀  Enhancement
