@@ -1,3 +1,24 @@
+# v0.8.0 (Tue Feb 16 2021)
+
+#### 🚀  Enhancement
+
+- feat: warn when new CLI version available [#40](https://github.com/artsy/artsy-cli/pull/40) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- Bump @types/node-fetch from 2.5.0 to 2.5.8 [#46](https://github.com/artsy/artsy-cli/pull/46) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump cli-ux from 5.3.1 to 5.5.1 [#50](https://github.com/artsy/artsy-cli/pull/50) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump chai from 4.2.0 to 4.3.0 [#48](https://github.com/artsy/artsy-cli/pull/48) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @types/node from 14.14.27 to 14.14.28 [#44](https://github.com/artsy/artsy-cli/pull/44) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump dotenv from 8.0.0 to 8.2.0 [#41](https://github.com/artsy/artsy-cli/pull/41) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.7.1 (Sat Feb 13 2021)
 
 #### ⚠️  Pushed to `master`
