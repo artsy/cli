@@ -58,11 +58,11 @@ export default class RFCs extends Command {
         if (issue.timelineItems.nodes?.length) {
           const comment = issue.timelineItems.nodes[0]
           if (comment?.__typename === "IssueComment") {
-            issueText += `\n\n:speech_balloon: _Last comment on <!date^${this.convertTimestampToEpoch(
+            issueText += `\n\n:speech_balloon: _Last comment <!date^${this.convertTimestampToEpoch(
               comment.createdAt
             )}^{date_short_pretty}^${comment.url}|${comment.createdAt}> by <${
-              issue.author?.url
-            }|${issue.author?.login}>_`
+              comment.author?.url
+            }|${comment.author?.login}>_`
           }
         }
 
