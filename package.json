@@ -52,7 +52,7 @@
     "nock": "^13.0.10",
     "nyc": "^13",
     "prettier": "^1.18.2",
-    "ts-node": "^8",
+    "ts-node": "^9",
     "tslint": "^5",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3"
