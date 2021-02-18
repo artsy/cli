@@ -10,7 +10,7 @@
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
-    "@oclif/plugin-help": "^2",
+    "@oclif/plugin-help": "^3",
     "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "@octokit/graphql": "^4.6.0",
     "@octokit/graphql-schema": "^10.21.0",
