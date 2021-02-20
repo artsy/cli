@@ -2,13 +2,25 @@ import fetch from "node-fetch"
 import { Config } from "../config"
 
 class Gravity {
-  static HOSTS = {
-    staging: "stagingapi.artsy.net",
-    production: "api.artsy.net",
+  static BASE_URL = `https://api.artsy.net/`
+  static REDIRECT_PORT = 27879
+
+  static url(endpoint: string) {
+    return `${Gravity.BASE_URL}${endpoint}`
+  }
+
+  static urls = {
+    current_user: Gravity.url("api/current_user"),
+    auth: Gravity.url("oauth2/authorize"),
+    access_token: Gravity.url("oauth2/access_token"),
+    access_tokens: Gravity.url("api/tokens/access_token"),
+    user_details: Gravity.url("api/current_user"),
+    // tslint:disable-next-line:no-http-string
+    callback: `http://127.0.0.1:${Gravity.REDIRECT_PORT}`,
   }
 
   async getAccessToken(credentials: Credentials) {
-    const gravityUrl = this.url("oauth2/access_token")
+    const gravityUrl = Gravity.urls.access_token
     const body: AccessTokenRequest = {
       client_id: process.env.CLIENT_ID!,
       client_secret: process.env.CLIENT_SECRET!,
@@ -30,16 +42,11 @@ class Gravity {
   async get(endpoint: string) {
     const token: string = Config.readToken()
 
-    const gravityUrl: string = this.url(`api/v1/${endpoint}`)
+    const gravityUrl: string = Gravity.url(`api/v1/${endpoint}`)
     const headers = { "X-Access-Token": token }
     const response = await fetch(gravityUrl, { headers })
 
     return response
-  }
-
-  url(endpoint: string): string {
-    const host = Gravity.HOSTS.staging
-    return `https://${host}/${endpoint}`
   }
 }
 
