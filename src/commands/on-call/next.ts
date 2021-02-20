@@ -1,10 +1,13 @@
-import { Command, flags } from "@oclif/command"
+import { flags } from "@oclif/command"
 import { Opsgenie } from "../../utils/opsgenie"
+
+import Command from "../../base"
 
 export default class Next extends Command {
   static description = "List is on call next"
 
   static flags = {
+    ...Command.flags,
     date: flags.string({ description: "target date in ISO format" }),
     schedule: flags.string({
       description: "schedule name",
@@ -13,8 +16,6 @@ export default class Next extends Command {
   }
 
   async run() {
-    require("dotenv").config()
-
     const participants = await this.fetchParticipants()
 
     participants.forEach(participant => this.log(participant.data.fullName))

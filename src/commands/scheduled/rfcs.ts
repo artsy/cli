@@ -1,19 +1,21 @@
-import { Command } from "@oclif/command"
 import {
   OpenRequestsForComments,
   OpenRequestsForCommentsQuery,
 } from "../../__generated__/graphql"
+import Command from "../../base"
 import { githubClient } from "../../utils/github"
 
 export default class RFCs extends Command {
   static description = "lists open RFCs"
 
+  static flags = {
+    ...Command.flags,
+  }
+
   static SearchURL =
     "https://github.com/search?q=org:Artsy+label:RFC+state:open"
 
   async run() {
-    require("dotenv").config()
-
     const {
       data: { search },
     } = await githubClient().query<OpenRequestsForCommentsQuery>({

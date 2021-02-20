@@ -1,11 +1,12 @@
-import { Command, flags } from "@oclif/command"
+import Command from "../base"
+
 import Gravity from "../utils/gravity"
 
 export default class Identify extends Command {
   static description = "Identify a Gravity resource by its BSON ID"
 
   static flags = {
-    help: flags.help({ char: "h" }),
+    ...Command.flags,
   }
 
   static args = [{ name: "id" }]
