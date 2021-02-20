@@ -1,4 +1,5 @@
-import { Command, flags } from "@oclif/command"
+import { flags } from "@oclif/command"
+import Command from "../../base"
 import { Opsgenie } from "../../utils/opsgenie"
 
 const chunk = require("lodash.chunk")
@@ -8,6 +9,7 @@ export default class List extends Command {
   static description = "List users via OpsGenie"
 
   static flags = {
+    ...Command.flags,
     randomize: flags.boolean({
       char: "r",
       default: false,
@@ -25,8 +27,6 @@ export default class List extends Command {
   }
 
   async run() {
-    require("dotenv").config()
-
     const { flags } = this.parse(List)
 
     let users = await this.fetchUsers()

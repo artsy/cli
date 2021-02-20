@@ -1,4 +1,4 @@
-import { Command } from "@oclif/command"
+import Command from "../../base"
 
 import { WebClient } from "@slack/client"
 import { Opsgenie } from "../../utils/opsgenie"
@@ -7,9 +7,11 @@ export default class StandupReminder extends Command {
   static description =
     "Remind facilitators and participants of upcoming standup."
 
-  async run() {
-    require("dotenv").config()
+  static flags = {
+    ...Command.flags,
+  }
 
+  async run() {
     const opsGenieOnCallStaffEmails = await this.onCallEmailsFromOpsGenie()
     const message = await this.messageForOnCallEmails(opsGenieOnCallStaffEmails)
 

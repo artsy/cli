@@ -1,4 +1,4 @@
-import { Command, flags } from "@oclif/command"
+import Command from "../../base"
 import { randomAcronym } from "../../lib/acronyms"
 
 export default class Random extends Command {
@@ -10,7 +10,7 @@ TAT: Turn around time`,
   ]
 
   static flags = {
-    help: flags.help({ char: "h" }),
+    ...Command.flags,
   }
 
   async run() {

@@ -1,4 +1,4 @@
-import { Command, flags } from "@oclif/command"
+import Command from "../../base"
 import { findAcronym } from "../../lib/acronyms"
 
 export default class Acronym extends Command {
@@ -12,7 +12,7 @@ AOV: Average Order Value`,
   ]
 
   static flags = {
-    help: flags.help({ char: "h" }),
+    ...Command.flags,
   }
 
   static args = [{ name: "acronym", required: true }]

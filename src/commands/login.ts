@@ -1,5 +1,5 @@
-import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
+import Command from "../base"
 import { Config } from "../config"
 import Gravity from "../utils/gravity"
 
@@ -8,12 +8,10 @@ export default class Login extends Command {
     "Log into the Artsy API. This is a prerequisite for many other commands."
 
   static flags = {
-    help: flags.help({ char: "h" }),
+    ...Command.flags,
   }
 
   async run() {
-    require("dotenv").config()
-
     const email = await cli.prompt("Email", { type: "normal" })
     const password = await cli.prompt("Password", { type: "hide" })
 
