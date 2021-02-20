@@ -3,7 +3,7 @@ import { expect, test } from "@oclif/test"
 describe("identify", () => {
   describe("when the artwork exists", () => {
     test
-      .nock("https://stagingapi.artsy.net", api =>
+      .nock("https://api.artsy.net", api =>
         api
           .get("/api/v1/artist/abc123")
           .reply(404)
@@ -16,14 +16,14 @@ describe("identify", () => {
       .command(["identify", "abc123"])
       .it("displays a found artwork message", ctx => {
         expect(ctx.stdout).to.equal(
-          "Artwork https://stagingapi.artsy.net/api/v1/artwork/abc123\n"
+          "Artwork https://api.artsy.net/api/v1/artwork/abc123\n"
         )
       })
   })
 
   describe("when the artist exists", () => {
     test
-      .nock("https://stagingapi.artsy.net", api =>
+      .nock("https://api.artsy.net", api =>
         api
           .get("/api/v1/artist/abc123")
           .reply(200)
@@ -36,14 +36,14 @@ describe("identify", () => {
       .command(["identify", "abc123"])
       .it("displays a found artist message", ctx => {
         expect(ctx.stdout).to.equal(
-          "Artist https://stagingapi.artsy.net/api/v1/artist/abc123\n"
+          "Artist https://api.artsy.net/api/v1/artist/abc123\n"
         )
       })
   })
 
   describe("when the partner exists", () => {
     test
-      .nock("https://stagingapi.artsy.net", api =>
+      .nock("https://api.artsy.net", api =>
         api
           .get("/api/v1/artist/abc123")
           .reply(404)
@@ -56,14 +56,14 @@ describe("identify", () => {
       .command(["identify", "abc123"])
       .it("displays a found partner message", ctx => {
         expect(ctx.stdout).to.equal(
-          "Partner https://stagingapi.artsy.net/api/v1/partner/abc123\n"
+          "Partner https://api.artsy.net/api/v1/partner/abc123\n"
         )
       })
   })
 
   describe("when nothing is found", () => {
     test
-      .nock("https://stagingapi.artsy.net", api =>
+      .nock("https://api.artsy.net", api =>
         api
           .get("/api/v1/artwork/abc123")
           .reply(404)

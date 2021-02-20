@@ -1,4 +1,5 @@
 import Command from "../base"
+import { Config } from "../config"
 
 import Gravity from "../utils/gravity"
 
@@ -22,6 +23,9 @@ export default class Identify extends Command {
     const { args } = this.parse(Identify)
     const { id } = args
 
+    if (!Config.readToken())
+      this.error("You are not logged in. Run `artsy login`.")
+
     const gravityPromises = Identify.collectionsToCheck.map(collection => {
       const resource = `${collection.endpoint}/${id}`
       return gravity.get(resource)
@@ -34,7 +38,7 @@ export default class Identify extends Command {
       const foundCollection = Identify.collectionsToCheck[foundIndex]
       const foundResource = `${foundCollection.endpoint}/${id}`
       this.log(
-        `${foundCollection.name} ${gravity.url(`api/v1/${foundResource}`)}`
+        `${foundCollection.name} ${Gravity.url(`api/v1/${foundResource}`)}`
       )
     } else {
       const collections = Identify.collectionsToCheck.map(c => c.name)
