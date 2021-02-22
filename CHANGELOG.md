@@ -1,3 +1,21 @@
+# v0.9.0 (Mon Feb 22 2021)
+
+#### 🚀  Enhancement
+
+- feat: update links in standup reminder [#60](https://github.com/artsy/artsy-cli/pull/60) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- Bump @oclif/dev-cli from 1.22.2 to 1.26.0 [#56](https://github.com/artsy/artsy-cli/pull/56) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @oclif/config from 1.13.2 to 1.17.0 [#52](https://github.com/artsy/artsy-cli/pull/52) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.8.1 (Tue Feb 16 2021)
 
 #### 🐛  Bug Fix
