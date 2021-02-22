@@ -71,14 +71,14 @@ describe("scheduled:standup-reminder", () => {
               color: "#666",
               title: "Monday Standup",
               text:
-                "<@devon>, <@jon> based on our on-call schedule, you’ll be running the Monday standup at 12pm ET time. Here are the docs <https://github.com/artsy/README/blob/master/events/open-standup.md|on GitHub>. Add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
+                "<@devon>, <@jon> based on our <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c|on-call schedule>, you’ll be running the Monday standup at 12pm ET time. Here are the docs <https://github.com/artsy/README/blob/master/events/open-standup.md|on GitHub>. Add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
             },
             {
               fallback: "Next On-call",
               color: "#666",
               title: "Next On-call",
               text:
-                "<@justin>, <@steve> looks like you have on-call shifts coming up! Check the schedule in OpsGenie for more details.",
+                "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://github.com/artsy/README/tree/master/playbooks/support#preparing-for-your-on-call-shift|Engineering Support doc> to prep. You've got this! :+1:",
             },
           ],
         })
