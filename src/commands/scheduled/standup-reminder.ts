@@ -4,6 +4,17 @@ import { WebClient } from "@slack/client"
 import { Opsgenie } from "../../utils/opsgenie"
 
 export default class StandupReminder extends Command {
+  static urls: { [key: string]: string } = {
+    onCallSchedule:
+      "https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c",
+    standup:
+      "https://github.com/artsy/README/blob/master/events/open-standup.md",
+    notes:
+      "https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c",
+    engineeringSupport:
+      "https://github.com/artsy/README/tree/master/playbooks/support#preparing-for-your-on-call-shift",
+  }
+
   static description =
     "Remind facilitators and participants of upcoming standup."
 
@@ -60,10 +71,12 @@ export default class StandupReminder extends Command {
     const mentions = await this.convertEmailsToSlackMentions(emails)
 
     return (
-      `${mentions.join(", ")} based on our on-call schedule, ` +
+      `${mentions.join(", ")} based on our <${
+        StandupReminder.urls.onCallSchedule
+      }|on-call schedule>, ` +
       `you’ll be running the Monday standup at 12pm ET time. Here are the docs ` +
-      `<https://github.com/artsy/README/blob/master/events/open-standup.md|on GitHub>. ` +
-      `Add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.`
+      `<${StandupReminder.urls.standup}|on GitHub>. ` +
+      `Add new standup notes <${StandupReminder.urls.notes}|in Notion>.`
     )
   }
 
@@ -72,7 +85,9 @@ export default class StandupReminder extends Command {
 
     return `${mentions.join(
       ", "
-    )} looks like you have on-call shifts coming up! Check the schedule in OpsGenie for more details.`
+    )} looks like you have on-call shifts coming up! Check out the <${
+      StandupReminder.urls.engineeringSupport
+    }|Engineering Support doc> to prep. You've got this! :+1:`
   }
 
   async convertEmailsToSlackMentions(emails: string[]) {
