@@ -59,27 +59,6 @@ export default class ScheduledRecentlyPublished extends Command {
         },
       },
       {
-        type: "divider",
-      },
-      {
-        type: "section",
-        text: {
-          type: "mrkdwn",
-          text:
-            "Have an idea for a blog post or podcast episode? Swing by the #blogging/#engineering-podcast channels anytime. We also have Writing Office Hours every Monday at 2pm ET.",
-        },
-      },
-      {
-        type: "context",
-        elements: [
-          {
-            type: "mrkdwn",
-            text:
-              "<https://artsy.github.io|Artsy Engineering Blog> | Podcast (<https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|iTunes>, <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google>)",
-          },
-        ],
-      },
-      {
         type: "context",
         elements: [
           {
