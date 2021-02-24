@@ -9,25 +9,14 @@ describe("scheduled:standup-reminder", () => {
   })
   test
     .nock("https://api.opsgenie.com", api =>
-      api
-        .get(/\/v2\/schedules\/.*\/on-calls.*/)
-        .reply(200, {
-          data: {
-            onCallParticipants: [
-              { name: "devon@example.com" },
-              { name: "jon@example.com" },
-            ],
-          },
-        })
-        .get(/\/v2\/schedules\/.*\/next-on-calls.*/)
-        .reply(200, {
-          data: {
-            exactNextOnCallRecipients: [
-              { name: "justin@example.com" },
-              { name: "steve@example.com" },
-            ],
-          },
-        })
+      api.get(/\/v2\/schedules\/.*\/on-calls.*/).reply(200, {
+        data: {
+          onCallParticipants: [
+            { name: "devon@example.com" },
+            { name: "jon@example.com" },
+          ],
+        },
+      })
     )
     .nock("https://slack.com/api", api =>
       api
@@ -45,40 +34,20 @@ describe("scheduled:standup-reminder", () => {
             id: "jon",
           },
         })
-        .post("/users.lookupByEmail", /email=justin%40example.com/)
-        .reply(200, {
-          ok: true,
-          user: {
-            id: "justin",
-          },
-        })
-        .post("/users.lookupByEmail", /email=steve%40example.com/)
-        .reply(200, {
-          ok: true,
-          user: {
-            id: "steve",
-          },
-        })
     )
     .stdout()
     .command(["scheduled:standup-reminder"])
     .it("returns Slack-formatted standup reminder message", ctx => {
       expect(ctx.stdout.trim()).to.eq(
         JSON.stringify({
-          attachments: [
+          blocks: [
             {
-              fallback: "Monday Standup",
-              color: "#666",
-              title: "Monday Standup",
-              text:
-                "<@devon>, <@jon> based on our <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c|on-call schedule>, you’ll be running the Monday standup at 12pm ET time. Here are the docs <https://github.com/artsy/README/blob/master/events/open-standup.md|on GitHub>. Add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
-            },
-            {
-              fallback: "Next On-call",
-              color: "#666",
-              title: "Next On-call",
-              text:
-                "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://github.com/artsy/README/tree/master/playbooks/support#preparing-for-your-on-call-shift|Engineering Support doc> to prep. You've got this! :+1:",
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text:
+                  "Hi <@devon> and <@jon> :wave:\n\nBased on our <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c|on-call schedule>, you've been chosen to facilitate today's Engineering Standup at 12pm ET. Please refer to the docs <https://github.com/artsy/README/blob/master/events/open-standup.md|on GitHub> and add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
+              },
             },
           ],
         })
