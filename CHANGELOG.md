@@ -1,3 +1,19 @@
+# v0.10.0 (Wed Feb 24 2021)
+
+#### 🚀  Enhancement
+
+- feat: update login to use OAuth flow [#62](https://github.com/artsy/artsy-cli/pull/62) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore: create base command class [#61](https://github.com/artsy/artsy-cli/pull/61) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.9.0 (Mon Feb 22 2021)
 
 #### 🚀  Enhancement
