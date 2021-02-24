@@ -1,3 +1,15 @@
+# v0.11.0 (Wed Feb 24 2021)
+
+#### 🚀  Enhancement
+
+- chore: split standup reminder from upcoming on-call shift reminder [#65](https://github.com/artsy/artsy-cli/pull/65) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.10.0 (Wed Feb 24 2021)
 
 #### 🚀  Enhancement
