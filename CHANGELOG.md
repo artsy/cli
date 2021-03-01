@@ -1,3 +1,21 @@
+# v0.12.0 (Mon Mar 01 2021)
+
+#### 🚀  Enhancement
+
+- chore: fix lint errors [#64](https://github.com/artsy/cli/pull/64) ([@dblandin](https://github.com/dblandin))
+- [WIP] feat: command for summarizing recent blog articles & podcast episodes [#64](https://github.com/artsy/cli/pull/64) ([@pepopowitz](https://github.com/pepopowitz) [@dblandin](https://github.com/dblandin))
+
+#### 🐛  Bug Fix
+
+- fix: add @types/xml2js to fix tsc -b [#68](https://github.com/artsy/cli/pull/68) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 2
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+- Steven Hicks ([@pepopowitz](https://github.com/pepopowitz))
+
+---
+
 # v0.11.0 (Wed Feb 24 2021)
 
 #### 🚀  Enhancement
