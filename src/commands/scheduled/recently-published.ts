@@ -1,6 +1,5 @@
 import { Command } from "@oclif/command"
 import Parser = require("rss-parser")
-import fetch from "cross-fetch"
 
 export default class ScheduledRecentlyPublished extends Command {
   static description =
