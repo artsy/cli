@@ -2,11 +2,51 @@ import * as path from "path"
 import { expect, test } from "@oclif/test"
 
 describe("scheduled:recently-published", () => {
-  const fixture = path.resolve(__dirname, "../../fixtures/podcast.xml")
+  const blogFixture = path.resolve(__dirname, "../../fixtures/feed.xml")
+  const podcastFixture = path.resolve(__dirname, "../../fixtures/podcast.xml")
+
   test
-    .nock("https://artsy.github.io", api =>
-      api.get("/podcast.xml").replyWithFile(200, fixture)
-    )
+    .nock("https://artsy.github.io", api => {
+      api.get("/feed.xml").replyWithFile(200, blogFixture)
+      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
+    .stdout()
+    .command(["scheduled:recently-published"])
+    .it("shares most recent blog posts", ctx => {
+      const response = ctx.stdout.trim()
+
+      expect(response).to.include(
+        " days ago* we published our most recent article on the *Artsy Engineering Blog*. Here are our most recent posts -- read and share them!"
+      )
+
+      expect(response).to.include(
+        JSON.stringify({
+          type: "section",
+          text: {
+            type: "mrkdwn",
+            text:
+              "<https://artsy.github.io/blog/2020/12/31/echo-supporting-old-app-versions/|Echoes From the Past: Supporting Old App Versions>",
+          },
+        })
+      )
+      expect(response).to.include(
+        JSON.stringify({
+          type: "context",
+          elements: [
+            {
+              type: "mrkdwn",
+              text: "Dec 30, 2020",
+            },
+          ],
+        })
+      )
+    })
+
+  test
+    .nock("https://artsy.github.io", api => {
+      api.get("/feed.xml").replyWithFile(200, blogFixture)
+      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
     .stdout()
     .command(["scheduled:recently-published"])
     .it("shares most recent podcast episode", ctx => {
@@ -55,9 +95,10 @@ describe("scheduled:recently-published", () => {
     })
 
   test
-    .nock("https://artsy.github.io", api =>
-      api.get("/podcast.xml").replyWithFile(200, fixture)
-    )
+    .nock("https://artsy.github.io", api => {
+      api.get("/feed.xml").replyWithFile(200, blogFixture)
+      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
     .stdout()
     .command(["scheduled:recently-published"])
     .it("lets people know how to contribute", ctx => {

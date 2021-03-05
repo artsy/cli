@@ -1,0 +1,44 @@
+<!-- note: the <description> fields in this fixture are altered because nock can't parse the html inside of our actual feed's descriptions. -->
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+<channel>
+<title>Artsy Engineering</title>
+<description/>
+<link>https://artsy.github.io/</link>
+<atom:link href="https://artsy.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+<pubDate>Thu, 04 Mar 2021 23:07:28 +0000</pubDate>
+<lastBuildDate>Thu, 04 Mar 2021 23:07:28 +0000</lastBuildDate>
+<generator>Jekyll v2.5.3</generator>
+<item>
+<title>Why Asking for Help Strengthens Engineering Teams</title>
+<description>I know that for many developers, especially those early in their careers, asking for help can be intimidating.</description>
+<pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
+<link>https://artsy.github.io/blog/2021/02/11/asking-for-help/</link>
+<guid isPermaLink="true">https://artsy.github.io/blog/2021/02/11/asking-for-help/</guid>
+<category>community</category>
+<category>culture</category>
+<category>learning</category>
+<category>teaching</category>
+<category>team</category>
+</item>
+<item>
+<title>Introducing Artsy Engineering Radio</title>
+<description>Available now on Apple Podcasts</description>
+<pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+<link>https://artsy.github.io/blog/2021/01/06/introducing-artsy-engineering-radio/</link>
+<guid isPermaLink="true">https://artsy.github.io/blog/2021/01/06/introducing-artsy-engineering-radio/</guid>
+<category>community</category>
+<category>learning</category>
+<category>podcast</category>
+</item>
+<item>
+<title>Echoes From the Past: Supporting Old App Versions</title>
+<description>In a recent blog post, I discussed a fundamental difference between web and iOS deployments.</description>
+<pubDate>Thu, 31 Dec 2020 00:00:00 +0000</pubDate>
+<link>https://artsy.github.io/blog/2020/12/31/echo-supporting-old-app-versions/</link>
+<guid isPermaLink="true">https://artsy.github.io/blog/2020/12/31/echo-supporting-old-app-versions/</guid>
+<category>ios</category>
+<category>mobile</category>
+<category>teams</category>
+</item>
+</channel>
+</rss>
