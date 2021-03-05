@@ -6,14 +6,71 @@ export default class ScheduledRecentlyPublished extends Command {
     "Describe our most recently published articles and podcast episodes"
 
   async run() {
+    const blog = await this.buildBlogSummary()
     const podcast = await this.buildPodcastSummary()
     const callToAction = this.buildCallToAction()
 
     const response = {
-      blocks: [...podcast, ...callToAction],
+      blocks: [...blog, ...podcast, ...callToAction],
     }
 
     this.log(JSON.stringify(response))
+  }
+
+  async buildBlogSummary() {
+    const BLOG_FEED_URL = "https://artsy.github.io/feed.xml"
+
+    const parser = new Parser()
+    const feed = await parser.parseURL(BLOG_FEED_URL)
+
+    const mostRecentPost = feed.items[0]
+    const { pubDate } = mostRecentPost
+    const daysAgo = computeDaysAgo(pubDate)
+
+    const threeMostRecentPosts = feed.items.slice(0, 3)
+    const threeMostRecentPostBlocks = threeMostRecentPosts
+      .map(this.buildBlogArticleBlocks)
+      .flat()
+
+    const blocks = [
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `*${daysAgo} days ago* we published our most recent article on the *Artsy Engineering Blog*. Here are our most recent posts -- read and share them!`,
+        },
+      },
+      ...threeMostRecentPostBlocks,
+    ]
+
+    return blocks
+  }
+
+  buildBlogArticleBlocks(post: Parser.Item): Array<any> {
+    const { link, pubDate, title } = post
+    const formattedDate = formatDate(pubDate)
+    const blocks = [
+      {
+        type: "section",
+        text: {
+          type: "mrkdwn",
+          text: `<${link}|${title}>`,
+        },
+      },
+      {
+        type: "context",
+        elements: [
+          {
+            type: "mrkdwn",
+            text: formattedDate,
+          },
+        ],
+      },
+      {
+        type: "divider",
+      },
+    ]
+    return blocks
   }
 
   async buildPodcastSummary() {
@@ -29,11 +86,7 @@ export default class ScheduledRecentlyPublished extends Command {
       pubDate,
       itunes: { author },
     } = lastEpisode
-    const formattedDate = new Date(pubDate!).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })
+    const formattedDate = formatDate(pubDate)
 
     const blocks = [
       {
@@ -96,4 +149,28 @@ export default class ScheduledRecentlyPublished extends Command {
       },
     ]
   }
+}
+
+function computeDaysAgo(dateString: string | undefined) {
+  if (dateString === undefined) {
+    return "??"
+  }
+
+  const parsed = Date.parse(dateString)
+  const now = Date.now()
+  const diff = now - parsed
+  const diffInDays = diff / (1000 * 3600 * 24)
+  return Math.floor(diffInDays)
+}
+
+function formatDate(dateString: string | undefined) {
+  if (dateString === undefined) {
+    return "??"
+  }
+
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  })
 }
