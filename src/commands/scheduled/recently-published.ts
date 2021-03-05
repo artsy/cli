@@ -46,7 +46,7 @@ export default class ScheduledRecentlyPublished extends Command {
     return blocks
   }
 
-  buildBlogArticleBlocks(post: Parser.Item): Array<any> {
+  buildBlogArticleBlocks(post: Parser.Item) {
     const { link, pubDate, title } = post
     const formattedDate = formatDate(pubDate)
     const blocks = [
