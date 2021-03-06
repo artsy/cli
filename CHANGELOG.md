@@ -1,3 +1,27 @@
+# v0.13.0 (Sat Mar 06 2021)
+
+#### 🚀  Enhancement
+
+- chore: bump mocha timeout [#71](https://github.com/artsy/cli/pull/71) ([@dblandin](https://github.com/dblandin))
+- feat: promote most recent blog posts in scheduled:recently-published command. [#71](https://github.com/artsy/cli/pull/71) ([@pepopowitz](https://github.com/pepopowitz) [@dblandin](https://github.com/dblandin))
+
+#### ⚠️  Pushed to `master`
+
+- chore: temporarily downgrade engine requirement to v10 ([@dblandin](https://github.com/dblandin))
+- Revert "chore: use auto/publish-canary" ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore: use auto/publish-canary [#73](https://github.com/artsy/cli/pull/73) ([@dblandin](https://github.com/dblandin))
+- chore: configure node orb [#72](https://github.com/artsy/cli/pull/72) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 2
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+- Steven Hicks ([@pepopowitz](https://github.com/pepopowitz))
+
+---
+
 # v0.12.0 (Mon Mar 01 2021)
 
 #### 🚀  Enhancement
