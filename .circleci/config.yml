@@ -10,7 +10,7 @@ workflows:
       - yarn/update-cache
       - yarn/lint
       - yarn/test
-      - auto/publish-canary:
+      - auto/publish:
           context: npm-deploy
           filters:
             branches:
