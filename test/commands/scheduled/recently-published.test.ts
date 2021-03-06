@@ -35,7 +35,7 @@ describe("scheduled:recently-published", () => {
           elements: [
             {
               type: "mrkdwn",
-              text: "Dec 30, 2020",
+              text: "Dec 31, 2020",
             },
           ],
         })
