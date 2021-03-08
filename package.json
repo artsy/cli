@@ -37,7 +37,7 @@
     "@graphql-codegen/typescript": "1.21.0",
     "@graphql-codegen/typescript-document-nodes": "1.17.9",
     "@graphql-codegen/typescript-operations": "^1.17.14",
-    "@graphql-codegen/typescript-resolvers": "1.18.2",
+    "@graphql-codegen/typescript-resolvers": "1.19.0",
     "@oclif/dev-cli": "^1",
     "@oclif/test": "^1",
     "@oclif/tslint": "^3",
