@@ -1,3 +1,19 @@
+# v0.15.0 (Mon Mar 08 2021)
+
+#### 🚀  Enhancement
+
+- chore(deps-dev): bump @graphql-codegen/cli from 1.20.1 to 1.21.2 [#74](https://github.com/artsy/cli/pull/74) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.21.0 to 1.21.1 [#75](https://github.com/artsy/cli/pull/75) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 1
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+
+---
+
 # v0.14.0 (Mon Mar 08 2021)
 
 #### 🚀  Enhancement
