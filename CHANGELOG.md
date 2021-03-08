@@ -1,3 +1,28 @@
+# v0.14.0 (Mon Mar 08 2021)
+
+#### 🚀  Enhancement
+
+- chore(deps): bump @octokit/graphql-schema from 10.22.0 to 10.29.0 [#78](https://github.com/artsy/cli/pull/78) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump @types/node from 14.14.28 to 14.14.32 [#76](https://github.com/artsy/cli/pull/76) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump nock from 13.0.10 to 13.0.11 [#80](https://github.com/artsy/cli/pull/80) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#79](https://github.com/artsy/cli/pull/79) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump typescript from 3.9.7 to 4.2.3 [#70](https://github.com/artsy/cli/pull/70) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump ts-node from 8.3.0 to 9.1.1 [#53](https://github.com/artsy/cli/pull/53) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump tslib from 1.10.0 to 2.1.0 [#49](https://github.com/artsy/cli/pull/49) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump globby from 10.0.1 to 11.0.2 [#45](https://github.com/artsy/cli/pull/45) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @oclif/plugin-help from 2.2.3 to 3.2.2 [#54](https://github.com/artsy/cli/pull/54) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump nock from 10.0.6 to 13.0.10 [#69](https://github.com/artsy/cli/pull/69) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump @types/mocha from 5.2.7 to 8.2.1 [#58](https://github.com/artsy/cli/pull/58) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 1
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+
+---
+
 # v0.13.0 (Sat Mar 06 2021)
 
 #### 🚀  Enhancement
