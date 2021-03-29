@@ -1,3 +1,42 @@
+# v0.16.0 (Mon Mar 29 2021)
+
+#### 🚀  Enhancement
+
+- chore(deps): bump @octokit/graphql-schema from 10.33.0 to 10.34.0 [#108](https://github.com/artsy/cli/pull/108) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump @types/node from 14.14.34 to 14.14.35 [#96](https://github.com/artsy/cli/pull/96) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 14.14.36 to 14.14.37 [#107](https://github.com/artsy/cli/pull/107) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 14.14.35 to 14.14.36 [#106](https://github.com/artsy/cli/pull/106) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.32.1 to 10.32.2 [#104](https://github.com/artsy/cli/pull/104) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump globby from 11.0.2 to 11.0.3 [#102](https://github.com/artsy/cli/pull/102) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.31.0 to 10.32.1 [#103](https://github.com/artsy/cli/pull/103) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump cross-fetch from 3.1.1 to 3.1.2 [#101](https://github.com/artsy/cli/pull/101) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/mocha from 8.2.1 to 8.2.2 [#100](https://github.com/artsy/cli/pull/100) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.30.0 to 10.31.0 [#98](https://github.com/artsy/cli/pull/98) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump cross-fetch from 3.1.0 to 3.1.1 [#99](https://github.com/artsy/cli/pull/99) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.29.1 to 10.30.0 [#97](https://github.com/artsy/cli/pull/97) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/cli from 1.21.2 to 1.21.3 [#95](https://github.com/artsy/cli/pull/95) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.32.2 to 10.33.0 [#105](https://github.com/artsy/cli/pull/105) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump chai from 4.3.3 to 4.3.4 [#94](https://github.com/artsy/cli/pull/94) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump cross-fetch from 3.0.6 to 3.1.0 [#93](https://github.com/artsy/cli/pull/93) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 14.14.33 to 14.14.34 [#92](https://github.com/artsy/cli/pull/92) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.29.0 to 10.29.1 [#90](https://github.com/artsy/cli/pull/90) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 14.14.32 to 14.14.33 [#89](https://github.com/artsy/cli/pull/89) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql from 4.6.0 to 4.6.1 [#88](https://github.com/artsy/cli/pull/88) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump rss-parser from 3.11.0 to 3.12.0 [#82](https://github.com/artsy/cli/pull/82) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @oclif/test from 1.2.5 to 1.2.8 [#83](https://github.com/artsy/cli/pull/83) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#84](https://github.com/artsy/cli/pull/84) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump chai from 4.2.0 to 4.3.3 [#87](https://github.com/artsy/cli/pull/87) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#77](https://github.com/artsy/cli/pull/77) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 1
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+
+---
+
 # v0.15.0 (Mon Mar 08 2021)
 
 #### 🚀  Enhancement
