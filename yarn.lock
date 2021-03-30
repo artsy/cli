@@ -1055,9 +1055,9 @@
     universal-user-agent "^6.0.0"
 
 "@octokit/graphql-schema@^10.21.0":
-  version "10.34.0"
-  resolved "https://registry.yarnpkg.com/@octokit/graphql-schema/-/graphql-schema-10.34.0.tgz#b38ba7f9a4abe8f47cd202520b91d7e0192ff54e"
-  integrity sha512-MRhwCezsHSlyUB1nQOlMvEGGHsMgKCRYX93w5H733Rgh8ncgJybF/cGn4svaph6ZGjGZzzARuN51pIVVTQBMjw==
+  version "10.34.1"
+  resolved "https://registry.yarnpkg.com/@octokit/graphql-schema/-/graphql-schema-10.34.1.tgz#6fdba8182edb37a8a749dcb67865e5d1999f71da"
+  integrity sha512-mTiU7hb69PXh6up20eEvL4N04r4OotfiMEd0/0WMPpPsMxkr5Ea3LeM1fGdnjO6kKjEjocp6rNNubFCZtKZpgA==
   dependencies:
     graphql "^15.0.0"
     graphql-tag "^2.10.3"
