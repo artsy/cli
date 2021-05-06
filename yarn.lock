@@ -616,15 +616,15 @@
     lodash "~4.17.20"
     tslib "~2.2.0"
 
-"@graphql-codegen/typescript-document-nodes@1.17.10":
-  version "1.17.10"
-  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-document-nodes/-/typescript-document-nodes-1.17.10.tgz#5edeada30e51fdbb53bb28ffdbc2c1ac6ff099a1"
-  integrity sha512-0xKilL6J7QeBwE7lH86RkTcHRU1Z49nEMVMU0n3o9u4Yf+757GoaGhliYboVZFXHgE8n16HbNBxIO+oIN6hJAA==
+"@graphql-codegen/typescript-document-nodes@1.17.11":
+  version "1.17.11"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-document-nodes/-/typescript-document-nodes-1.17.11.tgz#0d1af3be2f99d993a9dc8d71c3a17853dfabe5c9"
+  integrity sha512-ZBQeJBUZTwcAMDasCkR7RrKHVMy4d9mIWVgfuY0P+oDAQDIBbVSxA1A+sgxw92MQjVLozkqsZ6c5tmEArJA2Vg==
   dependencies:
-    "@graphql-codegen/plugin-helpers" "^1.18.3"
-    "@graphql-codegen/visitor-plugin-common" "^1.19.0"
+    "@graphql-codegen/plugin-helpers" "^1.18.5"
+    "@graphql-codegen/visitor-plugin-common" "^1.20.0"
     auto-bind "~4.0.0"
-    tslib "~2.1.0"
+    tslib "~2.2.0"
 
 "@graphql-codegen/typescript-operations@^1.17.14":
   version "1.17.16"
