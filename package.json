@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@artsy/auto-config": "^1.0.1",
-    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/cli": "1.21.4",
     "@graphql-codegen/typescript": "1.22.0",
     "@graphql-codegen/typescript-document-nodes": "1.17.10",
     "@graphql-codegen/typescript-operations": "^1.17.14",
