@@ -1,0 +1,14 @@
+query ArtsyRepositories($query: String!) {
+  search(query: $query, type: REPOSITORY, first: 100) {
+    __typename
+    nodes {
+      __typename
+      ... on Repository {
+        name
+        defaultBranchRef {
+          name
+        }
+      }
+    }
+  }
+}

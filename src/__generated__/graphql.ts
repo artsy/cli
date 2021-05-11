@@ -12775,6 +12775,8 @@ export type Release = Node & UniformResourceLocatable & {
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** List of releases assets which are dependent on this release. */
   releaseAssets: ReleaseAssetConnection;
+  /** The repository that the release belongs to. */
+  repository: Repository;
   /** The HTTP path for this issue */
   resourcePath: Scalars['URI'];
   /** A description of the release, rendered to HTML without any links in it. */
@@ -25892,6 +25894,7 @@ export type ReleaseResolvers<ContextType = any, ParentType extends ResolversPare
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   publishedAt?: Resolver<Maybe<ResolversTypes['DateTime']>, ParentType, ContextType>;
   releaseAssets?: Resolver<ResolversTypes['ReleaseAssetConnection'], ParentType, ContextType, RequireFields<ReleaseReleaseAssetsArgs, never>>;
+  repository?: Resolver<ResolversTypes['Repository'], ParentType, ContextType>;
   resourcePath?: Resolver<ResolversTypes['URI'], ParentType, ContextType>;
   shortDescriptionHTML?: Resolver<Maybe<ResolversTypes['HTML']>, ParentType, ContextType, RequireFields<ReleaseShortDescriptionHtmlArgs, 'limit'>>;
   tag?: Resolver<Maybe<ResolversTypes['Ref']>, ParentType, ContextType>;
@@ -29156,6 +29159,22 @@ export const OpenRequestsForComments = gql`
   }
 }
     `;
+export const ArtsyRepositories = gql`
+    query ArtsyRepositories($query: String!) {
+  search(query: $query, type: REPOSITORY, first: 100) {
+    __typename
+    nodes {
+      __typename
+      ... on Repository {
+        name
+        defaultBranchRef {
+          name
+        }
+      }
+    }
+  }
+}
+    `;
 export type OpenRequestsForCommentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -29253,5 +29272,25 @@ export type OpenRequestsForCommentsQuery = (
         ) | { __typename: 'LabeledEvent' } | { __typename: 'LockedEvent' } | { __typename: 'MarkedAsDuplicateEvent' } | { __typename: 'MentionedEvent' } | { __typename: 'MergedEvent' } | { __typename: 'MilestonedEvent' } | { __typename: 'MovedColumnsInProjectEvent' } | { __typename: 'PinnedEvent' } | { __typename: 'PullRequestCommit' } | { __typename: 'PullRequestCommitCommentThread' } | { __typename: 'PullRequestReview' } | { __typename: 'PullRequestReviewThread' } | { __typename: 'PullRequestRevisionMarker' } | { __typename: 'ReadyForReviewEvent' } | { __typename: 'ReferencedEvent' } | { __typename: 'RemovedFromProjectEvent' } | { __typename: 'RenamedTitleEvent' } | { __typename: 'ReopenedEvent' } | { __typename: 'ReviewDismissedEvent' } | { __typename: 'ReviewRequestRemovedEvent' } | { __typename: 'ReviewRequestedEvent' } | { __typename: 'SubscribedEvent' } | { __typename: 'TransferredEvent' } | { __typename: 'UnassignedEvent' } | { __typename: 'UnlabeledEvent' } | { __typename: 'UnlockedEvent' } | { __typename: 'UnmarkedAsDuplicateEvent' } | { __typename: 'UnpinnedEvent' } | { __typename: 'UnsubscribedEvent' } | { __typename: 'UserBlockedEvent' }>>> }
       ) }
     ) | { __typename: 'Repository' } | { __typename: 'User' }>>> }
+  ) }
+);
+
+export type ArtsyRepositoriesQueryVariables = Exact<{
+  query: Scalars['String'];
+}>;
+
+
+export type ArtsyRepositoriesQuery = (
+  { __typename?: 'Query' }
+  & { search: (
+    { __typename: 'SearchResultItemConnection' }
+    & { nodes?: Maybe<Array<Maybe<{ __typename: 'App' } | { __typename: 'Issue' } | { __typename: 'MarketplaceListing' } | { __typename: 'Organization' } | { __typename: 'PullRequest' } | (
+      { __typename: 'Repository' }
+      & Pick<Repository, 'name'>
+      & { defaultBranchRef?: Maybe<(
+        { __typename?: 'Ref' }
+        & Pick<Ref, 'name'>
+      )> }
+    ) | { __typename: 'User' }>>> }
   ) }
 );
