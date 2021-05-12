@@ -1,3 +1,22 @@
+# v0.18.0 (Wed May 12 2021)
+
+#### 🚀  Enhancement
+
+- feat: add audit:repositories command [#142](https://github.com/artsy/cli/pull/142) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore(deps): bump @octokit/graphql-schema from 10.37.0 to 10.38.0 [#144](https://github.com/artsy/cli/pull/144) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/chai from 4.2.17 to 4.2.18 [#141](https://github.com/artsy/cli/pull/141) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): [security] bump hosted-git-info from 2.8.2 to 2.8.9 [#138](https://github.com/artsy/cli/pull/138) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.17.0 (Fri May 07 2021)
 
 #### 🚀  Enhancement
