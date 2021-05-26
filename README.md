@@ -11,6 +11,10 @@ Artsy CLI is published on npm, so installing is really easy:
 $ npm install --global @artsy/cli
 ```
 
+## [Docs]
+
+- [Artsy Open Docs](docs/open.md)
+
 ## Releasing
 
 The release process happens automatically on every PR merge thanks to [auto](https://github.com/intuit/auto). To ensure
