@@ -1,3 +1,32 @@
+# v0.19.0 (Wed May 26 2021)
+
+#### 🚀  Enhancement
+
+- Update yarn.lock [#160](https://github.com/artsy/cli/pull/160) ([@olerichter00](https://github.com/olerichter00))
+- Revert chore(deps-dev): bump @graphql-codegen/cli from 1.21.4 to 1.21.5 [#160](https://github.com/artsy/cli/pull/160) ([@olerichter00](https://github.com/olerichter00))
+- fix: readme improvement [#159](https://github.com/artsy/cli/pull/159) ([@olerichter00](https://github.com/olerichter00))
+- feat: Artsy Open [#156](https://github.com/artsy/cli/pull/156) ([@olerichter00](https://github.com/olerichter00))
+
+#### 🐛  Bug Fix
+
+- chore(deps): bump @octokit/graphql-schema from 10.39.1 to 10.40.0 [#149](https://github.com/artsy/cli/pull/149) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### 🏠  Internal
+
+- chore(deps): [security] bump url-parse from 1.4.7 to 1.5.1 [#161](https://github.com/artsy/cli/pull/161) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#158](https://github.com/artsy/cli/pull/158) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/cli from 1.21.4 to 1.21.5 [#157](https://github.com/artsy/cli/pull/157) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.40.0 to 10.41.0 [#152](https://github.com/artsy/cli/pull/152) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql from 4.6.1 to 4.6.2 [#148](https://github.com/artsy/cli/pull/148) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.38.0 to 10.39.1 [#146](https://github.com/artsy/cli/pull/146) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Ole ([@olerichter00](https://github.com/olerichter00))
+
+---
+
 # v0.18.0 (Wed May 12 2021)
 
 #### 🚀  Enhancement
