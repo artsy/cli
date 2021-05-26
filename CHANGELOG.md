@@ -1,3 +1,15 @@
+# v0.20.0 (Wed May 26 2021)
+
+#### 🚀  Enhancement
+
+- fix: update link in open docs [#162](https://github.com/artsy/cli/pull/162) ([@olerichter00](https://github.com/olerichter00))
+
+#### Authors: 1
+
+- Ole ([@olerichter00](https://github.com/olerichter00))
+
+---
+
 # v0.19.0 (Wed May 26 2021)
 
 #### 🚀  Enhancement
