@@ -5,6 +5,15 @@ export const Config = {
   path: (): string => {
     return `${os.homedir()}/.config/artsy`
   },
+  readOpenConfig: (): any => {
+    try {
+      return JSON.parse(
+        fs.readFileSync(`${os.homedir()}/.config/artsy-open.json`)
+      )
+    } catch {
+      return {}
+    }
+  },
   readToken: (): string => {
     return fs.readFileSync(Config.path(), { encoding: "utf-8" })
   },
