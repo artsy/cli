@@ -1,3 +1,24 @@
+# v0.20.1 (Thu May 27 2021)
+
+#### ⚠️  Pushed to `master`
+
+- Revert "chore(deps-dev): bump @graphql-codegen/cli from 1.21.4 to 1.21.5" ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#167](https://github.com/artsy/cli/pull/167) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/cli from 1.21.4 to 1.21.5 [#166](https://github.com/artsy/cli/pull/166) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#165](https://github.com/artsy/cli/pull/165) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.22.0 to 1.22.1 [#164](https://github.com/artsy/cli/pull/164) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.41.0 to 10.42.0 [#163](https://github.com/artsy/cli/pull/163) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.20.0 (Wed May 26 2021)
 
 #### 🚀  Enhancement
