@@ -5496,9 +5496,9 @@ uri-js@^4.2.2:
     punycode "^2.1.0"
 
 uri-scheme@^1.0.76:
-  version "1.0.80"
-  resolved "https://registry.yarnpkg.com/uri-scheme/-/uri-scheme-1.0.80.tgz#b503b133b92c6cc69898c49a81ff5fed691c9910"
-  integrity sha512-uJYiXpZg91yyXkGZ8kxVwGc1381lBKSiMmcLny8OK/jmDC/K2Ubh/9XN/ykBFoeH8QR8mYlH4EvccuVYAc9Kkw==
+  version "1.0.81"
+  resolved "https://registry.yarnpkg.com/uri-scheme/-/uri-scheme-1.0.81.tgz#4c58d1cd3cad7024e67fad28ecf0e6e1e7585d41"
+  integrity sha512-V4FPLBJ0GgfXj1Gb8XsPotUayDdHJz1QNsUJp+7kd7n4/AcWSrZnnIxs4wuPDsLOEjeMcndOx7Nydnb2rF+X1A==
 
 url-parse-lax@^3.0.0:
   version "3.0.0"
