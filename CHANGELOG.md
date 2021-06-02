@@ -1,3 +1,22 @@
+# v0.21.0 (Wed Jun 02 2021)
+
+#### 🚀  Enhancement
+
+- fix: Remove www from artsy staging url [#172](https://github.com/artsy/cli/pull/172) ([@olerichter00](https://github.com/olerichter00))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump nock from 13.0.11 to 13.1.0 [#171](https://github.com/artsy/cli/pull/171) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump typescript from 4.2.4 to 4.3.2 [#170](https://github.com/artsy/cli/pull/170) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.80 to 1.0.81 [#169](https://github.com/artsy/cli/pull/169) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 2
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Ole ([@olerichter00](https://github.com/olerichter00))
+
+---
+
 # v0.20.1 (Thu May 27 2021)
 
 #### ⚠️  Pushed to `master`
