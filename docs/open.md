@@ -23,10 +23,10 @@ opens https://www.artsy.net/artwork/andy-warhol-watercolor-paint-kit-with-brushe
 **With a full URL:**
 
 ```
-artsy open https://www.staging.artsy.net/artwork/andy-warhol-watercolor-paint-kit-with-brushes-11
+artsy open https://staging.artsy.net/artwork/andy-warhol-watercolor-paint-kit-with-brushes-11
 ```
 
-opens https://www.staging.artsy.net/artwork/andy-warhol-watercolor-paint-kit-with-brushes-11 on iOS
+opens https://staging.artsy.net/artwork/andy-warhol-watercolor-paint-kit-with-brushes-11 on iOS
 
 **With flags:**
 

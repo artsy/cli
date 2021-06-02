@@ -6,7 +6,7 @@
   "environments": {
     "local": "localhost:3000",
     "production": "https://www.artsy.net",
-    "staging": "https://www.staging.artsy.net"
+    "staging": "https://staging.artsy.net"
   },
   "pages": {
     "about": "/about",

@@ -85,7 +85,7 @@ describe("open default on staging", () => {
     .it("opens artworks on ios", () => {
       expect(
         Ios.openAsync.calledWith({
-          uri: "https://www.staging.artsy.net/artworks",
+          uri: "https://staging.artsy.net/artworks",
         })
       ).to.be.ok
     })
