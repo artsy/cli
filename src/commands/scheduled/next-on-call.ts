@@ -6,7 +6,7 @@ import { convertEmailsToSlackMentions } from "../../utils/slack"
 export default class NextOnCall extends Command {
   static urls: { [key: string]: string } = {
     engineeringSupport:
-      "https://github.com/artsy/README/tree/master/playbooks/support#preparing-for-your-on-call-shift",
+      "https://github.com/artsy/README/tree/main/playbooks/support#preparing-for-your-on-call-shift",
   }
 
   static description = "Remind members with upcoming on-call shifts."
