@@ -7,8 +7,7 @@ export default class StandupReminder extends Command {
   static urls: { [key: string]: string } = {
     onCallSchedule:
       "https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c",
-    standup:
-      "https://github.com/artsy/README/blob/master/events/open-standup.md",
+    standup: "https://github.com/artsy/README/blob/main/events/open-standup.md",
     notes:
       "https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c",
   }
