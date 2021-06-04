@@ -20,7 +20,7 @@ opens "https://www.artsy.net/" on Android`,
     `$ artsy open about -l
 opens "localhost/about" on iOS`,
     `\nDOCS`,
-    `https://github.com/artsy/cli/blob/master/docs/open.md`,
+    `https://github.com/artsy/cli/blob/main/docs/open.md`,
     `\nALL PAGES`,
     Object.keys(config.pages).join(", "),
   ]
