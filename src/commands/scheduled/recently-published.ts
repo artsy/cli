@@ -134,7 +134,7 @@ export default class ScheduledRecentlyPublished extends Command {
         text: {
           type: "mrkdwn",
           text:
-            "Have an idea for a blog post or podcast episode? Swing by the #blogging/#engineering-podcast channels anytime. We also have Writing Office Hours every Monday at 2pm ET.",
+            "Have an idea for a blog post or podcast episode? Swing by the #blogging/#engineering-podcast channels anytime. We also have Writing Office Hours every Tuesday at 11am ET.",
         },
       },
       {
