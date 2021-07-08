@@ -1351,9 +1351,9 @@
   integrity sha512-yd+9qKmJxm496BOV9CMNaey8TWsikaZOwMRwPHQIjcOJM9oV+fi9ZMNw3JsVnbEEbo2gRTDnGEBv8pjyn67hNg==
 
 "@types/dashify@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/dashify/-/dashify-1.0.0.tgz#19ade107e1e330344a65ad65f0e7e1875483d2e9"
-  integrity sha512-uyYom3SM48jvowobcby+1z3r/sDX+5N8lAdPoNLKYMhF819pNjV6K5g8lAUGrwj80n+P7Qf10GcA9h7aIO2GJw==
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/dashify/-/dashify-1.0.1.tgz#b8dd8eb24767a76bb5edf44cd69ebf0e0be45382"
+  integrity sha512-fCHIbxCdnlJue1phjMPBGbpbxs+rHPqdoysFUqzhgaHm85oWKkVXHfYfvnWR+66q8AiuOE/UmpzlFImGuqai6A==
 
 "@types/events@*":
   version "3.0.0"
