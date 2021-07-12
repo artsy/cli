@@ -173,5 +173,6 @@ function formatDate(dateString: string | undefined) {
     year: "numeric",
     month: "short",
     day: "numeric",
+    timeZone: "UTC",
   })
 }
