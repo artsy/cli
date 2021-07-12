@@ -1,3 +1,4 @@
 {
-  "extends": "@artsy"
+  "extends": "@artsy",
+  "baseBranch": "main"
 }
