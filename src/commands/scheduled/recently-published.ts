@@ -86,8 +86,10 @@ export default class ScheduledRecentlyPublished extends Command {
       content,
       pubDate,
       itunes: { author },
+      enclosure,
     } = lastEpisode
     const formattedDate = formatDate(pubDate)
+    const webURL = formatWebURL(enclosure?.url)
 
     const blocks = [
       {
@@ -101,7 +103,7 @@ export default class ScheduledRecentlyPublished extends Command {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `${title} | <https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|Apple Podcasts> | <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google Podcasts> | <https://open.spotify.com/show/0gJYxpqN6P11dbjNw8VT2a?si=L4TWDrQETwuVO6JR1SOZTQ|Spotify>`,
+          text: `<${webURL}|${title}>`,
         },
       },
       {
@@ -175,4 +177,12 @@ function formatDate(dateString: string | undefined) {
     day: "numeric",
     timeZone: "UTC",
   })
+}
+
+function formatWebURL(urlString: string | undefined) {
+  if (urlString === undefined) {
+    return ""
+  }
+
+  return urlString.replace(".mp3", "")
 }

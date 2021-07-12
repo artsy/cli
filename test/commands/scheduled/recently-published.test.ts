@@ -71,7 +71,7 @@ describe("scheduled:recently-published", () => {
           text: {
             type: "mrkdwn",
             text:
-              "19: Humanizing The Workplace | <https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|Apple Podcasts> | <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google Podcasts> | <https://open.spotify.com/show/0gJYxpqN6P11dbjNw8VT2a?si=L4TWDrQETwuVO6JR1SOZTQ|Spotify>",
+              "<https://www.buzzsprout.com/1781859/8600736-19-humanizing-the-workplace|19: Humanizing The Workplace>",
           },
         })
       )
