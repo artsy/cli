@@ -1,3 +1,90 @@
+# v0.22.0 (Mon Jul 12 2021)
+
+#### 🚀  Enhancement
+
+- deps(dev): downgrade ts-node [#243](https://github.com/artsy/cli/pull/243) ([@dblandin](https://github.com/dblandin))
+- chore: update artsy engineering radio RSS source [#232](https://github.com/artsy/cli/pull/232) ([@pepopowitz](https://github.com/pepopowitz))
+- chore: update writing office hours time [#182](https://github.com/artsy/cli/pull/182) ([@pepopowitz](https://github.com/pepopowitz))
+- chore: update default branch references to main [#177](https://github.com/artsy/cli/pull/177) ([@dblandin](https://github.com/dblandin))
+- chore: update artsy/README default branch references to main [#177](https://github.com/artsy/cli/pull/177) ([@dblandin](https://github.com/dblandin))
+
+#### 🐛  Bug Fix
+
+- chore(auto): add baseBranch configuration to `main` [#244](https://github.com/artsy/cli/pull/244) ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump ts-node from 10.0.0 to 10.1.0 [#241](https://github.com/artsy/cli/pull/241) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/dashify from 1.0.0 to 1.0.1 [#236](https://github.com/artsy/cli/pull/236) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump cli-ux from 5.6.2 to 5.6.3 [#237](https://github.com/artsy/cli/pull/237) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/chai from 4.2.20 to 4.2.21 [#239](https://github.com/artsy/cli/pull/239) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/mocha from 8.2.2 to 8.2.3 [#233](https://github.com/artsy/cli/pull/233) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @types/node-fetch from 2.5.10 to 2.5.11 [#234](https://github.com/artsy/cli/pull/234) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/chai from 4.2.19 to 4.2.20 [#235](https://github.com/artsy/cli/pull/235) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.88 to 1.0.89 [#229](https://github.com/artsy/cli/pull/229) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.52.0 to 10.53.0 [#226](https://github.com/artsy/cli/pull/226) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump nock from 13.1.0 to 13.1.1 [#231](https://github.com/artsy/cli/pull/231) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 15.12.5 to 15.14.0 [#225](https://github.com/artsy/cli/pull/225) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump typescript from 4.3.4 to 4.3.5 [#224](https://github.com/artsy/cli/pull/224) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.22.3 to 1.22.4 [#223](https://github.com/artsy/cli/pull/223) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#222](https://github.com/artsy/cli/pull/222) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.51.0 to 10.52.0 [#221](https://github.com/artsy/cli/pull/221) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#219](https://github.com/artsy/cli/pull/219) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#220](https://github.com/artsy/cli/pull/220) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 15.12.4 to 15.12.5 [#215](https://github.com/artsy/cli/pull/215) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump graphql-tag from 2.12.4 to 2.12.5 [#216](https://github.com/artsy/cli/pull/216) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.87 to 1.0.88 [#218](https://github.com/artsy/cli/pull/218) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.85 to 1.0.87 [#214](https://github.com/artsy/cli/pull/214) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#213](https://github.com/artsy/cli/pull/213) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.50.0 to 10.51.0 [#212](https://github.com/artsy/cli/pull/212) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#211](https://github.com/artsy/cli/pull/211) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#210](https://github.com/artsy/cli/pull/210) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.49.0 to 10.50.0 [#208](https://github.com/artsy/cli/pull/208) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.84 to 1.0.85 [#205](https://github.com/artsy/cli/pull/205) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 15.12.3 to 15.12.4 [#207](https://github.com/artsy/cli/pull/207) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump cli-ux from 5.5.1 to 5.6.2 [#206](https://github.com/artsy/cli/pull/206) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/chai from 4.2.18 to 4.2.19 [#199](https://github.com/artsy/cli/pull/199) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump graphql from 15.5.0 to 15.5.1 [#204](https://github.com/artsy/cli/pull/204) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#203](https://github.com/artsy/cli/pull/203) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.48.0 to 10.49.0 [#196](https://github.com/artsy/cli/pull/196) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump typescript from 4.3.3 to 4.3.4 [#197](https://github.com/artsy/cli/pull/197) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 15.12.2 to 15.12.3 [#195](https://github.com/artsy/cli/pull/195) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.46.1 to 10.48.0 [#192](https://github.com/artsy/cli/pull/192) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump globby from 11.0.3 to 11.0.4 [#193](https://github.com/artsy/cli/pull/193) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.46.0 to 10.46.1 [#191](https://github.com/artsy/cli/pull/191) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql from 4.6.2 to 4.6.4 [#188](https://github.com/artsy/cli/pull/188) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump tslib from 2.2.0 to 2.3.0 [#190](https://github.com/artsy/cli/pull/190) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.83 to 1.0.84 [#189](https://github.com/artsy/cli/pull/189) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): [security] bump normalize-url from 4.5.0 to 4.5.1 [#187](https://github.com/artsy/cli/pull/187) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): [security] bump ws from 5.2.2 to 5.2.3 [#186](https://github.com/artsy/cli/pull/186) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 15.12.1 to 15.12.2 [#185](https://github.com/artsy/cli/pull/185) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump ts-node from 9.1.1 to 10.0.0 [#154](https://github.com/artsy/cli/pull/154) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @types/node from 14.14.41 to 15.12.1 [#181](https://github.com/artsy/cli/pull/181) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump dotenv from 8.2.0 to 10.0.0 [#153](https://github.com/artsy/cli/pull/153) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump lodash from 4.17.20 to 4.17.21 [#132](https://github.com/artsy/cli/pull/132) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump querystring from 0.2.0 to 0.2.1 [#85](https://github.com/artsy/cli/pull/85) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- Bump nyc from 13.3.0 to 15.1.0 [#42](https://github.com/artsy/cli/pull/42) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.45.0 to 10.46.0 [#178](https://github.com/artsy/cli/pull/178) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.42.0 to 10.45.0 [#175](https://github.com/artsy/cli/pull/175) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.81 to 1.0.83 [#173](https://github.com/artsy/cli/pull/173) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.22.2 to 1.22.3 [#209](https://github.com/artsy/cli/pull/209) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.22.1 to 1.22.2 [#202](https://github.com/artsy/cli/pull/202) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#201](https://github.com/artsy/cli/pull/201) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#200](https://github.com/artsy/cli/pull/200) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump typescript from 4.3.2 to 4.3.3 [#194](https://github.com/artsy/cli/pull/194) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 4
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+- Steven Hicks ([@pepopowitz](https://github.com/pepopowitz))
+
+---
+
 # v0.21.0 (Wed Jun 02 2021)
 
 #### 🚀  Enhancement
