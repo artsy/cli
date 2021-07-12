@@ -1,5 +1,6 @@
 import { Command } from "@oclif/command"
 import Parser = require("rss-parser")
+import TurndownService = require("turndown")
 
 export default class ScheduledRecentlyPublished extends Command {
   static description =
@@ -111,7 +112,7 @@ export default class ScheduledRecentlyPublished extends Command {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `> ${formattedContent}`,
+          text: `${formattedContent}`,
         },
       },
       {
@@ -194,7 +195,7 @@ function formatContent(content: string | undefined) {
   }
 
   // BuzzSprout gives us html for this field; slack needs markdown or plaintext.
-  //   For now, scrubbing the paragraph tags will fix most episodes.
-  // TODO: proper html-to-markdown conversion
-  return content.replace("<p>", "").replace("</p>", "")
+  var turndownService = new TurndownService()
+  var markdown = turndownService.turndown(`<blockquote>${content}</blockquote>`)
+  return markdown
 }

@@ -32,6 +32,7 @@
     "querystring": "^0.2.0",
     "rss-parser": "^3.11.0",
     "tslib": "^2",
+    "turndown": "^7.1.1",
     "uri-scheme": "^1.0.76"
   },
   "devDependencies": {
