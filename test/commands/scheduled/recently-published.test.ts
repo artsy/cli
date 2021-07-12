@@ -81,7 +81,7 @@ describe("scheduled:recently-published", () => {
           text: {
             type: "mrkdwn",
             text:
-              "> <p>Steve Hicks and Justin Bennett talk about empathy in workplace culture, how to build trust and safety, and the importance of providing space for people.</p>",
+              "> Steve Hicks and Justin Bennett talk about empathy in workplace culture, how to build trust and safety, and the importance of providing space for people.",
           },
         })
       )

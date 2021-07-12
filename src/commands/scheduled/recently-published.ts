@@ -90,6 +90,7 @@ export default class ScheduledRecentlyPublished extends Command {
     } = lastEpisode
     const formattedDate = formatDate(pubDate)
     const webURL = formatWebURL(enclosure?.url)
+    const formattedContent = formatContent(content)
 
     const blocks = [
       {
@@ -110,7 +111,7 @@ export default class ScheduledRecentlyPublished extends Command {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `> ${content}`,
+          text: `> ${formattedContent}`,
         },
       },
       {
@@ -185,4 +186,15 @@ function formatWebURL(urlString: string | undefined) {
   }
 
   return urlString.replace(".mp3", "")
+}
+
+function formatContent(content: string | undefined) {
+  if (content === undefined) {
+    return ""
+  }
+
+  // BuzzSprout gives us html for this field; slack needs markdown or plaintext.
+  //   For now, scrubbing the paragraph tags will fix most episodes.
+  // TODO: proper html-to-markdown conversion
+  return content.replace("<p>", "").replace("</p>", "")
 }
