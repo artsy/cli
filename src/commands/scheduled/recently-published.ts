@@ -144,7 +144,7 @@ export default class ScheduledRecentlyPublished extends Command {
           {
             type: "mrkdwn",
             text:
-              "<https://artsy.github.io|Artsy Engineering> | Podcast (<https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|iTunes>, <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google>)",
+              "<https://artsy.github.io|Artsy Engineering> | <https://artsyengineeringradio.buzzsprout.com|Artsy Engineering Radio>",
           },
         ],
       },
