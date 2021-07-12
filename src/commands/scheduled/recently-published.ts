@@ -79,7 +79,8 @@ export default class ScheduledRecentlyPublished extends Command {
     const parser = new Parser()
     const feed = await parser.parseURL(PODCAST_FEED_URL)
 
-    const lastEpisode = feed.items[feed.items.length - 1]
+    // Most recent episode is the first in the feed
+    const lastEpisode = feed.items[0]
     const {
       title,
       content,

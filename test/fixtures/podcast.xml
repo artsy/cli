@@ -1,53 +1,77 @@
-<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet href="https://feeds.buzzsprout.com/styles.xsl" type="text/xsl"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>Artsy Engineering Radio</title>
-<atom:link href="https://artsy.github.io/podcast.xml" rel="self" type="application/rss+xml"/>
-<itunes:new-feed-url>https://artsy.github.io/podcast.xml</itunes:new-feed-url>
-<link>https://artsy.github.io</link>
-<description>A podcast exploring questions in software engineering.</description>
-<lastBuildDate>Thu, 11 Feb 2021 22:29:33 +0000</lastBuildDate>
-<sy:updatePeriod>hourly</sy:updatePeriod>
-<sy:updateFrequency>1</sy:updateFrequency>
-<language>en</language>
-<copyright>Artsy, 2020</copyright>
-<itunes:subtitle>A podcast exploring questions in software engineering.</itunes:subtitle>
-<itunes:summary>A podcast exploring questions in software engineering.</itunes:summary>
-<itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
-<category>Technology</category>
-<itunes:category text="Technology"/>
-<itunes:author>Artsy Engineering</itunes:author>
-<itunes:owner>
-<itunes:name>Artsy Engineering</itunes:name>
-<itunes:email>OpenSourceGroup@artsy.net</itunes:email>
-</itunes:owner>
-<itunes:block>no</itunes:block>
-<itunes:explicit>no</itunes:explicit>
-<itunes:image href="https://artsy.github.io/images/podcast_logo.png"/>
-<item>
-<title>0: Introducing Artsy Engineering Radio</title>
-<pubDate>Wed, 16 Dec 2020 14:43:48 -0600</pubDate>
-<description>Jon Allured, Matt Dole, and Steve Hicks introduce you to Artsy Engineering Radio and help you understand why you need another podcast in your life.</description>
-<enclosure url="https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep0-IntroducingArtsyEngineeringRadio.mp3" length="7500002" type="audio/mpeg"/>
-<link>https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep0-IntroducingArtsyEngineeringRadio.mp3</link>
-<guid>https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep0-IntroducingArtsyEngineeringRadio.mp3</guid>
-<itunes:author>Jon Allured, Matt Dole, &amp; Steve Hicks</itunes:author>
-<itunes:summary>Jon Allured, Matt Dole, and Steve Hicks introduce you to Artsy Engineering Radio and help you understand why you need another podcast in your life.</itunes:summary>
-<itunes:image href="https://artsy.github.io/images/podcast_logo.png"/>
-<itunes:duration>00:09:02</itunes:duration>
-<itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
-</item>
-<item>
-<title>1: How To Have Good Meetings</title>
-<pubDate>Thu, 17 Dec 2020 10:35:52 -0600</pubDate>
-<description>Ash Furrow talks with Steve Hicks about facilitating meaningful and inclusive team meetings, and how meetings are part of building teams, trust, and systems.</description>
-<enclosure url="https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep1-GoodMeetingsWithAsh.mp3" length="23607969" type="audio/mpeg"/>
-<link>https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep1-GoodMeetingsWithAsh.mp3</link>
-<guid>https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineeringRadio-ep1-GoodMeetingsWithAsh.mp3</guid>
-<itunes:author>Ash Furrow &amp; Steve Hicks</itunes:author>
-<itunes:summary>Ash Furrow talks with Steve Hicks about facilitating meaningful and inclusive team meetings, and how meetings are part of building teams, trust, and systems.</itunes:summary>
-<itunes:image href="https://artsy.github.io/images/podcast_logo.png"/>
-<itunes:duration>00:27:41</itunes:duration>
-<itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
-</item>
+  <atom:link href="https://feeds.buzzsprout.com/1781859.rss" rel="self" type="application/rss+xml" />
+  <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" xmlns="http://www.w3.org/2005/Atom" />
+  <title>Artsy Engineering Radio</title>
+  <lastBuildDate>Mon, 12 Jul 2021 13:07:07 -0400</lastBuildDate>
+  <link>https://artsy.github.io</link>
+  <language>en</language>
+  <copyright>© 2021 Artsy Engineering Radio</copyright>
+  <podcast:locked owner="OpenSourceGroup@artsy.net">yes</podcast:locked>
+  <itunes:author>Artsy Engineering</itunes:author>
+  <itunes:type>episodic</itunes:type>
+  <itunes:explicit>false</itunes:explicit>
+  <description><![CDATA[A podcast exploring questions in software engineering.]]></description>
+  <itunes:owner>
+    <itunes:name>Artsy Engineering</itunes:name>
+    <itunes:email>OpenSourceGroup@artsy.net</itunes:email>
+  </itunes:owner>
+  <image>
+     <url>https://storage.buzzsprout.com/variants/8k6l96btp7y72nxvfaanyjfgwowi/8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2.jpg</url>
+     <title>Artsy Engineering Radio</title>
+     <link>https://artsy.github.io</link>
+  </image>
+  <itunes:image href="https://storage.buzzsprout.com/variants/8k6l96btp7y72nxvfaanyjfgwowi/8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2.jpg" />
+  <itunes:category text="Technology" />
+  <item>
+    <itunes:title>19: Humanizing The Workplace</itunes:title>
+    <title>19: Humanizing The Workplace</title>
+    <description><![CDATA[<p>Steve Hicks and Justin Bennett talk about empathy in workplace culture, how to build trust and safety, and the importance of providing space for people.</p>]]></description>
+    <content:encoded><![CDATA[<p>Steve Hicks and Justin Bennett talk about empathy in workplace culture, how to build trust and safety, and the importance of providing space for people.</p>]]></content:encoded>
+    <itunes:author>Steve Hicks &amp; Justin Bennett. Edited by Aja Simpson</itunes:author>
+    <enclosure url="https://www.buzzsprout.com/1781859/8600736-19-humanizing-the-workplace.mp3" length="27279337" type="audio/mpeg" />
+    <guid isPermaLink="false">Buzzsprout-8600736</guid>
+    <pubDate>Thu, 27 May 2021 15:00:00 -0400</pubDate>
+    <podcast:transcript url="https://feeds.buzzsprout.com/1781859/8600736/transcript" type="text/html" />
+    <podcast:soundbite startTime="858.0" duration="25.5" />
+    <itunes:duration>2271</itunes:duration>
+    <itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
+    <itunes:episodeType>full</itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+  <item>
+    <itunes:title>18: Software Accessibility</itunes:title>
+    <title>18: Software Accessibility</title>
+    <description><![CDATA[Join Tricia and Damon as they discuss how they design and build software with accessibility in mind.]]></description>
+    <content:encoded><![CDATA[Join Tricia and Damon as they discuss how they design and build software with accessibility in mind.]]></content:encoded>
+    <itunes:image href="https://storage.buzzsprout.com/variants/3mt4ivmkp0ztdmqwdljjzju2qadu/8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2.jpg" />
+    <itunes:author>Tricia Ofuono &amp; Damon Z. Edited by Aja Simpson</itunes:author>
+    <enclosure url="https://www.buzzsprout.com/1781859/8557973-18-software-accessibility.mp3" length="26953745" type="audio/mpeg" />
+    <guid isPermaLink="false">https://artsy-engineering-podcast.s3.amazonaws.com/ArtsyEngineering_Ep18_Accessibility_V2.mp3</guid>
+    <pubDate>Thu, 20 May 2021 12:27:13 -0400</pubDate>
+    <podcast:transcript url="https://feeds.buzzsprout.com/1781859/8557973/transcript" type="text/html" />
+    <itunes:duration>2244</itunes:duration>
+    <itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
+    <itunes:episodeType></itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
+  <item>
+    <itunes:title>17: Request for Comment #3</itunes:title>
+    <title>17: Request for Comment #3</title>
+    <description><![CDATA[Anna Carey, Jon Allured, and Steve Hicks hang out and talk about what they&apos;re working, what excites them, and the challenges and rewards of 3rd-party integration.]]></description>
+    <content:encoded><![CDATA[Anna Carey, Jon Allured, and Steve Hicks hang out and talk about what they&apos;re working, what excites them, and the challenges and rewards of 3rd-party integration.]]></content:encoded>
+    <itunes:image href="https://storage.buzzsprout.com/variants/hkqxlt7eq7sdmbfgdoto02y2ei7h/8d66eb17bb7d02ca4856ab443a78f2148cafbb129f58a3c81282007c6fe24ff2.jpg" />
+    <itunes:author>Anna Carey, Jon Allured, &amp; Steve Hicks</itunes:author>
+    <enclosure url="https://www.buzzsprout.com/1781859/8549227-17-request-for-comment-3.mp3" length="22185582" type="audio/mpeg" />
+    <guid isPermaLink="false">https://artsy-engineering-podcast.s3.amazonaws.com/ep-17-request-for-comment-3.mp3</guid>
+    <pubDate>Thu, 13 May 2021 13:11:45 -0400</pubDate>
+    <itunes:duration>1847</itunes:duration>
+    <itunes:keywords>engineering, software engineering, software development, open source</itunes:keywords>
+    <itunes:episodeType></itunes:episodeType>
+    <itunes:explicit>false</itunes:explicit>
+  </item>
 </channel>
 </rss>
