@@ -74,7 +74,7 @@ export default class ScheduledRecentlyPublished extends Command {
   }
 
   async buildPodcastSummary() {
-    const PODCAST_FEED_URL = "https://artsy.github.io/podcast.xml"
+    const PODCAST_FEED_URL = "https://feeds.buzzsprout.com/1781859.rss"
 
     const parser = new Parser()
     const feed = await parser.parseURL(PODCAST_FEED_URL)

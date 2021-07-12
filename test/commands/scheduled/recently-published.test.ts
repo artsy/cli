@@ -8,7 +8,9 @@ describe("scheduled:recently-published", () => {
   test
     .nock("https://artsy.github.io", api => {
       api.get("/feed.xml").replyWithFile(200, blogFixture)
-      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
+    .nock("https://feeds.buzzsprout.com", buzzsprout => {
+      buzzsprout.get("/1781859.rss").replyWithFile(200, podcastFixture)
     })
     .stdout()
     .command(["scheduled:recently-published"])
@@ -45,7 +47,9 @@ describe("scheduled:recently-published", () => {
   test
     .nock("https://artsy.github.io", api => {
       api.get("/feed.xml").replyWithFile(200, blogFixture)
-      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
+    .nock("https://feeds.buzzsprout.com", buzzsprout => {
+      buzzsprout.get("/1781859.rss").replyWithFile(200, podcastFixture)
     })
     .stdout()
     .command(["scheduled:recently-published"])
@@ -97,7 +101,9 @@ describe("scheduled:recently-published", () => {
   test
     .nock("https://artsy.github.io", api => {
       api.get("/feed.xml").replyWithFile(200, blogFixture)
-      api.get("/podcast.xml").replyWithFile(200, podcastFixture)
+    })
+    .nock("https://feeds.buzzsprout.com", buzzsprout => {
+      buzzsprout.get("/1781859.rss").replyWithFile(200, podcastFixture)
     })
     .stdout()
     .command(["scheduled:recently-published"])
