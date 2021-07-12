@@ -61,7 +61,7 @@ describe("scheduled:recently-published", () => {
           text: {
             type: "mrkdwn",
             text:
-              "The last episode of *Artsy Engineering Radio* aired on Dec 17, 2020:",
+              "The last episode of *Artsy Engineering Radio* aired on May 27, 2021:",
           },
         })
       )
@@ -71,7 +71,7 @@ describe("scheduled:recently-published", () => {
           text: {
             type: "mrkdwn",
             text:
-              "1: How To Have Good Meetings | <https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|Apple Podcasts> | <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google Podcasts> | <https://open.spotify.com/show/0gJYxpqN6P11dbjNw8VT2a?si=L4TWDrQETwuVO6JR1SOZTQ|Spotify>",
+              "19: Humanizing The Workplace | <https://podcasts.apple.com/us/podcast/artsy-engineering-radio/id1545870104|Apple Podcasts> | <https://podcasts.google.com/feed/aHR0cHM6Ly9hcnRzeS5naXRodWIuaW8vcG9kY2FzdC54bWw|Google Podcasts> | <https://open.spotify.com/show/0gJYxpqN6P11dbjNw8VT2a?si=L4TWDrQETwuVO6JR1SOZTQ|Spotify>",
           },
         })
       )
@@ -81,7 +81,7 @@ describe("scheduled:recently-published", () => {
           text: {
             type: "mrkdwn",
             text:
-              "> Ash Furrow talks with Steve Hicks about facilitating meaningful and inclusive team meetings, and how meetings are part of building teams, trust, and systems.",
+              "> <p>Steve Hicks and Justin Bennett talk about empathy in workplace culture, how to build trust and safety, and the importance of providing space for people.</p>",
           },
         })
       )
@@ -91,7 +91,8 @@ describe("scheduled:recently-published", () => {
           elements: [
             {
               type: "mrkdwn",
-              text: "Ash Furrow & Steve Hicks - Dec 17, 2020",
+              text:
+                "Steve Hicks & Justin Bennett. Edited by Aja Simpson - May 27, 2021",
             },
           ],
         })
