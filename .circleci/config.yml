@@ -12,6 +12,7 @@ workflows:
       - yarn/test
       - auto/publish:
           context: npm-deploy
+          version: v10.29.3
           filters:
             branches:
               only: main
