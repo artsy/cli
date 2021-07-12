@@ -195,7 +195,9 @@ function formatContent(content: string | undefined) {
   }
 
   // BuzzSprout gives us html for this field; slack needs markdown or plaintext.
-  var turndownService = new TurndownService()
-  var markdown = turndownService.turndown(`<blockquote>${content}</blockquote>`)
+  const turndownService = new TurndownService()
+  const markdown = turndownService.turndown(
+    `<blockquote>${content}</blockquote>`
+  )
   return markdown
 }
