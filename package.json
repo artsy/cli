@@ -38,7 +38,7 @@
     "@artsy/auto-config": "^1.0.1",
     "@graphql-codegen/cli": "1.21.4",
     "@graphql-codegen/typescript": "1.23.0",
-    "@graphql-codegen/typescript-document-nodes": "1.17.15",
+    "@graphql-codegen/typescript-document-nodes": "1.17.16",
     "@graphql-codegen/typescript-operations": "^1.17.14",
     "@graphql-codegen/typescript-resolvers": "1.20.0",
     "@oclif/dev-cli": "^1",
