@@ -50,6 +50,7 @@
     "@types/mocha": "^8",
     "@types/node": "^15",
     "@types/node-fetch": "^2.5.0",
+    "@types/turndown": "^5.0.1",
     "@types/xml2js": "^0.4.8",
     "chai": "^4",
     "globby": "^11",
