@@ -1,3 +1,40 @@
+# v0.23.0 (Mon Jul 26 2021)
+
+#### 🚀  Enhancement
+
+- chore: add turndown types [#264](https://github.com/artsy/cli/pull/264) ([@dblandin](https://github.com/dblandin))
+- chore: bump artsy/auto orb [#264](https://github.com/artsy/cli/pull/264) ([@dblandin](https://github.com/dblandin))
+- chore: linting (stop copying code from the internet, Steve) [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- feat: proper html-to-markdown conversion [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- fix/hack: quick markdown conversion of podcast feed descriptions [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- feat: link episode directly to its buzzsprout page [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- chore: replace google/apple podcast URLs with buzzsprout [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- fix: broken test (locally) - time zone issue [#247](https://github.com/artsy/cli/pull/247) ([@pepopowitz](https://github.com/pepopowitz))
+- fix: buzzsprout's rss feed has recent episodes at top, not bottom [#246](https://github.com/artsy/cli/pull/246) ([@pepopowitz](https://github.com/pepopowitz))
+- chore(auto): pin to more recent auto version [#245](https://github.com/artsy/cli/pull/245) ([@dblandin](https://github.com/dblandin))
+
+#### ⚠️ Pushed to `main`
+
+- chore: bump artsy/auto orb ([@dblandin](https://github.com/dblandin))
+
+#### 🏠  Internal
+
+- chore(deps): bump @types/node-fetch from 2.5.11 to 2.5.12 [#259](https://github.com/artsy/cli/pull/259) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.53.0 to 10.54.0 [#256](https://github.com/artsy/cli/pull/256) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.89 to 1.0.91 [#254](https://github.com/artsy/cli/pull/254) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-document-nodes [#249](https://github.com/artsy/cli/pull/249) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript from 1.22.4 to 1.23.0 [#248](https://github.com/artsy/cli/pull/248) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-operations [#251](https://github.com/artsy/cli/pull/251) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps-dev): bump @graphql-codegen/typescript-resolvers [#250](https://github.com/artsy/cli/pull/250) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 3
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+- Steven Hicks ([@pepopowitz](https://github.com/pepopowitz))
+
+---
+
 # v0.22.0 (Mon Jul 12 2021)
 
 #### 🚀  Enhancement
