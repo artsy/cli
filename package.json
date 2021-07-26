@@ -47,7 +47,7 @@
     "@oclif/tslint": "^3",
     "@types/chai": "^4",
     "@types/dashify": "^1.0.0",
-    "@types/mocha": "^8",
+    "@types/mocha": "^9",
     "@types/node": "^15",
     "@types/node-fetch": "^2.5.0",
     "@types/turndown": "^5.0.1",
