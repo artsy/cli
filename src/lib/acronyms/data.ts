@@ -40,6 +40,7 @@ export const acronymMap: AcronymMap = {
   EOD: "End of day",
   EOY: "End of year",
   FWIW: "For what it’s worth",
+  GLM: "Growth and Lifecycle Marketing",
   GDPR: "General Data Protection Regulation",
   GMV: "Gross Merchandise Value",
   GRC: "Gallery Resource Center",
