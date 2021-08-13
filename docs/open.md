@@ -46,7 +46,7 @@ opens https://www.artsy.net/artist/andy-warhol on Android
 
 ## Config
 
-All aliases and defaults can be found [here](src/lib/open/data/config.json).
+All aliases and defaults can be found [here](../src/lib/open/data/config.json).
 
 The config can be overriden by providing `~/.config/artsy-open.json`. Just copy the config from GitHub and modify it:
 
