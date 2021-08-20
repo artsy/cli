@@ -1,3 +1,28 @@
+# v0.24.0 (Fri Aug 20 2021)
+
+#### 🚀  Enhancement
+
+- chore: add GLM acronym [#278](https://github.com/artsy/cli/pull/278) ([@alexpopa-artsy](https://github.com/alexpopa-artsy))
+
+#### 🐛  Bug Fix
+
+- docs: Corrected path [#279](https://github.com/artsy/cli/pull/279) ([@jo-rs](https://github.com/jo-rs))
+
+#### 🏠  Internal
+
+- chore(deps): bump @octokit/graphql-schema from 10.57.0 to 10.58.0 [#276](https://github.com/artsy/cli/pull/276) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.56.0 to 10.57.0 [#273](https://github.com/artsy/cli/pull/273) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump uri-scheme from 1.0.91 to 1.0.92 [#272](https://github.com/artsy/cli/pull/272) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump @octokit/graphql-schema from 10.54.0 to 10.56.0 [#270](https://github.com/artsy/cli/pull/270) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+
+#### Authors: 3
+
+- [@alexpopa-artsy](https://github.com/alexpopa-artsy)
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- Joel Rosenblatt ([@jo-rs](https://github.com/jo-rs))
+
+---
+
 # v0.23.0 (Mon Jul 26 2021)
 
 #### 🚀  Enhancement
