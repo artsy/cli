@@ -48,7 +48,7 @@ describe("scheduled:next-on-call", () => {
                 text: {
                   type: "mrkdwn",
                   text:
-                    "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://github.com/artsy/README/tree/main/playbooks/support#preparing-for-your-on-call-shift|Engineering Support doc> to prep. You've got this! :+1:",
+                    "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://github.com/artsy/README/blob/main/playbooks/incident-handling.md#before-an-on-call-shift|Incident Handling doc> to prep. You've got this! :+1:",
                 },
               },
             ],

@@ -5,8 +5,8 @@ import { convertEmailsToSlackMentions } from "../../utils/slack"
 
 export default class NextOnCall extends Command {
   static urls: { [key: string]: string } = {
-    engineeringSupport:
-      "https://github.com/artsy/README/tree/main/playbooks/support#preparing-for-your-on-call-shift",
+    incidentHandling:
+      "https://github.com/artsy/README/blob/main/playbooks/incident-handling.md#before-an-on-call-shift",
   }
 
   static description = "Remind members with upcoming on-call shifts."
@@ -28,8 +28,8 @@ export default class NextOnCall extends Command {
             text: `${mentions.join(
               ", "
             )} looks like you have on-call shifts coming up! Check out the <${
-              NextOnCall.urls.engineeringSupport
-            }|Engineering Support doc> to prep. You've got this! :+1:`,
+              NextOnCall.urls.incidentHandling
+            }|Incident Handling doc> to prep. You've got this! :+1:`,
           },
         },
       ],
