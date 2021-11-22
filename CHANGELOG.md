@@ -1,3 +1,26 @@
+# v0.25.0 (Mon Nov 22 2021)
+
+#### 🚀  Enhancement
+
+- fix: set correct on call playbook url [#284](https://github.com/artsy/cli/pull/284) ([@admbtlr](https://github.com/admbtlr))
+
+#### 🏠  Internal
+
+- chore(deps-dev): bump @types/xml2js from 0.4.8 to 0.4.9 [#228](https://github.com/artsy/cli/pull/228) ([@dependabot-preview[bot]](https://github.com/dependabot-preview[bot]))
+- chore(deps): bump glob-parent from 5.1.1 to 5.1.2 [#183](https://github.com/artsy/cli/pull/183) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump axios from 0.21.1 to 0.21.4 [#283](https://github.com/artsy/cli/pull/283) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump path-parse from 1.0.6 to 1.0.7 [#277](https://github.com/artsy/cli/pull/277) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump url-parse from 1.5.1 to 1.5.3 [#280](https://github.com/artsy/cli/pull/280) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump object-path from 0.11.5 to 0.11.8 [#282](https://github.com/artsy/cli/pull/282) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 3
+
+- [@dependabot-preview[bot]](https://github.com/dependabot-preview[bot])
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Adam Butler ([@admbtlr](https://github.com/admbtlr))
+
+---
+
 # v0.24.0 (Fri Aug 20 2021)
 
 #### 🚀  Enhancement
