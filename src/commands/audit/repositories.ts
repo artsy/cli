@@ -1,5 +1,6 @@
 import { flags } from "@oclif/command"
 import { cli } from "cli-ux"
+import * as githubSearchQuery from "search-query-parser"
 import {
   ArtsyRepositories,
   ArtsyRepositoriesQuery,
@@ -7,8 +8,31 @@ import {
 import Command from "../../base"
 import { githubClient } from "../../utils/github"
 
+const GITHUB_SEARCH_PARSER_OPTIONS = {
+  keywords: [
+    "archived",
+    "created",
+    "followers",
+    "fork",
+    "forks",
+    "in",
+    "is",
+    "language",
+    "license",
+    "org",
+    "private",
+    "pushed",
+    "size",
+    "stars",
+    "template",
+    "topic",
+  ],
+}
+
 export default class Repositories extends Command {
   static description = "Audit GitHub repositories."
+
+  static args = [{ name: "query", required: false }]
 
   static flags = {
     ...Command.flags,
@@ -16,20 +40,30 @@ export default class Repositories extends Command {
     "default-branch": flags.string({
       description: "List only repos with a specific default branch",
     }),
-    pushed: flags.string({
-      default: ">2021-01-01",
-      description: "Pushed to",
-    }),
   }
 
   async run() {
-    const { flags } = this.parse(Repositories)
+    const { args, flags } = this.parse(Repositories)
+
+    let parsedQuery = githubSearchQuery.parse(
+      args.query,
+      GITHUB_SEARCH_PARSER_OPTIONS
+    )
+
+    if (typeof parsedQuery === "string") {
+      parsedQuery = { text: parsedQuery }
+    }
+
+    const query = githubSearchQuery.stringify(
+      { org: "artsy", ...parsedQuery },
+      GITHUB_SEARCH_PARSER_OPTIONS
+    )
 
     const {
       data: { search },
     } = await githubClient().query<ArtsyRepositoriesQuery>({
       query: ArtsyRepositories,
-      variables: { query: `org:artsy pushed:${flags.pushed}` },
+      variables: { query },
     })
 
     let repositories = []
