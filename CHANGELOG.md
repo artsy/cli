@@ -1,3 +1,15 @@
+# v0.26.0 (Tue Dec 14 2021)
+
+#### 🚀  Enhancement
+
+- feat: add support for other github repo search query args [#285](https://github.com/artsy/cli/pull/285) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.25.0 (Mon Nov 22 2021)
 
 #### 🚀  Enhancement
