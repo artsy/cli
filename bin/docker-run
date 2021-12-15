@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+docker run \
+  --interactive \
+  --tty \
+  --volume="$(pwd):/usr/src/app" \
+  --env-file=".env" \
+  artsy/cli "$@"
