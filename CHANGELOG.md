@@ -1,3 +1,15 @@
+# v0.26.1 (Thu Dec 16 2021)
+
+#### 🐛  Bug Fix
+
+- feat: add POC for commands which execute python scripts [#286](https://github.com/artsy/cli/pull/286) ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v0.26.0 (Tue Dec 14 2021)
 
 #### 🚀  Enhancement
