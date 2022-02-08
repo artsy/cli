@@ -33,7 +33,7 @@ export default class Login extends Command {
         if (query.code) {
           try {
             const data = await Gravity.getAccessToken(query.code.toString())
-            Config.writeToken(data.access_token)
+            Config.updateConfig({ accessToken: data.access_token })
             cli.action.stop("logged in!")
           } catch (error) {
             this.error(error)
