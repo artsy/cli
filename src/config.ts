@@ -14,6 +14,16 @@ export const Config = {
       return {}
     }
   },
+  gravityId: (): string => {
+    const data = fs.readFileSync(Config.path())
+    const json = JSON.parse(data)
+    return json.clients.gravity.clientId
+  },
+  gravitySecret: (): string => {
+    const data = fs.readFileSync(Config.path())
+    const json = JSON.parse(data)
+    return json.clients.gravity.clientSecret
+  },
   gravityToken: (): string => {
     const data = fs.readFileSync(Config.path())
     const json = JSON.parse(data)
