@@ -19,6 +19,19 @@ class Gravity {
     callback: `http://127.0.0.1:${Gravity.REDIRECT_PORT}`,
   }
 
+  static authUrl() {
+    const params = new URLSearchParams()
+
+    const clientId = process.env.CLIENT_ID as string
+
+    params.append("client_id", clientId)
+    params.append("redirect_uri", `http://127.0.0.1:${Gravity.REDIRECT_PORT}`)
+    params.append("response_type", "code")
+
+    const url = `${Gravity.urls.auth}?${params.toString()}`
+    return url
+  }
+
   static async getAccessToken(code: string) {
     const params = new URLSearchParams()
     params.append("code", code.toString())

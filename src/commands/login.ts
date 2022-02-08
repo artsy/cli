@@ -42,7 +42,6 @@ export default class Login extends Command {
       })
       .listen(Gravity.REDIRECT_PORT)
 
-    const authUrl = `${Gravity.urls.auth}?client_id=${process.env.CLIENT_ID}&redirect_uri=http://127.0.0.1:${Gravity.REDIRECT_PORT}&response_type=code`
-    await cli.open(authUrl)
+    await cli.open(Gravity.authUrl())
   }
 }
