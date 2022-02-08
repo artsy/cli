@@ -35,9 +35,12 @@ export const Config = {
     const json = Config.readConfig()
     return json.accessToken
   },
-  writeToken: (token: string): void => {
-    const options = { accessToken: token }
+  writeConfig: (options: object): void => {
     const data = JSON.stringify(options, null, 2)
     fs.writeFileSync(Config.path(), data)
+  },
+  writeToken: (token: string): void => {
+    const options = { accessToken: token }
+    Config.writeConfig(options)
   },
 }
