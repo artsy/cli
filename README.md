@@ -11,6 +11,15 @@ Artsy CLI is published on npm, so installing is really easy:
 $ npm install --global @artsy/cli
 ```
 
+## Setup
+
+In order to access shared config, run these commands:
+
+```
+$ mkdir -p ~/.config/artsy
+$ aws s3 cp s3://artsy-citadel/dev/artsy-cli-config.json ~/.config/artsy/config.json
+```
+
 ## Docs
 
 - [Artsy Open Docs](docs/open.md)
