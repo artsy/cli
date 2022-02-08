@@ -27,7 +27,7 @@ export default class Logout extends Command {
 
     if (!response.ok) this.error(`${response.status} ${response.statusText}`)
 
-    Config.writeToken("")
+    Config.updateConfig({ accessToken: "" })
     this.log("Logged out!")
   }
 }
