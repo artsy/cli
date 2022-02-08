@@ -15,11 +15,11 @@ export default class WhoAmI extends Command {
   async run() {
     const { flags } = this.parse(WhoAmI)
 
-    const token = Config.readToken()
+    const token = Config.gravityToken()
     if (!token) this.error("You are not logged in. Run `artsy login`.")
 
     const userResponse = await fetch(Gravity.urls.current_user, {
-      headers: { "X-Access-Token": Config.readToken() },
+      headers: { "X-Access-Token": Config.gravityToken() },
     })
 
     const json = await userResponse.json()

@@ -14,7 +14,7 @@ export const Config = {
       return {}
     }
   },
-  readToken: (): string => {
+  gravityToken: (): string => {
     return fs.readFileSync(Config.path(), { encoding: "utf-8" })
   },
   writeToken: (token: string): void => {

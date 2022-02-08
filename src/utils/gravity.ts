@@ -40,7 +40,7 @@ class Gravity {
   }
 
   async get(endpoint: string) {
-    const token: string = Config.readToken()
+    const token: string = Config.gravityToken()
 
     const gravityUrl: string = Gravity.url(`api/v1/${endpoint}`)
     const headers = { "X-Access-Token": token }

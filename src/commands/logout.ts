@@ -11,7 +11,7 @@ export default class Logout extends Command {
   }
 
   async run() {
-    const token = Config.readToken()
+    const token = Config.gravityToken()
 
     if (!token) {
       this.log("Already logged out!")

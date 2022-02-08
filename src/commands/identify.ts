@@ -23,7 +23,7 @@ export default class Identify extends Command {
     const { args } = this.parse(Identify)
     const { id } = args
 
-    if (!Config.readToken())
+    if (!Config.gravityToken())
       this.error("You are not logged in. Run `artsy login`.")
 
     const gravityPromises = Identify.collectionsToCheck.map(collection => {
