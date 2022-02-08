@@ -18,6 +18,26 @@ export default class Login extends Command {
 
     cli.action.start("Waiting for response")
 
+    const getAccessToken = async (code: string) => {
+      const params = new URLSearchParams()
+      params.append("code", code.toString())
+      params.append("client_id", process.env.CLIENT_ID as string)
+      params.append("client_secret", process.env.CLIENT_SECRET as string)
+      params.append("grant_type", "authorization_code")
+      params.append("scope", "offline_access")
+
+      const response = await fetch(Gravity.urls.access_token, {
+        method: "POST",
+        body: params,
+      })
+
+      if (!response.ok) this.error(`${response.status} ${response.statusText}`)
+
+      const data = await response.json()
+
+      return data
+    }
+
     const server = require("http")
       .createServer(async (req: any, res: any) => {
         const url = new URL(req.url, Gravity.urls.callback)
@@ -31,22 +51,7 @@ export default class Login extends Command {
         server.close()
 
         if (query.code) {
-          const params = new URLSearchParams()
-          params.append("code", query.code.toString())
-          params.append("client_id", process.env.CLIENT_ID as string)
-          params.append("client_secret", process.env.CLIENT_SECRET as string)
-          params.append("grant_type", "authorization_code")
-          params.append("scope", "offline_access")
-
-          const response = await fetch(Gravity.urls.access_token, {
-            method: "POST",
-            body: params,
-          })
-
-          if (!response.ok)
-            this.error(`${response.status} ${response.statusText}`)
-
-          const data = await response.json()
+          const data = await getAccessToken(query.code.toString())
           Config.writeToken(data.access_token)
 
           cli.action.stop("logged in!")
