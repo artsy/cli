@@ -18,29 +18,32 @@ export default class Login extends Command {
 
     cli.action.start("Waiting for response")
 
-    const server = require("http")
-      .createServer(async (req: any, res: any) => {
-        const url = new URL(req.url, Gravity.urls.callback)
-        const query = parse(url.search.substr(1))
+    const server = require("http").createServer()
 
-        res.writeHead(200, { "Content-Type": "text/plain" })
-        res.end("Thank you. You may return to the Artsy CLI now.")
+    const requestHandler = async (req: any, res: any) => {
+      const url = new URL(req.url, Gravity.urls.callback)
+      const query = parse(url.search.substr(1))
 
-        req.connection.end()
-        req.connection.destroy()
-        server.close()
+      res.writeHead(200, { "Content-Type": "text/plain" })
+      res.end("Thank you. You may return to the Artsy CLI now.")
 
-        if (query.code) {
-          try {
-            const data = await Gravity.getAccessToken(query.code.toString())
-            Config.updateConfig({ accessToken: data.access_token })
-            cli.action.stop("logged in!")
-          } catch (error) {
-            this.error(error)
-          }
+      req.connection.end()
+      req.connection.destroy()
+      server.close()
+
+      if (query.code) {
+        try {
+          const data = await Gravity.getAccessToken(query.code.toString())
+          Config.updateConfig({ accessToken: data.access_token })
+          cli.action.stop("logged in!")
+        } catch (error) {
+          this.error(error)
         }
-      })
-      .listen(Gravity.REDIRECT_PORT)
+      }
+    }
+
+    server.on("request", requestHandler)
+    server.listen(Gravity.REDIRECT_PORT)
 
     await cli.open(Gravity.authUrl())
   }
