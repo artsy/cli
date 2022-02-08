@@ -3,7 +3,7 @@ const os = require("os")
 
 export const Config = {
   path: (): string => {
-    return `${os.homedir()}/.config/artsy`
+    return `${os.homedir()}/.config/artsy/config.json`
   },
   readOpenConfig: (): any => {
     try {
@@ -15,9 +15,13 @@ export const Config = {
     }
   },
   gravityToken: (): string => {
-    return fs.readFileSync(Config.path(), { encoding: "utf-8" })
+    const data = fs.readFileSync(Config.path())
+    const json = JSON.parse(data)
+    return json.accessToken
   },
   writeToken: (token: string): void => {
-    fs.writeFileSync(Config.path(), token)
+    const options = { accessToken: token }
+    const data = JSON.stringify(options, null, 2)
+    fs.writeFileSync(Config.path(), data)
   },
 }
