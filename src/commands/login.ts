@@ -31,7 +31,7 @@ export default class Login extends Command {
         body: params,
       })
 
-      if (!response.ok) this.error(`${response.status} ${response.statusText}`)
+      if (!response.ok) throw `${response.status} ${response.statusText}`
 
       const data = await response.json()
 
@@ -51,10 +51,13 @@ export default class Login extends Command {
         server.close()
 
         if (query.code) {
-          const data = await getAccessToken(query.code.toString())
-          Config.writeToken(data.access_token)
-
-          cli.action.stop("logged in!")
+          try {
+            const data = await getAccessToken(query.code.toString())
+            Config.writeToken(data.access_token)
+            cli.action.stop("logged in!")
+          } catch (error) {
+            this.error(error)
+          }
         }
       })
       .listen(Gravity.REDIRECT_PORT)
