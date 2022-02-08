@@ -5,6 +5,15 @@ export const Config = {
   path: (): string => {
     return `${os.homedir()}/.config/artsy/config.json`
   },
+  readConfig: (): any => {
+    try {
+      const path = Config.path()
+      const data = fs.readFileSync(path)
+      return JSON.parse(data)
+    } catch {
+      return {}
+    }
+  },
   readOpenConfig: (): any => {
     try {
       return JSON.parse(
@@ -15,18 +24,15 @@ export const Config = {
     }
   },
   gravityId: (): string => {
-    const data = fs.readFileSync(Config.path())
-    const json = JSON.parse(data)
+    const json = Config.readConfig()
     return json.clients.gravity.clientId
   },
   gravitySecret: (): string => {
-    const data = fs.readFileSync(Config.path())
-    const json = JSON.parse(data)
+    const json = Config.readConfig()
     return json.clients.gravity.clientSecret
   },
   gravityToken: (): string => {
-    const data = fs.readFileSync(Config.path())
-    const json = JSON.parse(data)
+    const json = Config.readConfig()
     return json.accessToken
   },
   writeToken: (token: string): void => {
