@@ -1,5 +1,4 @@
 import cli from "cli-ux"
-import fetch from "node-fetch"
 import { parse } from "querystring"
 import Command from "../base"
 import { Config } from "../config"

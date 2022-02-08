@@ -23,7 +23,7 @@ class Gravity {
     const params = new URLSearchParams()
 
     params.append("client_id", Config.gravityId())
-    params.append("redirect_uri", `http://127.0.0.1:${Gravity.REDIRECT_PORT}`)
+    params.append("redirect_uri", Gravity.urls.callback)
     params.append("response_type", "code")
 
     const url = `${Gravity.urls.auth}?${params.toString()}`
@@ -43,7 +43,8 @@ class Gravity {
       body: params,
     })
 
-    if (!response.ok) throw `${response.status} ${response.statusText}`
+    if (!response.ok)
+      throw new Error(`${response.status} ${response.statusText}`)
 
     const data = await response.json()
 
@@ -66,15 +67,4 @@ export default Gravity
 export interface Credentials {
   email: string
   password: string
-}
-
-interface AccessTokenRequest extends Credentials {
-  grant_type: string
-  client_id: string
-  client_secret: string
-}
-
-interface AccessTokenResponse {
-  access_token: string
-  expires_in: string
 }
