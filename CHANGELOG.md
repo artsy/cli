@@ -1,3 +1,15 @@
+# v1.0.1 (Fri Feb 11 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update README.md ([@dblandin](https://github.com/dblandin))
+
+#### Authors: 1
+
+- Devon Blandin ([@dblandin](https://github.com/dblandin))
+
+---
+
 # v1.0.0 (Fri Feb 11 2022)
 
 #### 💥  Breaking Change
