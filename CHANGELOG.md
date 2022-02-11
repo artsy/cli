@@ -1,3 +1,15 @@
+# v1.0.0 (Fri Feb 11 2022)
+
+#### 💥  Breaking Change
+
+- feat: Use more standard config approach [#289](https://github.com/artsy/cli/pull/289) ([@jonallured](https://github.com/jonallured))
+
+#### Authors: 1
+
+- Jon Allured ([@jonallured](https://github.com/jonallured))
+
+---
+
 # v0.26.1 (Thu Dec 16 2021)
 
 #### 🐛  Bug Fix
