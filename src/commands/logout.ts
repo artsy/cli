@@ -1,7 +1,7 @@
 import { Command } from "@oclif/command"
 import fetch from "node-fetch"
 import { Config } from "../config"
-import { Gravity } from "../utils/gravity"
+import { Gravity } from "../clients/gravity"
 
 export default class Logout extends Command {
   static description = "Expire your local auth token."
