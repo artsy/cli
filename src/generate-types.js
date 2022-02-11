@@ -1,6 +1,8 @@
 const fetch = require("cross-fetch")
 const fs = require("fs")
 
+import { Config } from "./config"
+
 require("dotenv").config()
 
 fetch(`https://api.github.com/graphql`, {
@@ -23,7 +25,7 @@ fetch(`https://api.github.com/graphql`, {
     `,
   }),
   headers: {
-    authorization: `token ${process.env.GITHUB_TOKEN}`,
+    authorization: `token ${Config.githubToken()}`,
   },
 })
   .then(result => {

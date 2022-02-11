@@ -2,14 +2,6 @@ import { expect, test } from "@oclif/test"
 import { OpenRequestsForCommentsFixture } from "../../fixtures/open-rfcs"
 
 describe("scheduled:rfcs", () => {
-  beforeEach(() => {
-    process.env.GITHUB_TOKEN = "test"
-  })
-
-  afterEach(() => {
-    delete process.env.GITHUB_TOKEN
-  })
-
   test
     .nock("https://api.github.com", api =>
       api.post("/graphql").reply(200, OpenRequestsForCommentsFixture)

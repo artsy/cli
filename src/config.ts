@@ -23,6 +23,10 @@ export const Config = {
       return {}
     }
   },
+  githubToken: (): string => {
+    const json = Config.readConfig()
+    return json.clients?.github?.token
+  },
   gravityId: (): string => {
     const json = Config.readConfig()
     return json.clients.gravity.clientId
