@@ -1,7 +1,7 @@
 # Artsy CLI [![CircleCI][badge]][circleci]
 
-[badge]: https://circleci.com/gh/artsy/artsy-cli.svg?style=svg
-[circleci]: https://circleci.com/gh/artsy/artsy-cli
+[badge]: https://circleci.com/gh/artsy/cli/tree/main.svg?style=svg
+[circleci]: https://circleci.com/gh/artsy/cli/tree/main
 
 ## Install
 
