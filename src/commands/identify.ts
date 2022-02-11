@@ -1,7 +1,7 @@
 import Command from "../base"
 import { Config } from "../config"
 
-import Gravity from "../utils/gravity"
+import { Gravity } from "../utils/gravity"
 
 export default class Identify extends Command {
   static description = "Identify a Gravity resource by its BSON ID"

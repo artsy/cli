@@ -2,7 +2,7 @@ import cli from "cli-ux"
 import { parse } from "querystring"
 import Command from "../base"
 import { Config } from "../config"
-import Gravity from "../utils/gravity"
+import { Gravity } from "../utils/gravity"
 
 export default class Login extends Command {
   static description =

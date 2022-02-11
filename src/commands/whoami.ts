@@ -2,7 +2,7 @@ import { Command } from "@oclif/command"
 import cli from "cli-ux"
 import fetch from "node-fetch"
 import { Config } from "../config"
-import Gravity from "../utils/gravity"
+import { Gravity } from "../utils/gravity"
 
 export default class WhoAmI extends Command {
   static description = "Who are you?"
