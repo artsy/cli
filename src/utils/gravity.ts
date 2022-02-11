@@ -63,8 +63,3 @@ class Gravity {
 }
 
 export default Gravity
-
-export interface Credentials {
-  email: string
-  password: string
-}
