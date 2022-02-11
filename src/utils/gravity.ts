@@ -19,28 +19,40 @@ class Gravity {
     callback: `http://127.0.0.1:${Gravity.REDIRECT_PORT}`,
   }
 
-  async getAccessToken(credentials: Credentials) {
-    const gravityUrl = Gravity.urls.access_token
-    const body: AccessTokenRequest = {
-      client_id: process.env.CLIENT_ID!,
-      client_secret: process.env.CLIENT_SECRET!,
-      grant_type: "credentials",
-      ...credentials,
-    }
+  static authUrl() {
+    const params = new URLSearchParams()
 
-    const response = await fetch(gravityUrl, {
-      method: "post",
-      body: JSON.stringify(body),
-      headers: { "Content-Type": "application/json" },
+    params.append("client_id", Config.gravityId())
+    params.append("redirect_uri", Gravity.urls.callback)
+    params.append("response_type", "code")
+
+    const url = `${Gravity.urls.auth}?${params.toString()}`
+    return url
+  }
+
+  static async getAccessToken(code: string) {
+    const params = new URLSearchParams()
+    params.append("code", code.toString())
+    params.append("client_id", Config.gravityId())
+    params.append("client_secret", Config.gravitySecret())
+    params.append("grant_type", "authorization_code")
+    params.append("scope", "offline_access")
+
+    const response = await fetch(Gravity.urls.access_token, {
+      method: "POST",
+      body: params,
     })
 
-    const json = await response.json()
+    if (!response.ok)
+      throw new Error(`${response.status} ${response.statusText}`)
 
-    return json as AccessTokenResponse
+    const data = await response.json()
+
+    return data
   }
 
   async get(endpoint: string) {
-    const token: string = Config.readToken()
+    const token: string = Config.gravityToken()
 
     const gravityUrl: string = Gravity.url(`api/v1/${endpoint}`)
     const headers = { "X-Access-Token": token }
@@ -55,15 +67,4 @@ export default Gravity
 export interface Credentials {
   email: string
   password: string
-}
-
-interface AccessTokenRequest extends Credentials {
-  grant_type: string
-  client_id: string
-  client_secret: string
-}
-
-interface AccessTokenResponse {
-  access_token: string
-  expires_in: string
 }

@@ -1,5 +1,4 @@
 import cli from "cli-ux"
-import fetch from "node-fetch"
 import { parse } from "querystring"
 import Command from "../base"
 import { Config } from "../config"
@@ -18,43 +17,33 @@ export default class Login extends Command {
 
     cli.action.start("Waiting for response")
 
-    const server = require("http")
-      .createServer(async (req: any, res: any) => {
-        const url = new URL(req.url, Gravity.urls.callback)
-        const query = parse(url.search.substr(1))
+    const server = require("http").createServer()
 
-        res.writeHead(200, { "Content-Type": "text/plain" })
-        res.end("Thank you. You may return to the Artsy CLI now.")
+    const requestHandler = async (req: any, res: any) => {
+      const url = new URL(req.url, Gravity.urls.callback)
+      const query = parse(url.search.substr(1))
 
-        req.connection.end()
-        req.connection.destroy()
-        server.close()
+      res.writeHead(200, { "Content-Type": "text/plain" })
+      res.end("Thank you. You may return to the Artsy CLI now.")
 
-        if (query.code) {
-          const params = new URLSearchParams()
-          params.append("code", query.code.toString())
-          params.append("client_id", process.env.CLIENT_ID as string)
-          params.append("client_secret", process.env.CLIENT_SECRET as string)
-          params.append("grant_type", "authorization_code")
-          params.append("scope", "offline_access")
+      req.connection.end()
+      req.connection.destroy()
+      server.close()
 
-          const response = await fetch(Gravity.urls.access_token, {
-            method: "POST",
-            body: params,
-          })
-
-          if (!response.ok)
-            this.error(`${response.status} ${response.statusText}`)
-
-          const data = await response.json()
-          Config.writeToken(data.access_token)
-
+      if (query.code) {
+        try {
+          const data = await Gravity.getAccessToken(query.code.toString())
+          Config.updateConfig({ accessToken: data.access_token })
           cli.action.stop("logged in!")
+        } catch (error) {
+          this.error(error)
         }
-      })
-      .listen(Gravity.REDIRECT_PORT)
-    await cli.open(
-      `${Gravity.urls.auth}?client_id=${process.env.CLIENT_ID}&redirect_uri=http://127.0.0.1:${Gravity.REDIRECT_PORT}&response_type=code`
-    )
+      }
+    }
+
+    server.on("request", requestHandler)
+    server.listen(Gravity.REDIRECT_PORT)
+
+    await cli.open(Gravity.authUrl())
   }
 }
