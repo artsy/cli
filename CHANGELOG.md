@@ -1,3 +1,21 @@
+# v1.1.0 (Mon Feb 14 2022)
+
+#### 🚀  Enhancement
+
+- feat: Consolidate more client config [#291](https://github.com/artsy/cli/pull/291) ([@jonallured](https://github.com/jonallured))
+
+#### 🏠  Internal
+
+- chore(deps): bump node-fetch from 2.6.1 to 2.6.7 [#290](https://github.com/artsy/cli/pull/290) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump follow-redirects from 1.14.4 to 1.14.8 [#292](https://github.com/artsy/cli/pull/292) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Jon Allured ([@jonallured](https://github.com/jonallured))
+
+---
+
 # v1.0.1 (Fri Feb 11 2022)
 
 #### ⚠️ Pushed to `main`
