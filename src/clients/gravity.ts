@@ -1,7 +1,7 @@
 import fetch from "node-fetch"
 import { Config } from "../config"
 
-class Gravity {
+export class Gravity {
   static BASE_URL = `https://api.artsy.net/`
   static REDIRECT_PORT = 27879
 
@@ -60,11 +60,4 @@ class Gravity {
 
     return response
   }
-}
-
-export default Gravity
-
-export interface Credentials {
-  email: string
-  password: string
 }

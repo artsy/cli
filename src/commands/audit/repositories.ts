@@ -6,7 +6,7 @@ import {
   ArtsyRepositoriesQuery,
 } from "../../__generated__/graphql"
 import Command from "../../base"
-import { githubClient } from "../../utils/github"
+import { githubClient } from "../../clients/github"
 
 const GITHUB_SEARCH_PARSER_OPTIONS = {
   keywords: [

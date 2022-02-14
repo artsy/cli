@@ -8,12 +8,12 @@ import { HttpLink } from "apollo-link-http"
 
 import "cross-fetch/polyfill"
 
+import { Config } from "../config"
+
 const { schema } = require("@octokit/graphql-schema")
 
 export function githubClient(): ApolloClient<NormalizedCacheObject> {
-  if (!process.env.GITHUB_TOKEN) {
-    throw new Error("You need to provide a `GITHUB_TOKEN` env variable.")
-  }
+  const githubToken = Config.githubToken()
 
   const fragmentMatcher = new IntrospectionFragmentMatcher({
     introspectionQueryResultData: schema.json,
@@ -23,7 +23,7 @@ export function githubClient(): ApolloClient<NormalizedCacheObject> {
     link: new HttpLink({
       uri: "https://api.github.com/graphql",
       headers: {
-        authorization: `token ${process.env.GITHUB_TOKEN}`,
+        authorization: `token ${githubToken}`,
       },
     }),
     cache: new InMemoryCache({ fragmentMatcher }),

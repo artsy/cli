@@ -3,7 +3,7 @@ import {
   OpenRequestsForCommentsQuery,
 } from "../../__generated__/graphql"
 import Command from "../../base"
-import { githubClient } from "../../utils/github"
+import { githubClient } from "../../clients/github"
 
 export default class RFCs extends Command {
   static description = "lists open RFCs"
