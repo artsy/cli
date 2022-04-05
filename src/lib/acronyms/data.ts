@@ -58,7 +58,7 @@ export const acronymMap: AcronymMap = {
   LTM: "Last Twelve Months",
   LTV: "Lifetime value",
   MAU: "Monthly Active Users",
-  MOOAEA, "Make Offer on All Eligible Artworks",
+  MOOAEA: "Make Offer on All Eligible Artworks",
   MSO: "Marketplace Strategy and Operations",
   MPC: "Monthly Partner Communication (Outdated Term; now Director’s Digest)",
   MQL: "Marketing Qualified Lead",
