@@ -1,3 +1,20 @@
+# v1.2.0 (Tue Apr 05 2022)
+
+#### 🚀  Enhancement
+
+- Adding MOOAEA, CBN, CTA acronyms [#295](https://github.com/artsy/cli/pull/295) ([@chr-tatu](https://github.com/chr-tatu))
+
+#### 🏠  Internal
+
+- chore(deps): bump url-parse from 1.5.3 to 1.5.7 [#293](https://github.com/artsy/cli/pull/293) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Christian Tatu ([@chr-tatu](https://github.com/chr-tatu))
+
+---
+
 # v1.1.0 (Mon Feb 14 2022)
 
 #### 🚀  Enhancement
