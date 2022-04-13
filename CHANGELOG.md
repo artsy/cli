@@ -1,3 +1,17 @@
+# v1.3.0 (Wed Apr 13 2022)
+
+#### 🚀  Enhancement
+
+- feat: add a jwt command to decode an access token locally [#296](https://github.com/artsy/cli/pull/296) ([@anandaroop](https://github.com/anandaroop))
+- docs: document the steps to generate a new command [#296](https://github.com/artsy/cli/pull/296) ([@anandaroop](https://github.com/anandaroop))
+- chore: add @oclif/core dep explicitly [#296](https://github.com/artsy/cli/pull/296) ([@anandaroop](https://github.com/anandaroop))
+
+#### Authors: 1
+
+- Anandaroop Roy ([@anandaroop](https://github.com/anandaroop))
+
+---
+
 # v1.2.0 (Tue Apr 05 2022)
 
 #### 🚀  Enhancement
