@@ -30,8 +30,8 @@ export default class FacilitateIncidentReview extends Command {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `${mention} you have been selected to facilitate the Incident Review! :tada:
-            Check out the <${FacilitateIncidentReview.playbook}|Incident Review Playbook> for more information and the next steps.`,
+            text: `${mention} you have been selected to facilitate the upcoming Incident Review meeting! :tada:
+Check out the <${FacilitateIncidentReview.playbook}|Incident Review Playbook> for more information and the next steps.`,
           }
         }
       ]
