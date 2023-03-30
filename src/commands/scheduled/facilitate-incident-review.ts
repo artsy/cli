@@ -1,6 +1,5 @@
 import { flags } from "@oclif/command"
 import { Opsgenie } from "../../utils/opsgenie"
-
 import Command from "../../base"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
@@ -10,7 +9,10 @@ export default class FacilitateIncidentReview extends Command {
 
   static flags = {
     ...Command.flags,
-    date: flags.string({ description: "target date in ISO format" }),
+    date: flags.string({
+      description: "target date in ISO format",
+      default: wednesday11AM()
+    }),
     schedule: flags.string({
       description: "schedule name",
       default: "Engineering On Call",
@@ -58,4 +60,11 @@ Check out the <${FacilitateIncidentReview.playbook}|Incident Review Playbook> fo
 
     return Promise.all(usernames.map(username => opsgenie.user(username)))
   }
+}
+
+function wednesday11AM () {
+  const wednesday = new Date()
+  wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3)
+  wednesday.setHours(11, 0, 0, 0)
+  return wednesday.toISOString()
 }
