@@ -1,7 +1,7 @@
 import { flags } from "@oclif/command"
-import { Opsgenie } from "../../utils/opsgenie"
 import Command from "../../base"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
+import { fetchParticipants } from "../../utils/fetchParticipants"
 
 export default class FacilitateIncidentReview extends Command {
   static description = "Choose a random on-call participant to facilitate the Incident Review"
@@ -20,7 +20,8 @@ export default class FacilitateIncidentReview extends Command {
   }
 
   async run() {
-    const participants = await this.fetchParticipants()
+    const { flags } = this.parse(FacilitateIncidentReview)
+    const participants = await fetchParticipants(flags)
 
     // at random select a participant and return their email (username)
     const email = (participants[Math.floor(Math.random() * participants.length)]).data.username
@@ -40,25 +41,6 @@ Check out the <${FacilitateIncidentReview.playbook}|Incident Review Playbook> fo
     })
 
     this.log(payload)
-  }
-
-  async fetchParticipants() {
-    const { flags } = this.parse(FacilitateIncidentReview)
-
-    const targetDate = flags.date ? new Date(flags.date) : new Date()
-
-    const opsgenie = new Opsgenie()
-    const onCalls = await opsgenie.scheduleOnCalls(flags.schedule, targetDate)
-
-    if (!onCalls.data) {
-      this.error(`Whoops! I didn't find the schedule \`${flags.schedule}\`.`)
-    }
-
-    const usernames = onCalls.data.onCallParticipants.map(participant => {
-      return participant.name
-    })
-
-    return Promise.all(usernames.map(username => opsgenie.user(username)))
   }
 }
 
