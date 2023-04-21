@@ -61,20 +61,23 @@ Check out the <${FacilitateIncidentReview.urls.incidentReviewSchedule}|Incident 
 }
 
 // Given a schedule name and a target date, return the list of on-call participants
-async function onCallParticipantEmails(schedule: string, date: string) : Promise<string[]> {
+async function onCallParticipantEmails(
+  schedule: string,
+  date: string
+): Promise<string[]> {
   const opsgenie = new Opsgenie()
   const targetDate = date ? new Date(date) : new Date()
   const onCalls = await opsgenie.scheduleOnCalls(schedule, targetDate)
 
   if (!onCalls.data) {
-    Command.prototype.error(
-      `Whoops! '${schedule}' is not a valid schedule.`
-    )
+    Command.prototype.error(`Whoops! '${schedule}' is not a valid schedule.`)
   }
 
-  return onCalls.data.onCallParticipants.map((participant: OpsGenieOnCallParticipant) => {
-    return participant.name
-  })
+  return onCalls.data.onCallParticipants.map(
+    (participant: OpsGenieOnCallParticipant) => {
+      return participant.name
+    }
+  )
 }
 
 // By default we want to select on-call participants starting Wednesday at 11AM ET
