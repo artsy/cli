@@ -1,6 +1,6 @@
 import { flags } from "@oclif/command"
 import Command from "../../base"
-import { fetchParticipants } from "../../utils/fetch-participants"
+import { Opsgenie } from "../../utils/opsgenie"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
 export default class FacilitateIncidentReview extends Command {
@@ -9,7 +9,7 @@ export default class FacilitateIncidentReview extends Command {
   static urls: { [key: string]: string } = {
     incidentReviewSchedule:
       "https://www.notion.so/artsy/Incident-Reviews-725052225efc49e78532b13e166ba3c7",
-    oncallEngineeringSchedule:
+    onCallEngineeringSchedule:
       "https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c/main",
   }
 
@@ -23,24 +23,22 @@ export default class FacilitateIncidentReview extends Command {
       description: "schedule name",
       default: "Engineering On Call",
     }),
-    participant: flags.string({
-      description: "participant email",
+    facilitatorEmail: flags.string({
+      description: "facilitator email",
       default: "",
     }),
   }
 
   async run() {
     const { flags } = this.parse(FacilitateIncidentReview)
-    let email = flags.participant
-    let participants = []
+    let email = flags.facilitatorEmail
+    let emails = [] as string[]
 
-    // if no participant is passed in, fetch participants based on schedule and date
     if (!email) {
-      participants = await fetchParticipants(flags)
-      // at random select a participant and return their email (username)
-      email =
-        participants[Math.floor(Math.random() * participants.length)].data
-          .username
+      emails = await onCallParticipantEmails(flags.schedule, flags.date)
+
+      // at random select an email (participant) to facilitate the incident review
+      email = emails[Math.floor(Math.random() * emails.length)]
     }
 
     const mention = (await convertEmailsToSlackMentions([email])).pop()
@@ -51,7 +49,7 @@ export default class FacilitateIncidentReview extends Command {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `${mention} :wave:, based on the <${FacilitateIncidentReview.urls.oncallEngineeringSchedule}|on-call schedule> you have been selected to _prepare for and facilitate_ the Incident Review meeting tomorrow at 11AM ET! :tada:
+            text: `${mention} :wave:, based on the <${FacilitateIncidentReview.urls.onCallEngineeringSchedule}|on-call schedule> you have been selected to _prepare for and facilitate_ the Incident Review meeting tomorrow at 11AM ET! :tada:
 Check out the <${FacilitateIncidentReview.urls.incidentReviewSchedule}|Incident Review Schedule> for more information and the next steps.`,
           },
         },
@@ -62,6 +60,24 @@ Check out the <${FacilitateIncidentReview.urls.incidentReviewSchedule}|Incident 
   }
 }
 
+// Given a schedule name and a target date, return the list of on-call participants
+async function onCallParticipantEmails(schedule: string, date: string) : Promise<string[]> {
+  const opsgenie = new Opsgenie()
+  const targetDate = date ? new Date(date) : new Date()
+  const onCalls = await opsgenie.scheduleOnCalls(schedule, targetDate)
+
+  if (!onCalls.data) {
+    Command.prototype.error(
+      `Whoops! '${schedule}' is not a valid schedule.`
+    )
+  }
+
+  return onCalls.data.onCallParticipants.map((participant: OpsGenieOnCallParticipant) => {
+    return participant.name
+  })
+}
+
+// By default we want to select on-call participants starting Wednesday at 11AM ET
 function wednesday11AM() {
   const wednesday = new Date()
   wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3)
