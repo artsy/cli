@@ -37,6 +37,12 @@ describe("scheduled:facilitate-incident-review with facilitatorEmail set", () =>
 })
 
 describe("scheduled:facilitate-incident-review", () => {
+  beforeEach(() => {
+    process.env.OPSGENIE_API_KEY = "test"
+  })
+  afterEach(() => {
+    delete process.env.OPSGENIE_API_KEY
+  })
   test
     .nock("https://api.opsgenie.com", api =>
       api.get(/\/v2\/schedules\/.*\/on-calls.*/).reply(200, {

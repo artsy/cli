@@ -60,7 +60,6 @@ Check out the <${FacilitateIncidentReview.urls.incidentReviewSchedule}|Incident 
   }
 }
 
-// Given a schedule name and a target date, return the list of on-call participants
 async function onCallParticipantEmails(
   schedule: string,
   date: string
