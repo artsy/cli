@@ -25,7 +25,7 @@ export default class FacilitateIncidentReview extends Command {
     }),
     participant: flags.string({
       description: "participant email",
-      default: ""
+      default: "",
     }),
   }
 
@@ -38,7 +38,9 @@ export default class FacilitateIncidentReview extends Command {
     if (!email) {
       participants = await fetchParticipants(flags)
       // at random select a participant and return their email (username)
-      email = participants[Math.floor(Math.random() * participants.length)].data.username
+      email =
+        participants[Math.floor(Math.random() * participants.length)].data
+          .username
     }
 
     const mention = (await convertEmailsToSlackMentions([email])).pop()
