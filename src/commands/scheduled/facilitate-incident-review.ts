@@ -23,16 +23,24 @@ export default class FacilitateIncidentReview extends Command {
       description: "schedule name",
       default: "Engineering On Call",
     }),
+    participant: flags.string({
+      description: "participant email",
+      default: ""
+    }),
   }
 
   async run() {
     const { flags } = this.parse(FacilitateIncidentReview)
-    const participants = await fetchParticipants(flags)
+    let email = flags.participant
+    let participants = []
 
-    // at random select a participant and return their email (username)
-    const email =
-      participants[Math.floor(Math.random() * participants.length)].data
-        .username
+    // if no participant is passed in, fetch participants based on schedule and date
+    if (!email) {
+      participants = await fetchParticipants(flags)
+      // at random select a participant and return their email (username)
+      email = participants[Math.floor(Math.random() * participants.length)].data.username
+    }
+
     const mention = (await convertEmailsToSlackMentions([email])).pop()
 
     const payload = JSON.stringify({
