@@ -25,13 +25,12 @@ export default class FacilitateIncidentReview extends Command {
     }),
     facilitatorEmail: flags.string({
       description: "facilitator email",
-      default: "",
     }),
   }
 
   async run() {
     const { flags } = this.parse(FacilitateIncidentReview)
-    let email = flags.facilitatorEmail
+    let email = flags.facilitatorEmail || ""
     let emails = [] as string[]
 
     if (!email) {
