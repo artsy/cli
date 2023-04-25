@@ -1,3 +1,28 @@
+# v1.4.0 (Tue Apr 25 2023)
+
+#### 🚀  Enhancement
+
+- feat: FacilitateIncidentReview scheduled command [#302](https://github.com/artsy/cli/pull/302) ([@ovasdi](https://github.com/ovasdi))
+
+#### 🏠  Internal
+
+- chore(deps): bump json5 from 2.2.0 to 2.2.3 [#299](https://github.com/artsy/cli/pull/299) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump ua-parser-js from 0.7.24 to 0.7.33 [#300](https://github.com/artsy/cli/pull/300) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump http-cache-semantics from 4.1.0 to 4.1.1 [#301](https://github.com/artsy/cli/pull/301) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump ejs from 3.1.6 to 3.1.7 [#298](https://github.com/artsy/cli/pull/298) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump cross-fetch from 3.1.4 to 3.1.5 [#297](https://github.com/artsy/cli/pull/297) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### 🔩 Dependency Updates
+
+- chore(deps): bump url-parse from 1.5.7 to 1.5.10 [#294](https://github.com/artsy/cli/pull/294) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.3.0 (Wed Apr 13 2022)
 
 #### 🚀  Enhancement
