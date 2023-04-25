@@ -9,7 +9,7 @@ describe("scheduled:facilitate-incident-review", () => {
   })
   test
     .nock("https://slack.com/api", api =>
-      api.post("/users.lookupByEmail", /email=neo%40matrix.com/).reply(200, {
+      api.post("/users.lookupByEmail").reply(200, {
         ok: true,
         user: {
           id: "neo",
@@ -45,12 +45,15 @@ describe("scheduled:facilitate-incident-review", () => {
     .nock("https://api.opsgenie.com", api =>
       api.get(/\/v2\/schedules\/.*\/on-calls.*/).reply(200, {
         data: {
-          onCallParticipants: [{ name: "neo@matrix.com" }],
+          onCallParticipants: [
+            { name: "neo@matrix.com" },
+            { name: "trinity@matrix.com" },
+          ],
         },
       })
     )
     .nock("https://slack.com/api", api =>
-      api.post("/users.lookupByEmail", /email=neo%40matrix.com/).reply(200, {
+      api.post("/users.lookupByEmail").reply(200, {
         ok: true,
         user: {
           id: "neo",
