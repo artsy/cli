@@ -17,7 +17,7 @@ export default class FacilitateIncidentReview extends Command {
     ...Command.flags,
     date: flags.string({
       description: "target date in ISO format",
-      default: wednesday11AM(),
+      default: wednesdayShift(),
     }),
     schedule: flags.string({
       description: "schedule name",
@@ -78,10 +78,12 @@ async function onCallParticipantEmails(
   )
 }
 
-// By default we want to select on-call participants starting Wednesday at 11AM ET
-function wednesday11AM() {
-  const wednesday = new Date()
-  wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3)
-  wednesday.setHours(11, 0, 0, 0)
+// By default we want to select on-call participants after Wednesday at 11AM ET
+// because that is when the on-call schedule is updated.
+// Setting the default to Wednesday at 2PM ET to avoid issues when daylight savings time shifts.
+function wednesdayShift() {
+  const wednesday = new Date() // this returns the current date and time in UTC
+  wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3) // 3 = Wednesday
+  wednesday.setHours(18, 0, 0, 0) // 18 in UTC = 2PM ET (when daylight savings time is in effect)
   return wednesday.toISOString()
 }
