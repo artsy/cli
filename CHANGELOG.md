@@ -1,3 +1,15 @@
+# v1.5.0 (Wed Apr 26 2023)
+
+#### 🚀  Enhancement
+
+- refactor: FacilitateIncidentReview date helper [#303](https://github.com/artsy/cli/pull/303) ([@ovasdi](https://github.com/ovasdi))
+
+#### Authors: 1
+
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.4.0 (Tue Apr 25 2023)
 
 #### 🚀  Enhancement
