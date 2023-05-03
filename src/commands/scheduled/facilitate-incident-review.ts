@@ -3,6 +3,18 @@ import Command from "../../base"
 import { Opsgenie } from "../../utils/opsgenie"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
+type Dates = {
+  baseDate: string
+  exceptions: string[]
+}
+
+const useDatesVarDescription = `
+Use dates from DATES env var.
+Dates env var is a JSON string with the following format: { baseDate: string, exceptions: string[] }
+Each date should be in the following format: YYYY-MM-DD
+Example: { "baseDate": "2023-04-27", "exceptions": ["2023-05-03", "2023-05-31"] }
+`.trim()
+
 export default class FacilitateIncidentReview extends Command {
   static description =
     "Choose a random on-call participant to facilitate the Incident Review"
@@ -26,10 +38,35 @@ export default class FacilitateIncidentReview extends Command {
     facilitatorEmail: flags.string({
       description: "facilitator email",
     }),
+    useDatesVar: flags.boolean({
+      description: useDatesVarDescription,
+      default: false,
+    }),
   }
 
   async run() {
     const { flags } = this.parse(FacilitateIncidentReview)
+
+    if (flags.useDatesVar) {
+      if (!process.env.DATES) {
+        this.error("DATES env var is not set. Use --help for more info.")
+      } else {
+        let dates: Dates = { baseDate: "", exceptions: [] }
+        try {
+          dates = JSON.parse(process.env.DATES)
+        } catch (error) {
+          this.error(
+            `DATES env var is not a valid JSON string. Use --help for more info.`
+          )
+        }
+
+        if (isOffWeek(dates)) {
+          this.log("Off week")
+          return
+        }
+      }
+    }
+
     let email = flags.facilitatorEmail || ""
     let emails = [] as string[]
 
@@ -86,4 +123,39 @@ function wednesdayShift() {
   wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3) // 3 = Wednesday
   wednesday.setHours(18, 0, 0, 0) // 18 in UTC = 2PM ET (when daylight savings time is in effect)
   return wednesday.toISOString()
+}
+
+// Determine if the current week is an 'off week' for Incident Reviews
+// baseDate: is the starting date used to calculate if the current week is an 'off week'
+//   **Incident Reviews are held every other week
+// exceptions: is an array of dates for which the baseDate based calculation will be ignored
+function isOffWeek(dates: Dates) {
+  if (!dates.baseDate || !dates.exceptions) {
+    throw new Error("dates object is not valid")
+  } else if (!Array.isArray(dates.exceptions)) {
+    throw new Error("exceptions is not an array")
+  } else if (!Date.parse(dates.baseDate)) {
+    throw new Error("baseDate is not a valid date")
+  }
+
+  dates.exceptions.forEach(date => {
+    if (!Date.parse(date)) {
+      throw new Error("exceptions contains a date that is not valid")
+    }
+  })
+
+  const today = new Date().toISOString()
+
+  // calculate the number of weeks since the baseDate
+  // if val is less than 1.5, it is an 'off week'
+  const val =
+    ((Date.parse(today) - Date.parse(dates.baseDate)) /
+      (1000 * 60 * 60 * 24 * 7)) %
+    2
+
+  // if the today is not in the exceptions array and val is less than 1.5 its an 'off week', return true
+  if (!dates.exceptions.includes(today.split("T")[0]) && val < 1.5) {
+    return true
+  }
+  return false
 }
