@@ -3,7 +3,7 @@ import Command from "../../base"
 import { Opsgenie } from "../../utils/opsgenie"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
-type Dates = {
+interface Dates {
   baseDate: string
   exceptions: string[]
 }
@@ -55,9 +55,7 @@ export default class FacilitateIncidentReview extends Command {
         try {
           dates = JSON.parse(process.env.DATES)
         } catch (error) {
-          this.error(
-            `DATES env var is not a valid JSON string. Use --help for more info.`
-          )
+          this.error(`${error}. Use --help for more info.`)
         }
 
         if (isOffWeek(dates)) {
@@ -157,5 +155,6 @@ function isOffWeek(dates: Dates) {
   if (!dates.exceptions.includes(today.split("T")[0]) && val < 1.5) {
     return true
   }
+
   return false
 }
