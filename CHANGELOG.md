@@ -1,3 +1,15 @@
+# v1.7.0 (Thu May 04 2023)
+
+#### 🚀  Enhancement
+
+- feat: FacilitateIncidentReview supports off week calculation [#304](https://github.com/artsy/cli/pull/304) ([@ovasdi](https://github.com/ovasdi))
+
+#### Authors: 1
+
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.6.0 (Thu May 04 2023)
 
 #### 🚀  Enhancement
