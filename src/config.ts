@@ -29,7 +29,9 @@ export const Config = {
   },
   gravityId: (): string => {
     const json = Config.readConfig()
-    return json.clients?.gravity?.clientId || process.env.GRAVITY_CLIENT_ID || ""
+    return (
+      json.clients?.gravity?.clientId || process.env.GRAVITY_CLIENT_ID || ""
+    )
   },
   gravitySecret: (): string => {
     const json = Config.readConfig()
