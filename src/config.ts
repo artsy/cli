@@ -47,6 +47,12 @@ export const Config = {
     const json = Config.readConfig()
     return json.clients.opsgenie.apiKey || process.env.OPSGENIE_API_KEY || ""
   },
+  slackWebApiToken: (): string => {
+    const json = Config.readConfig()
+    return (
+      json.clients.slack.webApiToken || process.env.SLACK_WEB_API_TOKEN || ""
+    )
+  },
   updateConfig: (newOptions: object): void => {
     const existingOptions = Config.readConfig()
     const options = {
