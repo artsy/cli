@@ -1,7 +1,15 @@
 import { WebClient } from "@slack/client"
+import { Config } from "../config"
 
 const convertEmailsToSlackMentions = async (emails: string[]) => {
-  const slackToken = process.env.SLACK_WEB_API_TOKEN
+  const slackToken = Config.slackWebApiToken()
+
+  if (!slackToken) {
+    throw new Error(
+      "A Slack web api token was not found in the environment or config file."
+    )
+  }
+
   const web = new WebClient(slackToken)
   const users = await Promise.all(
     emails.map(email => web.users.lookupByEmail({ email }))
