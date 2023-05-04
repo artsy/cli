@@ -25,19 +25,23 @@ export const Config = {
   },
   githubToken: (): string => {
     const json = Config.readConfig()
-    return json.clients?.github?.token
+    return json.clients?.github?.token || process.env.GITHUB_TOKEN || ""
   },
   gravityId: (): string => {
     const json = Config.readConfig()
-    return json.clients.gravity.clientId
+    return json.clients.gravity.clientId || process.env.GRAVITY_CLIENT_ID || ""
   },
   gravitySecret: (): string => {
     const json = Config.readConfig()
-    return json.clients.gravity.clientSecret
+    return (
+      json.clients.gravity.clientSecret ||
+      process.env.GRAVITY_CLIENT_SECRET ||
+      ""
+    )
   },
   gravityToken: (): string => {
     const json = Config.readConfig()
-    return json.accessToken
+    return json.accessToken || process.env.GRAVITY_ACCESS_TOKEN || ""
   },
   updateConfig: (newOptions: object): void => {
     const existingOptions = Config.readConfig()
