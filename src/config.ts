@@ -43,6 +43,10 @@ export const Config = {
     const json = Config.readConfig()
     return json.accessToken || process.env.GRAVITY_ACCESS_TOKEN || ""
   },
+  opsGenieApiKey: (): string => {
+    const json = Config.readConfig()
+    return json.clients.opsgenie.apiKey || process.env.OPSGENIE_API_KEY || ""
+  },
   updateConfig: (newOptions: object): void => {
     const existingOptions = Config.readConfig()
     const options = {

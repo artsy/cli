@@ -1,15 +1,16 @@
 import fetch from "node-fetch"
 import * as querystring from "querystring"
+import { Config } from "../config"
 
 export class Opsgenie {
   apiKey: string
 
   constructor() {
-    if (!process.env.OPSGENIE_API_KEY) {
-      throw new Error("OPSGENIE_API_KEY env var required")
-    }
+    this.apiKey = Config.opsGenieApiKey()
 
-    this.apiKey = process.env.OPSGENIE_API_KEY
+    if (!this.apiKey) {
+      throw new Error("An Opsgenie api key was not found in the environment or config file.")
+    }
   }
 
   team(teamName: string): Promise<OpsGenieTeamResponse> {
