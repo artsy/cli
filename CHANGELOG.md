@@ -1,3 +1,15 @@
+# v1.6.0 (Thu May 04 2023)
+
+#### 🚀  Enhancement
+
+- refactor: add fallback to reading from env when loading config [#305](https://github.com/artsy/cli/pull/305) ([@ovasdi](https://github.com/ovasdi))
+
+#### Authors: 1
+
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.5.0 (Wed Apr 26 2023)
 
 #### 🚀  Enhancement
