@@ -29,12 +29,12 @@ export const Config = {
   },
   gravityId: (): string => {
     const json = Config.readConfig()
-    return json.clients.gravity.clientId || process.env.GRAVITY_CLIENT_ID || ""
+    return json.clients?.gravity?.clientId || process.env.GRAVITY_CLIENT_ID || ""
   },
   gravitySecret: (): string => {
     const json = Config.readConfig()
     return (
-      json.clients.gravity.clientSecret ||
+      json.clients?.gravity?.clientSecret ||
       process.env.GRAVITY_CLIENT_SECRET ||
       ""
     )
@@ -45,12 +45,12 @@ export const Config = {
   },
   opsGenieApiKey: (): string => {
     const json = Config.readConfig()
-    return json.clients.opsgenie.apiKey || process.env.OPSGENIE_API_KEY || ""
+    return json.clients?.opsgenie?.apiKey || process.env.OPSGENIE_API_KEY || ""
   },
   slackWebApiToken: (): string => {
     const json = Config.readConfig()
     return (
-      json.clients.slack.webApiToken || process.env.SLACK_WEB_API_TOKEN || ""
+      json.clients?.slack?.webApiToken || process.env.SLACK_WEB_API_TOKEN || ""
     )
   },
   updateConfig: (newOptions: object): void => {
