@@ -9,7 +9,9 @@ export class Opsgenie {
     this.apiKey = Config.opsGenieApiKey()
 
     if (!this.apiKey) {
-      throw new Error("An Opsgenie api key was not found in the environment or config file.")
+      throw new Error(
+        "An Opsgenie api key was not found in the environment or config file."
+      )
     }
   }
 
