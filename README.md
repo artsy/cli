@@ -17,7 +17,7 @@ In order to access shared config, run these commands:
 
 ```
 $ mkdir -p ~/.config/artsy
-$ aws s3 cp s3://artsy-citadel/dev/artsy-cli-config.json ~/.config/artsy/config.json
+$ aws s3 cp s3://artsy-citadel/cli/config.json ~/.config/artsy/
 ```
 
 ## Docs
