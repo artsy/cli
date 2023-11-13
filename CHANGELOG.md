@@ -1,3 +1,15 @@
+# v1.8.0 (Mon Nov 13 2023)
+
+#### 🚀  Enhancement
+
+- chore: simplify S3 path for shared configuration [#309](https://github.com/artsy/cli/pull/309) ([@joeyAghion](https://github.com/joeyAghion))
+
+#### Authors: 1
+
+- Joey Aghion ([@joeyAghion](https://github.com/joeyAghion))
+
+---
+
 # v1.7.0 (Thu May 04 2023)
 
 #### 🚀  Enhancement
