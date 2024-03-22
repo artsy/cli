@@ -5,7 +5,7 @@ export class Gravity {
   static BASE_URL_PRODUCTION = `https://api.artsy.net/`
   static BASE_URL_STAGING = `https://stagingapi.artsy.net/`
 
-  static REDIRECT_PORT = 27879;
+  static REDIRECT_PORT = 27879
 
   static baseUrl(isStaging = false) {
     return isStaging ? Gravity.BASE_URL_STAGING : Gravity.BASE_URL_PRODUCTION
@@ -22,6 +22,7 @@ export class Gravity {
       access_token: Gravity.url("oauth2/access_token", isStaging),
       access_tokens: Gravity.url("api/tokens/access_token", isStaging),
       user_details: Gravity.url("api/current_user", isStaging),
+      // tslint:disable-next-line:no-http-string
       callback: `http://127.0.0.1:${Gravity.REDIRECT_PORT}`,
     }
   }

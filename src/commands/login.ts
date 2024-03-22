@@ -1,9 +1,9 @@
+import { flags } from "@oclif/command"
 import cli from "cli-ux"
 import { parse } from "querystring"
 import Command from "../base"
 import { Gravity } from "../clients/gravity"
 import { Config } from "../config"
-import { flags } from "@oclif/command"
 
 export default class Login extends Command {
   static description =
@@ -37,14 +37,17 @@ export default class Login extends Command {
 
       if (query.code) {
         try {
-          const data = await Gravity.getAccessToken(query.code.toString(), isStaging)
+          const data = await Gravity.getAccessToken(
+            query.code.toString(),
+            isStaging
+          )
           if (isStaging) {
             Config.updateConfig({ stagingAccessToken: data.access_token })
-          }  else {
+          } else {
             Config.updateConfig({ accessToken: data.access_token })
           }
           cli.action.stop("logged in!")
-        } catch (error: any) {
+        } catch (error) {
           this.error(error)
         }
       }

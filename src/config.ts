@@ -41,7 +41,7 @@ export const Config = {
       ""
     )
   },
-  gravityToken: (isStaging: boolean = false) => {
+  gravityToken: (isStaging = false) => {
     const json = Config.readConfig()
 
     const stagingTokenKey = "GRAVITY_STAGING_ACCESS_TOKEN";
