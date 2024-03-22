@@ -41,9 +41,17 @@ export const Config = {
       ""
     )
   },
-  gravityToken: (): string => {
+  gravityToken: (isStaging: boolean = false) => {
     const json = Config.readConfig()
-    return json.accessToken || process.env.GRAVITY_ACCESS_TOKEN || ""
+
+    const stagingTokenKey = "GRAVITY_STAGING_ACCESS_TOKEN";
+    const productionTokenKey = "GRAVITY_ACCESS_TOKEN";
+
+    if (isStaging) {
+      return json.stagingAccessToken || process.env[stagingTokenKey] || "";
+    } else {
+      return json.accessToken || process.env[productionTokenKey] || "";
+    }
   },
   opsGenieApiKey: (): string => {
     const json = Config.readConfig()
