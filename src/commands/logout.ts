@@ -1,4 +1,4 @@
-import { Command, flags } from "@oclif/command"
+import { Command } from "@oclif/command"
 import fetch from "node-fetch"
 import { Gravity } from "../clients/gravity"
 import { Config } from "../config"
@@ -37,10 +37,14 @@ export default class Logout extends Command {
     })
 
     if (!response.ok) {
-      this.error(`Failed to log out from ${isStaging ? 'staging' : 'production'} environment: ${response.status} ${response.statusText}`)
+      this.error(
+        `Failed to log out from ${
+          isStaging ? "staging" : "production"
+        } environment: ${response.status} ${response.statusText}`
+      )
     }
 
     const tokenKey = isStaging ? "stagingAccessToken" : "accessToken"
-    Config.updateConfig({ tokenKey : "" })
+    Config.updateConfig({ [tokenKey]: "" })
   }
 }
