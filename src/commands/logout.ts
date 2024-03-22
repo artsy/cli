@@ -4,23 +4,29 @@ import { Gravity } from "../clients/gravity"
 import { Config } from "../config"
 
 export default class Logout extends Command {
-  static description = "Expire your local auth token."
+  static description = "Expire your local auth tokens."
 
   static flags = {
     ...Command.flags,
-    staging: flags.boolean({ char: "s" }),
   }
 
   async run() {
-    const { flags } = this.parse(Logout)
-    const isStaging = flags.staging
+    const prodToken = Config.gravityToken(false)
+    const stagingToken = Config.gravityToken(true)
 
-    const token = Config.gravityToken()
-
-    if (!token) {
-      this.log("Already logged out!")
-      this.exit()
+    if (!prodToken && !stagingToken) {
+      this.log("Already logged out from both environments!")
+      return
     }
+
+    await this.performLogout(prodToken, false)
+    await this.performLogout(stagingToken, true)
+
+    this.log("Logged out from all environments!")
+  }
+
+  async performLogout(token: string, isStaging: boolean) {
+    if (!token) return
 
     const params = new URLSearchParams()
     params.append("access_token", token)
@@ -30,13 +36,11 @@ export default class Logout extends Command {
       body: params,
     })
 
-    if (!response.ok) this.error(`${response.status} ${response.statusText}`)
-
-    if (isStaging) {
-      Config.updateConfig({ stagingAccessToken: "" })
-    } else {
-      Config.updateConfig({ accessToken: "" })
+    if (!response.ok) {
+      this.error(`Failed to log out from ${isStaging ? 'staging' : 'production'} environment: ${response.status} ${response.statusText}`)
     }
-    this.log("Logged out!")
+
+    const tokenKey = isStaging ? "stagingAccessToken" : "accessToken"
+    Config.updateConfig({ tokenKey : "" })
   }
 }
