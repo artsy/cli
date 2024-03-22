@@ -44,13 +44,13 @@ export const Config = {
   gravityToken: (isStaging = false) => {
     const json = Config.readConfig()
 
-    const stagingTokenKey = "GRAVITY_STAGING_ACCESS_TOKEN";
-    const productionTokenKey = "GRAVITY_ACCESS_TOKEN";
+    const stagingTokenKey = "GRAVITY_STAGING_ACCESS_TOKEN"
+    const productionTokenKey = "GRAVITY_ACCESS_TOKEN"
 
     if (isStaging) {
-      return json.stagingAccessToken || process.env[stagingTokenKey] || "";
+      return json.stagingAccessToken || process.env[stagingTokenKey] || ""
     } else {
-      return json.accessToken || process.env[productionTokenKey] || "";
+      return json.accessToken || process.env[productionTokenKey] || ""
     }
   },
   opsGenieApiKey: (): string => {
