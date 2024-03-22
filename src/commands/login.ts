@@ -15,8 +15,8 @@ export default class Login extends Command {
   }
 
   async run() {
-    const { flags } = this.parse(Login);
-    const isStaging = flags.staging;
+    const { flags } = this.parse(Login)
+    const isStaging = flags.staging
 
     await cli.anykey("Ready! Press any key to initiate authorization flow")
 

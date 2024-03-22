@@ -12,7 +12,7 @@ export default class Logout extends Command {
   }
 
   async run() {
-    const { flags } = this.parse(Logout);
+    const { flags } = this.parse(Logout)
     const isStaging = flags.staging
 
     const token = Config.gravityToken()
