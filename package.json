@@ -1,7 +1,7 @@
 {
   "name": "@artsy/cli",
   "description": "The artsy command line tool",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "author": "Jon Allured @jonallured",
   "bin": {
     "artsy": "./bin/run"
