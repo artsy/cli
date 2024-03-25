@@ -8,6 +8,7 @@ workflows:
   default:
     jobs:
       - yarn/update-cache
+      - yarn/type-check
       - yarn/lint
       - yarn/test
       - auto/publish:
@@ -18,5 +19,6 @@ workflows:
               only: main
           requires:
             - yarn/update-cache
+            - yarn/type-check
             - yarn/lint
             - yarn/test

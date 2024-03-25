@@ -18,7 +18,7 @@ export default class WhoAmI extends Command {
     const token = Config.gravityToken()
     if (!token) this.error("You are not logged in. Run `artsy login`.")
 
-    const userResponse = await fetch(Gravity.urls.current_user, {
+    const userResponse = await fetch(Gravity.urls().current_user, {
       headers: { "X-Access-Token": Config.gravityToken() },
     })
 
