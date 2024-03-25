@@ -1,3 +1,16 @@
+# v1.9.0 (Mon Mar 25 2024)
+
+#### 🚀  Enhancement
+
+- fix(build): fix type error, add type check step to ci [#311](https://github.com/artsy/cli/pull/311) ([@brainbicycle](https://github.com/brainbicycle))
+- feat: support staging login and gravity env [#310](https://github.com/artsy/cli/pull/310) ([@brainbicycle](https://github.com/brainbicycle))
+
+#### Authors: 1
+
+- Brian Beckerle ([@brainbicycle](https://github.com/brainbicycle))
+
+---
+
 # v1.8.0 (Mon Nov 13 2023)
 
 #### 🚀  Enhancement
