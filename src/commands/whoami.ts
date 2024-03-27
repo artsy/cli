@@ -1,5 +1,4 @@
-import { Command } from "@oclif/command"
-import { flags } from "@oclif/command"
+import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
 import fetch from "node-fetch"
 import { Gravity } from "../clients/gravity"
