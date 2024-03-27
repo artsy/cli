@@ -1,4 +1,4 @@
-import { Command } from "@oclif/command"
+import { Command, flags } from "@oclif/command"
 import cli from "cli-ux"
 import fetch from "node-fetch"
 import { Gravity } from "../clients/gravity"
@@ -10,16 +10,18 @@ export default class WhoAmI extends Command {
   static flags = {
     ...Command.flags,
     ...cli.table.flags(),
+    staging: flags.boolean({ char: "s" }),
   }
 
   async run() {
     const { flags } = this.parse(WhoAmI)
+    const isStaging = flags.staging
 
-    const token = Config.gravityToken()
+    const token = Config.gravityToken(isStaging)
     if (!token) this.error("You are not logged in. Run `artsy login`.")
 
-    const userResponse = await fetch(Gravity.urls().current_user, {
-      headers: { "X-Access-Token": Config.gravityToken() },
+    const userResponse = await fetch(Gravity.urls(isStaging).current_user, {
+      headers: { "X-Access-Token": Config.gravityToken(isStaging) },
     })
 
     const json = await userResponse.json()
