@@ -1,3 +1,21 @@
+# v1.10.0 (Wed Mar 27 2024)
+
+#### 🚀  Enhancement
+
+- feat: support staging flag in whoami [#313](https://github.com/artsy/cli/pull/313) ([@brainbicycle](https://github.com/brainbicycle))
+
+#### 🏠  Internal
+
+- chore(deps): bump get-func-name from 2.0.0 to 2.0.2 [#308](https://github.com/artsy/cli/pull/308) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- chore(deps): bump semver from 5.7.1 to 5.7.2 [#307](https://github.com/artsy/cli/pull/307) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Brian Beckerle ([@brainbicycle](https://github.com/brainbicycle))
+
+---
+
 # v1.9.0 (Mon Mar 25 2024)
 
 #### 🚀  Enhancement
