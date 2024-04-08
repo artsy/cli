@@ -39,7 +39,9 @@ export default class NextOnCall extends Command {
 
   async nextOnCallEmailsFromOpsGenie() {
     const opsgenie = new Opsgenie()
-    const onCalls = await opsgenie.scheduleNextOnCalls("Sapphire Retro Rotation")
+    const onCalls = await opsgenie.scheduleNextOnCalls(
+      "Sapphire Retro Rotation"
+    )
 
     return onCalls.data.exactNextOnCallRecipients.map((participant: any) => {
       return participant.name

@@ -4,8 +4,8 @@ import { Opsgenie } from "../../utils/opsgenie"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
 export default class NextOnCall extends Command {
-
-  static description = "Remind Sapphire members that are due to run upcoming ceremonies."
+  static description =
+    "Remind Sapphire members that are due to run upcoming ceremonies."
 
   static flags = {
     ...Command.flags,
@@ -34,7 +34,9 @@ export default class NextOnCall extends Command {
 
   async nextOnCallEmailsFromOpsGenie() {
     const opsgenie = new Opsgenie()
-    const onCalls = await opsgenie.scheduleNextOnCalls("Sapphire Weekly Ceremonies Rotation Excluding Retro")
+    const onCalls = await opsgenie.scheduleNextOnCalls(
+      "Sapphire Weekly Ceremonies Rotation Excluding Retro"
+    )
 
     return onCalls.data.exactNextOnCallRecipients.map((participant: any) => {
       return participant.name
