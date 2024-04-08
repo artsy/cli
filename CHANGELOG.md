@@ -1,3 +1,15 @@
+# v1.12.0 (Mon Apr 08 2024)
+
+#### 🚀  Enhancement
+
+- feat: add Sapphire ceremony reminders to schedules [#316](https://github.com/artsy/cli/pull/316) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.11.0 (Mon Apr 08 2024)
 
 #### 🚀  Enhancement
