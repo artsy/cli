@@ -1,3 +1,21 @@
+# v1.11.0 (Mon Apr 08 2024)
+
+#### 🚀  Enhancement
+
+- Revert "feat: add Sapphire ceremony reminders to schedules" [#315](https://github.com/artsy/cli/pull/315) ([@amonkhouse](https://github.com/amonkhouse))
+- feat: add Sapphire ceremony reminders to schedules [#314](https://github.com/artsy/cli/pull/314) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### 🏠  Internal
+
+- chore(deps): bump follow-redirects from 1.14.8 to 1.15.6 [#312](https://github.com/artsy/cli/pull/312) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.10.0 (Wed Mar 27 2024)
 
 #### 🚀  Enhancement
