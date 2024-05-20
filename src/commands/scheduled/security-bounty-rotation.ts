@@ -4,9 +4,9 @@ import { Opsgenie } from "../../utils/opsgenie"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
 export default class SecurityBountyRotation extends Command {
-  static urls: { [key: string]: string } = { 
-    playbook: 
-      "https://www.notion.so/artsy/Security-Bounty-Program-Playbook-0071e3292a194f23b6a8ae593a08d3f3" 
+  static urls: { [key: string]: string } = {
+    playbook:
+      "https://www.notion.so/artsy/Security-Bounty-Program-Playbook-0071e3292a194f23b6a8ae593a08d3f3",
   }
   static description =
     "Remind members that are due to respond to security bounty submissions."
