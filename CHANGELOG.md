@@ -1,3 +1,16 @@
+# v1.12.1 (Mon May 20 2024)
+
+#### 🐛  Bug Fix
+
+- fix: linting [#319](https://github.com/artsy/cli/pull/319) ([@amonkhouse](https://github.com/amonkhouse))
+- chore: add scheduled security bounty rotation reminder [#318](https://github.com/artsy/cli/pull/318) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.12.0 (Mon Apr 08 2024)
 
 #### 🚀  Enhancement
