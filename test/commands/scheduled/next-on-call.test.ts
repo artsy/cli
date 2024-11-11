@@ -48,7 +48,7 @@ describe("scheduled:next-on-call", () => {
                 text: {
                   type: "mrkdwn",
                   text:
-                    "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://github.com/artsy/README/blob/main/playbooks/incident-handling.md#before-an-on-call-shift|Incident Handling doc> to prep. You've got this! :+1:",
+                    "<@justin>, <@steve> looks like you have on-call shifts coming up! Check out the <https://www.notion.so/artsy/Incident-Handling-111cab0764a0808c993ec19b352cfab9?pvs=4#111cab0764a08052944df603067ca183|Incident Handling doc> to prep. You've got this! :+1:",
                 },
               },
             ],
