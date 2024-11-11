@@ -6,7 +6,7 @@ import { convertEmailsToSlackMentions } from "../../utils/slack"
 export default class NextOnCall extends Command {
   static urls: { [key: string]: string } = {
     incidentHandling:
-      "https://github.com/artsy/README/blob/main/playbooks/incident-handling.md#before-an-on-call-shift",
+      "https://www.notion.so/artsy/Incident-Handling-111cab0764a0808c993ec19b352cfab9?pvs=4#111cab0764a08052944df603067ca183",
   }
 
   static description = "Remind members with upcoming on-call shifts."
