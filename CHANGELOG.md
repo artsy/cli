@@ -1,3 +1,15 @@
+# v1.13.0 (Mon Nov 11 2024)
+
+#### 🚀  Enhancement
+
+- chore: update next on call incident handling link [#321](https://github.com/artsy/cli/pull/321) ([@ovasdi](https://github.com/ovasdi))
+
+#### Authors: 1
+
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.12.1 (Mon May 20 2024)
 
 #### 🐛  Bug Fix
