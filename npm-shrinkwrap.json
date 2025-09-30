@@ -6,7 +6,7 @@
   "packages": {
     "": {
       "name": "@artsy/cli",
-      "version": "1.13.0",
+      "version": "1.13.1",
       "license": "MIT",
       "dependencies": {
         "@oclif/command": "^1",
