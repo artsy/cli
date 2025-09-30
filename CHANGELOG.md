@@ -1,3 +1,15 @@
+# v1.13.1 (Tue Sep 30 2025)
+
+#### 🐛  Bug Fix
+
+- chore: add npm-shrinkwrap.json file [#322](https://github.com/artsy/cli/pull/322) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.13.0 (Mon Nov 11 2024)
 
 #### 🚀  Enhancement
