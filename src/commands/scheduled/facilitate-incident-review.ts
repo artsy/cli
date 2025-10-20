@@ -8,10 +8,14 @@ interface Dates {
   exceptions: string[]
 }
 
-const useDatesVarDescription = `
-Use dates from DATES env var.
-Dates env var is a JSON string with the following format: { baseDate: string, exceptions: string[] }
-Each date should be in the following format: YYYY-MM-DD
+const biweeklyScheduleDescription = `
+Enable bi-weekly scheduling with DATES env var.
+Since Incident Reviews run every other week, this determines which weeks to skip:
+- baseDate: A date when review SHOULD happen. The script calculates weeks since this date.
+- exceptions: Array of dates to override the bi-weekly calculation (run on "off weeks")
+
+Format: { baseDate: string, exceptions: string[] }
+All dates in YYYY-MM-DD format.
 Example: { "baseDate": "2023-04-27", "exceptions": ["2023-05-03", "2023-05-31"] }
 `.trim()
 
@@ -38,8 +42,8 @@ export default class FacilitateIncidentReview extends Command {
     facilitatorEmail: flags.string({
       description: "facilitator email",
     }),
-    useDatesVar: flags.boolean({
-      description: useDatesVarDescription,
+    enableBiweeklySchedule: flags.boolean({
+      description: biweeklyScheduleDescription,
       default: false,
     }),
   }
@@ -47,7 +51,7 @@ export default class FacilitateIncidentReview extends Command {
   async run() {
     const { flags } = this.parse(FacilitateIncidentReview)
 
-    if (flags.useDatesVar) {
+    if (flags.enableBiweeklySchedule) {
       if (!process.env.DATES) {
         this.error("DATES env var is not set. Use --help for more info.")
       } else {
