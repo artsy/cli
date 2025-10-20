@@ -29,7 +29,7 @@ export default class FacilitateIncidentReview extends Command {
     ...Command.flags,
     date: flags.string({
       description: "target date in ISO format",
-      default: wednesdayShift(),
+      default: facilitatorSelectionDate(),
     }),
     schedule: flags.string({
       description: "schedule name",
@@ -113,14 +113,41 @@ async function onCallParticipantEmails(
   )
 }
 
-// By default we want to select on-call participants after Wednesday at 11AM ET
-// because that is when the on-call schedule is updated.
-// Setting the default to Wednesday at 2PM ET to avoid issues when daylight savings time shifts.
-function wednesdayShift() {
-  const wednesday = new Date() // this returns the current date and time in UTC
-  wednesday.setDate(wednesday.getDate() - wednesday.getDay() + 3) // 3 = Wednesday
-  wednesday.setHours(18, 0, 0, 0) // 18 in UTC = 2PM ET (when daylight savings time is in effect)
-  return wednesday.toISOString()
+// By default we want to select on-call participants after the on-call schedule is updated.
+// The day and time can be configured via environment variables:
+// - FACILITATOR_SELECTION_DAY (default: 3 = Wednesday)
+// - FACILITATOR_SELECTION_HOUR_UTC (default: 18 = 2PM ET during DST)
+function facilitatorSelectionDate() {
+  const defaultDay = 3 // Wednesday
+  const defaultHour = 18 // 2PM ET during DST, 1PM ET during standard time
+
+  // Parse and validate environment variables
+  const selectionDay = process.env.FACILITATOR_SELECTION_DAY
+    ? parseInt(process.env.FACILITATOR_SELECTION_DAY, 10)
+    : defaultDay
+
+  const selectionHour = process.env.FACILITATOR_SELECTION_HOUR_UTC
+    ? parseInt(process.env.FACILITATOR_SELECTION_HOUR_UTC, 10)
+    : defaultHour
+
+  // Validate day is 0-6 (Sunday-Saturday)
+  if (selectionDay < 0 || selectionDay > 6 || isNaN(selectionDay)) {
+    throw new Error(
+      `Invalid FACILITATOR_SELECTION_DAY: ${process.env.FACILITATOR_SELECTION_DAY}. Must be 0-6 (0=Sunday, 6=Saturday)`
+    )
+  }
+
+  // Validate hour is 0-23
+  if (selectionHour < 0 || selectionHour > 23 || isNaN(selectionHour)) {
+    throw new Error(
+      `Invalid FACILITATOR_SELECTION_HOUR_UTC: ${process.env.FACILITATOR_SELECTION_HOUR_UTC}. Must be 0-23`
+    )
+  }
+
+  const date = new Date() // this returns the current date and time in UTC
+  date.setDate(date.getDate() - date.getDay() + selectionDay)
+  date.setHours(selectionHour, 0, 0, 0)
+  return date.toISOString()
 }
 
 // Determine if the current week is an 'off week' for Incident Reviews
