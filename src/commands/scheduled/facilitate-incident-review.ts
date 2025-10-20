@@ -83,7 +83,7 @@ export default class FacilitateIncidentReview extends Command {
           type: "section",
           text: {
             type: "mrkdwn",
-            text: `${mention} :wave:, based on the <${FacilitateIncidentReview.urls.onCallEngineeringSchedule}|on-call schedule> you have been selected to _prepare for and facilitate_ the Incident Review meeting tomorrow at 11AM ET! :tada:
+            text: `${mention} :wave:, based on the <${FacilitateIncidentReview.urls.onCallEngineeringSchedule}|on-call schedule> you have been selected to _prepare for and facilitate_ the upcoming Incident Review meeting! :tada:
 Check out the <${FacilitateIncidentReview.urls.incidentReviewSchedule}|Incident Review Schedule> for more information and the next steps.`,
           },
         },
