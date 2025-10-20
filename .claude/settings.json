@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [],
+    "deny": [
+      "Read(.env)",
+      "Bash(aws:*)"
+    ]
+  }
+}
