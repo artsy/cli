@@ -32,7 +32,7 @@ describe("scheduled:facilitate-incident-review", () => {
                 text: {
                   type: "mrkdwn",
                   text:
-                    "<@neo> :wave:, based on the <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c/main|on-call schedule> you have been selected to _prepare for and facilitate_ the Incident Review meeting tomorrow at 11AM ET! :tada:\nCheck out the <https://www.notion.so/artsy/Incident-Reviews-725052225efc49e78532b13e166ba3c7|Incident Review Schedule> for more information and the next steps.",
+                    "<@neo> :wave:, based on the <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c/main|on-call schedule> you have been selected to _prepare for and facilitate_ the upcoming Incident Review meeting! :tada:\nCheck out the <https://www.notion.so/artsy/Incident-Reviews-725052225efc49e78532b13e166ba3c7|Incident Review Schedule> for more information and the next steps.",
                 },
               },
             ],
@@ -73,7 +73,7 @@ describe("scheduled:facilitate-incident-review", () => {
                 text: {
                   type: "mrkdwn",
                   text:
-                    "<@neo> :wave:, based on the <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c/main|on-call schedule> you have been selected to _prepare for and facilitate_ the Incident Review meeting tomorrow at 11AM ET! :tada:\nCheck out the <https://www.notion.so/artsy/Incident-Reviews-725052225efc49e78532b13e166ba3c7|Incident Review Schedule> for more information and the next steps.",
+                    "<@neo> :wave:, based on the <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c/main|on-call schedule> you have been selected to _prepare for and facilitate_ the upcoming Incident Review meeting! :tada:\nCheck out the <https://www.notion.so/artsy/Incident-Reviews-725052225efc49e78532b13e166ba3c7|Incident Review Schedule> for more information and the next steps.",
                 },
               },
             ],
