@@ -1,3 +1,15 @@
+# v1.14.0 (Tue Oct 21 2025)
+
+#### 🚀  Enhancement
+
+- feat: make facilitator selection day and time configurable [#325](https://github.com/artsy/cli/pull/325) ([@ovasdi](https://github.com/ovasdi))
+
+#### Authors: 1
+
+- Ozzie Vasdi ([@ovasdi](https://github.com/ovasdi))
+
+---
+
 # v1.13.2 (Mon Oct 06 2025)
 
 #### 🐛  Bug Fix
