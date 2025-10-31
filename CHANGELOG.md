@@ -1,3 +1,15 @@
+# v1.15.0 (Fri Oct 31 2025)
+
+#### 🚀  Enhancement
+
+- feat: add conventional commit github action [#326](https://github.com/artsy/cli/pull/326) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.14.0 (Tue Oct 21 2025)
 
 #### 🚀  Enhancement
