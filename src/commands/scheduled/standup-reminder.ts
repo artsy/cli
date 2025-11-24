@@ -31,7 +31,7 @@ export default class StandupReminder extends Command {
             type: "mrkdwn",
             text: `Hi ${mentions.join(" and ")} :wave:\n\nBased on our <${
               StandupReminder.urls.onCallSchedule
-            }|on-call schedule>, you've been chosen to facilitate today's Engineering Standup at 12pm ET. Please refer to the docs <${
+            }|on-call schedule>, you've been chosen to facilitate today's Engineering Standup at 11:45am ET. Please refer to the docs <${
               StandupReminder.urls.standup
             }|on GitHub> and add new standup notes <${
               StandupReminder.urls.notes

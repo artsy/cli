@@ -46,7 +46,7 @@ describe("scheduled:standup-reminder", () => {
               text: {
                 type: "mrkdwn",
                 text:
-                  "Hi <@devon> and <@jon> :wave:\n\nBased on our <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c|on-call schedule>, you've been chosen to facilitate today's Engineering Standup at 12pm ET. Please refer to the docs <https://github.com/artsy/README/blob/main/events/open-standup.md|on GitHub> and add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
+                  "Hi <@devon> and <@jon> :wave:\n\nBased on our <https://artsy.app.opsgenie.com/teams/dashboard/ee381004-a72e-42ef-a733-b350d6693c6c|on-call schedule>, you've been chosen to facilitate today's Engineering Standup at 11:45am ET. Please refer to the docs <https://github.com/artsy/README/blob/main/events/open-standup.md|on GitHub> and add new standup notes <https://www.notion.so/artsy/Standup-Notes-28a5dfe4864645788de1ef936f39687c|in Notion>.",
               },
             },
           ],
