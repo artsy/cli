@@ -1,3 +1,15 @@
+# v1.18.0 (Mon Nov 24 2025)
+
+#### 🚀  Enhancement
+
+- fix: correct standup time [#329](https://github.com/artsy/cli/pull/329) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.17.0 (Wed Nov 19 2025)
 
 #### 🚀  Enhancement
