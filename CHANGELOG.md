@@ -1,3 +1,15 @@
+# v1.19.0 (Fri Feb 06 2026)
+
+#### 🚀  Enhancement
+
+- feat: add triggers to conventional commits check [#330](https://github.com/artsy/cli/pull/330) ([@amonkhouse](https://github.com/amonkhouse))
+
+#### Authors: 1
+
+- Amy Monkhouse ([@amonkhouse](https://github.com/amonkhouse))
+
+---
+
 # v1.18.0 (Mon Nov 24 2025)
 
 #### 🚀  Enhancement
