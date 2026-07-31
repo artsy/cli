@@ -57,6 +57,38 @@ export const Config = {
     const json = Config.readConfig()
     return json.clients?.opsgenie?.apiKey || process.env.OPSGENIE_API_KEY || ""
   },
+  orbitUrl: (): string => {
+    const json = Config.readConfig()
+    return json.clients?.orbit?.url || process.env.ORBIT_URL || ""
+  },
+  orbitToken: (): string => {
+    const json = Config.readConfig()
+    return json.clients?.orbit?.token || process.env.ORBIT_TOKEN || ""
+  },
+  orbitSecurityBountyRotationId: (): string => {
+    const json = Config.readConfig()
+    return (
+      json.clients?.orbit?.securityBountyRotationId ||
+      process.env.ORBIT_SECURITY_BOUNTY_ROTATION_ID ||
+      ""
+    )
+  },
+  orbitSapphireRotationId: (): string => {
+    const json = Config.readConfig()
+    return (
+      json.clients?.orbit?.sapphireRotationId ||
+      process.env.ORBIT_SAPPHIRE_ROTATION_ID ||
+      ""
+    )
+  },
+  orbitSapphireRetroRotationId: (): string => {
+    const json = Config.readConfig()
+    return (
+      json.clients?.orbit?.sapphireRetroRotationId ||
+      process.env.ORBIT_SAPPHIRE_RETRO_ROTATION_ID ||
+      ""
+    )
+  },
   slackWebApiToken: (): string => {
     const json = Config.readConfig()
     return (

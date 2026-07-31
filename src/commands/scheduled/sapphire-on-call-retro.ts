@@ -1,6 +1,8 @@
 import Command from "../../base"
 
+import { Config } from "../../config"
 import { Opsgenie } from "../../utils/opsgenie"
+import { Orbit } from "../../utils/orbit"
 import { convertEmailsToSlackMentions } from "../../utils/slack"
 
 export default class SapphireOnCallRetro extends Command {
@@ -15,7 +17,7 @@ export default class SapphireOnCallRetro extends Command {
   }
 
   async run() {
-    const emails = await this.onCallEmailsFromOpsGenie()
+    const emails = await this.onCallEmails()
     const mentions = await convertEmailsToSlackMentions(emails)
 
     const payload = JSON.stringify({
@@ -35,6 +37,24 @@ export default class SapphireOnCallRetro extends Command {
     })
 
     this.log(payload)
+  }
+
+  // Prefers Orbit when a rotation id is configured (see ../../utils/orbit);
+  // otherwise (and if the Orbit lookup fails) falls back to the Opsgenie
+  // schedule, unchanged from before.
+  async onCallEmails() {
+    const orbitEmails = await this.onCallEmailsFromOrbit()
+    if (orbitEmails) return orbitEmails
+
+    return this.onCallEmailsFromOpsGenie()
+  }
+
+  async onCallEmailsFromOrbit() {
+    const rotationId = Config.orbitSapphireRetroRotationId()
+    if (!rotationId) return null
+
+    const orbit = new Orbit()
+    return orbit.onCallEmails(rotationId)
   }
 
   async onCallEmailsFromOpsGenie() {
