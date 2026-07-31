@@ -1,3 +1,16 @@
+# v1.20.0 (Fri Jul 31 2026)
+
+#### 🚀  Enhancement
+
+- feat: source security-bounty/sapphire rotations from Orbit [#331](https://github.com/artsy/cli/pull/331) ([@claude](https://github.com/claude) [@MounirDhahri](https://github.com/MounirDhahri))
+
+#### Authors: 2
+
+- Claude ([@claude](https://github.com/claude))
+- Mounir Dhahri ([@MounirDhahri](https://github.com/MounirDhahri))
+
+---
+
 # v1.19.0 (Fri Feb 06 2026)
 
 #### 🚀  Enhancement
