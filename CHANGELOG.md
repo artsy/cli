@@ -1,3 +1,16 @@
+# v1.20.1 (Wed Nov 04 2026)
+
+#### 🐛  Bug Fix
+
+- fix(ci): use the orb's default auto v11.3.0 for releases [#334](https://github.com/artsy/cli/pull/334) ([@zapraum](https://github.com/zapraum))
+- chore(ci): bump artsy/auto orb for npm trusted publishing [#333](https://github.com/artsy/cli/pull/333) ([@zapraum](https://github.com/zapraum))
+
+#### Authors: 1
+
+- Rodrigo ([@zapraum](https://github.com/zapraum))
+
+---
+
 # v1.20.0 (Fri Jul 31 2026)
 
 #### 🚀  Enhancement
