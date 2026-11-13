@@ -65,14 +65,6 @@ export const Config = {
     const json = Config.readConfig()
     return json.clients?.orbit?.token || process.env.ORBIT_TOKEN || ""
   },
-  orbitSecurityBountyRotationId: (): string => {
-    const json = Config.readConfig()
-    return (
-      json.clients?.orbit?.securityBountyRotationId ||
-      process.env.ORBIT_SECURITY_BOUNTY_ROTATION_ID ||
-      ""
-    )
-  },
   orbitSapphireRotationId: (): string => {
     const json = Config.readConfig()
     return (
