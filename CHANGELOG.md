@@ -1,3 +1,15 @@
+# v1.21.0 (Fri Nov 13 2026)
+
+#### 🚀  Enhancement
+
+- chore: remove scheduled:security-bounty-rotation (PHIRE-3645) [#335](https://github.com/artsy/cli/pull/335) ([@MounirDhahri](https://github.com/MounirDhahri))
+
+#### Authors: 1
+
+- Mounir Dhahri ([@MounirDhahri](https://github.com/MounirDhahri))
+
+---
+
 # v1.20.1 (Wed Nov 04 2026)
 
 #### 🐛  Bug Fix
